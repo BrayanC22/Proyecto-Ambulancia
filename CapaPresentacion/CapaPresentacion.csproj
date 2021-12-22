@@ -200,5 +200,8 @@
   <ItemGroup>
     <None Include="Resources\fondo1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Login\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
