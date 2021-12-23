@@ -1,7 +1,7 @@
 ﻿
-namespace CapaPresentacion.Usuario
+namespace CapaPresentacion
 {
-    partial class frmUsuario
+    partial class frmPagos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,19 @@ namespace CapaPresentacion.Usuario
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmPagos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmUsuario";
+            this.BackgroundImage = global::CapaPresentacion.Properties.Resources.coming_soon;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(605, 450);
+            this.Name = "frmPagos";
+            this.Text = "frmPagos";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

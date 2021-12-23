@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaPresentacion.Usuario
+namespace CapaPresentacion
 {
-    public partial class frmUsuario : Form
+    public partial class frmPagos : Form
     {
-        public frmUsuario()
+        public frmPagos()
         {
             InitializeComponent();
         }
