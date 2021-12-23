@@ -45,6 +45,7 @@
     <Compile Include="ClsAmbulancia.cs" />
     <Compile Include="ClsCliente.cs" />
     <Compile Include="ClsPersona.cs" />
+    <Compile Include="Conductor\ClsConductores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario\clsUsuario.cs" />
   </ItemGroup>

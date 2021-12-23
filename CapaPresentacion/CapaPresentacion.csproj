@@ -64,6 +64,12 @@
     <Compile Include="frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConductores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConductores.Designer.cs">
+      <DependentUpon>FrmConductores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultarAmbulanciacs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="frmConsultarCliente.Designer.cs">
       <DependentUpon>frmConsultarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultarConductores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultarConductores.Designer.cs">
+      <DependentUpon>FrmConsultarConductores.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEliminarAmbulancia.cs">
       <SubType>Form</SubType>
@@ -123,11 +135,17 @@
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConductores.resx">
+      <DependentUpon>FrmConductores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarAmbulanciacs.resx">
       <DependentUpon>frmConsultarAmbulanciacs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarCliente.resx">
       <DependentUpon>frmConsultarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultarConductores.resx">
+      <DependentUpon>FrmConsultarConductores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEliminarAmbulancia.resx">
       <DependentUpon>frmEliminarAmbulancia.cs</DependentUpon>
@@ -149,14 +167,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,6 +244,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ambulancia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulancia3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoConductor.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
