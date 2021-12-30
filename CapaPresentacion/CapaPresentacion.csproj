@@ -278,5 +278,13 @@
   <ItemGroup>
     <None Include="Resources\coming-soon.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\A-Editar.png" />
+    <Content Include="Resources\A-save.png" />
+    <Content Include="Resources\A-Usuario.png" />
+    <Content Include="Resources\BaseDatosScript\SQLAmbulancia.sql" />
+    <Content Include="Resources\BaseDatosScript\SQLCliente.sql" />
+    <Content Include="Resources\BaseDatosScript\SQLUsuario.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

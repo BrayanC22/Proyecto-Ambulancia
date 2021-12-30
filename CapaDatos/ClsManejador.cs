@@ -1,7 +1,176 @@
-﻿using System; using System.Collections.Generic; using System.Data.SqlClient; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms;  namespace CapaDatos {     public class ClsManejador     {         List<ClsDatosAmbulancia> datosambulancia = new List<ClsDatosAmbulancia>();
-        List<ClsDatosCliente> datosCliente = new List<ClsDatosCliente>();          private SqlConnection conexion;          private SqlConnection abrir_conexion()         {              try             {                 string ConnectionString = "server = localhost; database = LosRapidosSAbd; integrated security = true  ";                  conexion = new SqlConnection(ConnectionString);                 conexion.Open();                  Console.WriteLine("Se abrio la conexion desde la capa de acceso a datos");              }             catch (SqlException ex)             {                 throw ex;             }             return conexion;         }          private void cerrar_conexion(SqlConnection conexion)         {             conexion.Close();             Console.WriteLine("Se cerro la conexion desde la capa de acceso a datos");         }          //Método para insertar información         public void insertar_ambulancia(List<ClsParametrosAmbulancia> lst)         {             try             {                 if (lst != null)                 {                     SqlConnection conexion = abrir_conexion();                     string cadena = "INSERT INTO Ambulancia" +                                     "(modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion) " +                                     "VALUES" + "(@modelo, @tipoAmbulancia, @placa, @matricula, @fechaActivacion, @estado, @observacion)";                      SqlCommand comannd = new SqlCommand(cadena, conexion);                     comannd.Parameters.AddWithValue("@modelo", lst[0].Modelo); // a la variable de tip Mysql comand agregar un valor al parametro                     comannd.Parameters.AddWithValue("@tipoAmbulancia", lst[0].TipoAmbulancia); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica                     comannd.Parameters.AddWithValue("@placa", lst[0].Placa);                     comannd.Parameters.AddWithValue("@matricula", lst[0].Matricula);                     comannd.Parameters.AddWithValue("@fechaActivacion", lst[0].FechaActivacion);                     comannd.Parameters.AddWithValue("@estado", lst[0].Estado);                     comannd.Parameters.AddWithValue("@observacion", lst[0].Observacion);                        int t = Convert.ToInt32(comannd.ExecuteScalar()); // con esa linea executa el insert a la bd                     cerrar_conexion(conexion);                 }             }             catch (Exception ex)             { throw ex; }         }          public List<Object> listar_ambulancia()         {             List<Object> lstAmbulancia = new List<Object>();              SqlConnection conexion = abrir_conexion();             string cadena = "Select modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion from Ambulancia ";             SqlCommand comando = new SqlCommand(cadena, conexion);             SqlDataReader registros = comando.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.             while (registros.Read())  // leo la informacion almacenada en registro             {                 var tmp = new                 {                     modelo = registros["modelo"].ToString(),  // para asignar valores de la base a la variable cedula                     tipoAmbulancia = registros["tipoAmbulancia"].ToString(),                     placa = registros["placa"].ToString(),                     matricula = registros["matricula"].ToString(),                     fechaActivacion = registros["fechaActivacion"].ToString(),                     estado = registros["estado"].ToString(),                     observacion = registros["observacion"].ToString(),                                    };                  lstAmbulancia.Add(tmp);             }             cerrar_conexion(conexion);             return lstAmbulancia;         }           public List<Object> buscar_ambulancia(String placa)         {             List<Object> lstAmbulancia = new List<Object>();              SqlConnection conexion = abrir_conexion();             string cadena = "Select modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion from Ambulancia WHERE placa = @placa";             SqlCommand comando = new SqlCommand(cadena, conexion);             comando.Parameters.AddWithValue("@placa", placa);              SqlDataReader registros = comando.ExecuteReader();             while (registros.Read())             {                 var tmp = new                 {                     modelo = registros["modelo"].ToString(),  // para asignar valores de la base a la variable cedula                     tipoAmbulancia = registros["tipoAmbulancia"].ToString(),                     placa = registros["placa"].ToString(),                     matricula = registros["matricula"].ToString(),                     fechaActivacion = registros["fechaActivacion"].ToString(),                     estado = registros["estado"].ToString(),                     observacion = registros["observacion"].ToString(),                  };                 lstAmbulancia.Add(tmp);             }             cerrar_conexion(conexion);             return lstAmbulancia;         }           public int eliminar_ambulancia(String placa)         {             SqlConnection conexion = abrir_conexion();             string cadena = "DELETE FROM Ambulancia WHERE placa = @placa";             SqlCommand command = new SqlCommand(cadena, conexion);             command.Parameters.AddWithValue("@placa", placa);             int resultado = Convert.ToInt32(command.ExecuteScalar());              MessageBox.Show("Se a eliminado con exito");             cerrar_conexion(conexion);             return resultado;         }
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using CapaDatos.Usuario;
 
-        /*         public int actualizar_alumno_individual(String param_cedula, String param_nombre, String param_apellido, String param_edad, String param_direccion,           String param_sexo, String param_nacionalidad, String param_provincias, String param_cantones, String param_imagen, String param_semestre)         {             SqlConnection conexion = abrir_conexion();             string actualizar = "update estudiante set Nombres=@param_nombre, Apellidos=@param_apellido,  Edad=@param_edad, " +                 " Direccion=@param_direccion, Sexo=@param_sexo, Nacionalidad=@param_nacionalidad,  Provincias=@param_provincias," +                 "  Cantones=@param_cantones,  Imagen=@param_imagen,  Semestre=@param_semestre where Cedula=@param_cedula";             SqlCommand cmd = new SqlCommand(actualizar, conexion);             cmd.Parameters.AddWithValue("@param_cedula", param_cedula);             cmd.Parameters.AddWithValue("@param_nombre", param_nombre);             cmd.Parameters.AddWithValue("@param_apellido", param_apellido);             cmd.Parameters.AddWithValue("@param_edad", param_edad);             cmd.Parameters.AddWithValue("@param_direccion", param_direccion);             cmd.Parameters.AddWithValue("@param_sexo", param_sexo);             cmd.Parameters.AddWithValue("@param_nacionalidad", param_nacionalidad);             cmd.Parameters.AddWithValue("@param_provincias", param_provincias);             cmd.Parameters.AddWithValue("@param_cantones", param_cantones);             cmd.Parameters.AddWithValue("@param_imagen", param_imagen);             cmd.Parameters.AddWithValue("@param_semestre", param_semestre);              int resultado_operacion = Convert.ToInt32(cmd.ExecuteScalar());             cerrar_conexion(conexion);              return resultado_operacion;                  } */
+namespace CapaDatos
+{
+    public class ClsManejador
+    {
+        List<ClsDatosAmbulancia> datosambulancia = new List<ClsDatosAmbulancia>();
+        List<ClsDatosCliente> datosCliente = new List<ClsDatosCliente>();
+
+        private SqlConnection conexion;
+
+        private SqlConnection abrir_conexion()
+        {
+
+            try
+            {
+                string ConnectionString = "server = localhost; database = LosRapidosSAbd; integrated security = true  ";
+
+                conexion = new SqlConnection(ConnectionString);
+                conexion.Open();
+
+                Console.WriteLine("Se abrio la conexion desde la capa de acceso a datos");
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            return conexion;
+        }
+
+        private void cerrar_conexion(SqlConnection conexion)
+        {
+            conexion.Close();
+            Console.WriteLine("Se cerro la conexion desde la capa de acceso a datos");
+        }
+
+        //Método para insertar información
+        public void insertar_ambulancia(List<ClsParametrosAmbulancia> lst)
+        {
+            try
+            {
+                if (lst != null)
+                {
+                    SqlConnection conexion = abrir_conexion();
+                    string cadena = "INSERT INTO Ambulancia" +
+                                    "(modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion) " +
+                                    "VALUES" + "(@modelo, @tipoAmbulancia, @placa, @matricula, @fechaActivacion, @estado, @observacion)";
+
+                    SqlCommand comannd = new SqlCommand(cadena, conexion);
+                    comannd.Parameters.AddWithValue("@modelo", lst[0].Modelo); // a la variable de tip Mysql comand agregar un valor al parametro
+                    comannd.Parameters.AddWithValue("@tipoAmbulancia", lst[0].TipoAmbulancia); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
+                    comannd.Parameters.AddWithValue("@placa", lst[0].Placa);
+                    comannd.Parameters.AddWithValue("@matricula", lst[0].Matricula);
+                    comannd.Parameters.AddWithValue("@fechaActivacion", lst[0].FechaActivacion);
+                    comannd.Parameters.AddWithValue("@estado", lst[0].Estado);
+                    comannd.Parameters.AddWithValue("@observacion", lst[0].Observacion);
+ 
+
+                    int t = Convert.ToInt32(comannd.ExecuteScalar()); // con esa linea executa el insert a la bd
+                    cerrar_conexion(conexion);
+                }
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
+
+        public List<Object> listar_ambulancia()
+        {
+            List<Object> lstAmbulancia = new List<Object>();
+
+            SqlConnection conexion = abrir_conexion();
+            string cadena = "Select modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion from Ambulancia ";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            SqlDataReader registros = comando.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
+            while (registros.Read())  // leo la informacion almacenada en registro
+            {
+                var tmp = new
+                {
+                    modelo = registros["modelo"].ToString(),  // para asignar valores de la base a la variable cedula
+                    tipoAmbulancia = registros["tipoAmbulancia"].ToString(),
+                    placa = registros["placa"].ToString(),
+                    matricula = registros["matricula"].ToString(),
+                    fechaActivacion = registros["fechaActivacion"].ToString(),
+                    estado = registros["estado"].ToString(),
+                    observacion = registros["observacion"].ToString(),
+                  
+                };
+
+                lstAmbulancia.Add(tmp);
+            }
+            cerrar_conexion(conexion);
+            return lstAmbulancia;
+        }
+
+
+        public List<Object> buscar_ambulancia(String placa)
+        {
+            List<Object> lstAmbulancia = new List<Object>();
+
+            SqlConnection conexion = abrir_conexion();
+            string cadena = "Select modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion from Ambulancia WHERE placa = @placa";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            comando.Parameters.AddWithValue("@placa", placa);
+
+            SqlDataReader registros = comando.ExecuteReader();
+            while (registros.Read())
+            {
+                var tmp = new
+                {
+                    modelo = registros["modelo"].ToString(),  // para asignar valores de la base a la variable cedula
+                    tipoAmbulancia = registros["tipoAmbulancia"].ToString(),
+                    placa = registros["placa"].ToString(),
+                    matricula = registros["matricula"].ToString(),
+                    fechaActivacion = registros["fechaActivacion"].ToString(),
+                    estado = registros["estado"].ToString(),
+                    observacion = registros["observacion"].ToString(),
+
+                };
+                lstAmbulancia.Add(tmp);
+            }
+            cerrar_conexion(conexion);
+            return lstAmbulancia;
+        }
+
+
+        public int eliminar_ambulancia(String placa)
+        {
+            SqlConnection conexion = abrir_conexion();
+            string cadena = "DELETE FROM Ambulancia WHERE placa = @placa";
+            SqlCommand command = new SqlCommand(cadena, conexion);
+            command.Parameters.AddWithValue("@placa", placa);
+            int resultado = Convert.ToInt32(command.ExecuteScalar());
+
+            MessageBox.Show("Se a eliminado con exito");
+            cerrar_conexion(conexion);
+            return resultado;
+        }
+
+        /*
+        public int actualizar_alumno_individual(String param_cedula, String param_nombre, String param_apellido, String param_edad, String param_direccion,
+          String param_sexo, String param_nacionalidad, String param_provincias, String param_cantones, String param_imagen, String param_semestre)
+        {
+            SqlConnection conexion = abrir_conexion();
+            string actualizar = "update estudiante set Nombres=@param_nombre, Apellidos=@param_apellido,  Edad=@param_edad, " +
+                " Direccion=@param_direccion, Sexo=@param_sexo, Nacionalidad=@param_nacionalidad,  Provincias=@param_provincias," +
+                "  Cantones=@param_cantones,  Imagen=@param_imagen,  Semestre=@param_semestre where Cedula=@param_cedula";
+            SqlCommand cmd = new SqlCommand(actualizar, conexion);
+            cmd.Parameters.AddWithValue("@param_cedula", param_cedula);
+            cmd.Parameters.AddWithValue("@param_nombre", param_nombre);
+            cmd.Parameters.AddWithValue("@param_apellido", param_apellido);
+            cmd.Parameters.AddWithValue("@param_edad", param_edad);
+            cmd.Parameters.AddWithValue("@param_direccion", param_direccion);
+            cmd.Parameters.AddWithValue("@param_sexo", param_sexo);
+            cmd.Parameters.AddWithValue("@param_nacionalidad", param_nacionalidad);
+            cmd.Parameters.AddWithValue("@param_provincias", param_provincias);
+            cmd.Parameters.AddWithValue("@param_cantones", param_cantones);
+            cmd.Parameters.AddWithValue("@param_imagen", param_imagen);
+            cmd.Parameters.AddWithValue("@param_semestre", param_semestre);
+
+            int resultado_operacion = Convert.ToInt32(cmd.ExecuteScalar());
+            cerrar_conexion(conexion);
+
+            return resultado_operacion;
+        
+        } */
 
         //Cliente
         public void insertar_cliente(List<ClsParametrosCliente> lst)
@@ -104,4 +273,39 @@
             cerrar_conexion(conexion);
             return resultado;
         }
-           }  }  
+
+
+        /* ----------------------- Registro de usuario ------------------------- */
+        public String RegistrarUsuario(List<clsParametrosUsuario> lst)
+        {
+            String mensaje = "";
+            try
+            {
+                SqlConnection conexionAbierta = abrir_conexion();
+
+                string query = "INSERT INTO Usuario " +
+                    "(Nombre, Apellido, Cedula, Correo, Password, RutaImagen)" +
+                    " VALUES (@Nombre, @Apellido, @Cedula, @Correo,@Password, @RutaImagen)";
+                SqlCommand command = new SqlCommand(query, conexionAbierta);
+                //valores para cada parámetro dado en el query
+                command.Parameters.AddWithValue("@Nombre", lst[0].Nombre);
+                command.Parameters.AddWithValue("@Apellido", lst[0].Apellido);
+                command.Parameters.AddWithValue("@Cedula", lst[0].Cedula);
+                command.Parameters.AddWithValue("@Correo", lst[0].Correo);
+                command.Parameters.AddWithValue("@Password", lst[0].Password);
+                command.Parameters.AddWithValue("@RutaImagen", lst[0].RutaImagen);
+
+                int t = Convert.ToInt32(command.ExecuteNonQuery());
+                mensaje = "Registrado con éxito, " + t;
+                cerrar_conexion(conexionAbierta);
+            }
+            catch (SqlException ex)
+            {
+                mensaje = "Base de datos inaccesible, Error: " + ex;
+            }
+            return mensaje;
+        }
+    }
+
+}
+

@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos;
-using CapaDatos.Usuario;
 
-namespace CapaNegocio.Usuario
+namespace CapaDatos.Usuario
 {
-    public class clsUsuario
+    public class clsParametrosUsuario
     {
-        String nombre;
-        String apellido;
-        String cedula;
-        String correo;
-        String password;
-        String rutaImagen;
+        private String nombre;
+        private String apellido;
+        private String cedula;
+        private String correo;
+        private String password;
+        private String rutaImagen;
 
 
         /* Constructor parametrizado*/
-        public clsUsuario(String nombre, String apellido, String cedula, String correo, String password, String rutaImagen)
+        public clsParametrosUsuario(String nombre, String apellido, String cedula, String correo, String password, String rutaImagen)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -27,10 +25,6 @@ namespace CapaNegocio.Usuario
             this.correo = correo;
             this.password = password;
             this.rutaImagen = rutaImagen;
-        }
-        public clsUsuario()
-        {
-
         }
 
 
@@ -68,22 +62,5 @@ namespace CapaNegocio.Usuario
             get { return rutaImagen; }
             set { rutaImagen = value; }
         }
-
-        /* -------------------------- Metodos ---------------------- */
-        ClsManejador manejadorUsuario = new ClsManejador();
-
-        public String registrarUsuario()
-        {
-            List<clsParametrosUsuario> lstUsuarios = new List<clsParametrosUsuario>();
-
-                lstUsuarios.Add(new clsParametrosUsuario(Nombre, Apellido, Cedula, Correo,Password, RutaImagen));
-            
-            return manejadorUsuario.RegistrarUsuario(lstUsuarios); ;
-        }
-
     }
-
-
-
-
 }

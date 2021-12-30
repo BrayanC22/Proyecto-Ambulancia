@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbRegistrarUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -48,20 +48,21 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // lbRegistrarUsuario
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(151)))), ((int)(((byte)(199)))));
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(237, 389);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Regístrate";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbRegistrarUsuario.AutoSize = true;
+            this.lbRegistrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(151)))), ((int)(((byte)(199)))));
+            this.lbRegistrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbRegistrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbRegistrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistrarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbRegistrarUsuario.Location = new System.Drawing.Point(237, 389);
+            this.lbRegistrarUsuario.Name = "lbRegistrarUsuario";
+            this.lbRegistrarUsuario.Size = new System.Drawing.Size(73, 17);
+            this.lbRegistrarUsuario.TabIndex = 6;
+            this.lbRegistrarUsuario.Text = "Regístrate";
+            this.lbRegistrarUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbRegistrarUsuario.Click += new System.EventHandler(this.lbRegistrarUsuario_Click);
             // 
             // label1
             // 
@@ -72,7 +73,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(88, 389);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 20);
+            this.label1.Size = new System.Drawing.Size(147, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "¿Eres usuario nuevo?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -124,7 +125,7 @@
             this.ClientSize = new System.Drawing.Size(421, 469);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbRegistrarUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -142,7 +143,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbRegistrarUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtPassword;

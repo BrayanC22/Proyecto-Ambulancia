@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.Usuario;
 
 namespace CapaPresentacion.Login
 {
@@ -79,6 +80,12 @@ namespace CapaPresentacion.Login
         private void button1_Click(object sender, EventArgs e)
         {
             login(txtUser.Text, txtPassword.Text);
+        }
+
+        private void lbRegistrarUsuario_Click(object sender, EventArgs e)
+        {
+            frmRegistrarUsuario registrarUsuario = new frmRegistrarUsuario();
+            registrarUsuario.Show();
         }
     }
 }
