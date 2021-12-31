@@ -79,9 +79,9 @@ namespace CapaPresentacion
 
         private void btn_regresar_Click(object sender, EventArgs e)
         {
+            frmMenu menu = new frmMenu();
+            menu.Show();
             this.Hide();
-            frmPrincipal frmPrinc = new frmPrincipal();
-            frmPrinc.Show();
         }
 
         private void txtAñoActivacion_KeyPress(object sender, KeyPressEventArgs e)

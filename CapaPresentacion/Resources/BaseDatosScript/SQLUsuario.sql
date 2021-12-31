@@ -9,10 +9,12 @@ CREATE TABLE Usuario
   Nombre         VARCHAR (40) not null,
   Apellido              VARCHAR (40) not null ,
   Cedula           VARCHAR (40) unique not null ,
-  Correo                 VARCHAR(40)  not null ,
+  NombreUsuario                 VARCHAR(40)  not null ,
   Password            VARCHAR(40) not null,
   RutaImagen	               VARCHAR(500) not null,
   Primary Key(Id_Usuario));
 
   select * from Usuario;
+
+  SELECT NombreUsuario, password FROM Usuario WHERE NombreUsuario = 'lino' AND password = '12345';
   -- drop table Usuario;

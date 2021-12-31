@@ -13,18 +13,18 @@ namespace CapaNegocio.Usuario
         String nombre;
         String apellido;
         String cedula;
-        String correo;
+        String usuario;
         String password;
         String rutaImagen;
 
 
         /* Constructor parametrizado*/
-        public clsUsuario(String nombre, String apellido, String cedula, String correo, String password, String rutaImagen)
+        public clsUsuario(String nombre, String apellido, String cedula, String usuario, String password, String rutaImagen)
         {
             this.nombre = nombre;
             this.apellido = apellido;
             this.cedula = cedula;
-            this.correo = correo;
+            this.usuario = usuario;
             this.password = password;
             this.rutaImagen = rutaImagen;
         }
@@ -53,10 +53,10 @@ namespace CapaNegocio.Usuario
             set { cedula = value; }
         }
 
-        public String Correo
+        public String Usuario
         {
-            get { return correo; }
-            set { correo = value; }
+            get { return usuario; }
+            set { usuario = value; }
         }
         public String Password
         {
@@ -76,7 +76,7 @@ namespace CapaNegocio.Usuario
         {
             List<clsParametrosUsuario> lstUsuarios = new List<clsParametrosUsuario>();
 
-                lstUsuarios.Add(new clsParametrosUsuario(Nombre, Apellido, Cedula, Correo,Password, RutaImagen));
+                lstUsuarios.Add(new clsParametrosUsuario(Nombre, Apellido, Cedula, Usuario,Password, RutaImagen));
             
             return manejadorUsuario.RegistrarUsuario(lstUsuarios); ;
         }

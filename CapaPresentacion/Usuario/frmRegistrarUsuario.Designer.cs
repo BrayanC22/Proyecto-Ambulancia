@@ -34,7 +34,7 @@ namespace CapaPresentacion.Usuario
             this.pboxPerfil = new System.Windows.Forms.PictureBox();
             this.txtConfirmaPass = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@ namespace CapaPresentacion.Usuario
             this.GroupRegistroUsuario.Controls.Add(this.pboxPerfil);
             this.GroupRegistroUsuario.Controls.Add(this.txtConfirmaPass);
             this.GroupRegistroUsuario.Controls.Add(this.txtPass);
-            this.GroupRegistroUsuario.Controls.Add(this.txtCorreo);
+            this.GroupRegistroUsuario.Controls.Add(this.txtUsuario);
             this.GroupRegistroUsuario.Controls.Add(this.txtCedula);
             this.GroupRegistroUsuario.Controls.Add(this.txtApellidos);
             this.GroupRegistroUsuario.Controls.Add(this.txtNombre);
@@ -125,16 +125,16 @@ namespace CapaPresentacion.Usuario
             this.txtPass.TabIndex = 11;
             this.txtPass.UseSystemPasswordChar = true;
             // 
-            // txtCorreo
+            // txtUsuario
             // 
-            this.txtCorreo.BackColor = System.Drawing.Color.White;
-            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCorreo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCorreo.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(159, 300);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(170, 16);
-            this.txtCorreo.TabIndex = 10;
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsuario.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(159, 300);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(170, 16);
+            this.txtUsuario.TabIndex = 10;
             // 
             // txtCedula
             // 
@@ -215,9 +215,9 @@ namespace CapaPresentacion.Usuario
             this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(46, 300);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 19);
+            this.label4.Size = new System.Drawing.Size(71, 19);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Correo:";
+            this.label4.Text = "Usuario:";
             // 
             // label3
             // 
@@ -276,7 +276,7 @@ namespace CapaPresentacion.Usuario
         private System.Windows.Forms.GroupBox GroupRegistroUsuario;
         private System.Windows.Forms.TextBox txtConfirmaPass;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtNombre;

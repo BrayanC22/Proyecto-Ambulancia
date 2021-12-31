@@ -11,7 +11,7 @@ CREATE TABLE Cliente
   Edad                 int  not null ,
   Domicilio           VARCHAR(60) not null,
   Sexo	               VARCHAR(60) not null,
-  Imagen               VARCHAR(100) not null,
+  Imagen               VARCHAR(400) not null,
   CodigoCliente	        VARCHAR(60) not null,
 
   Primary Key(Id_Cliente)

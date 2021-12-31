@@ -11,18 +11,18 @@ namespace CapaDatos.Usuario
         private String nombre;
         private String apellido;
         private String cedula;
-        private String correo;
+        private String usuario;
         private String password;
         private String rutaImagen;
 
 
         /* Constructor parametrizado*/
-        public clsParametrosUsuario(String nombre, String apellido, String cedula, String correo, String password, String rutaImagen)
+        public clsParametrosUsuario(String nombre, String apellido, String cedula, String usuario, String password, String rutaImagen)
         {
             this.nombre = nombre;
             this.apellido = apellido;
             this.cedula = cedula;
-            this.correo = correo;
+            this.usuario = usuario;
             this.password = password;
             this.rutaImagen = rutaImagen;
         }
@@ -47,10 +47,10 @@ namespace CapaDatos.Usuario
             set { cedula = value; }
         }
 
-        public String Correo
+        public String Usuario
         {
-            get { return correo; }
-            set { correo = value; }
+            get { return usuario; }
+            set { usuario = value; }
         }
         public String Password
         {

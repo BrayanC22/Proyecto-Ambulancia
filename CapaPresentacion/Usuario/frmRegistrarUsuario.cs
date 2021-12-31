@@ -27,7 +27,7 @@ namespace CapaPresentacion.Usuario
             clsUsuario.Nombre = txtNombre.Text;
             clsUsuario.Apellido = txtApellidos.Text;
             clsUsuario.Cedula = txtCedula.Text;
-            clsUsuario.Correo = txtCorreo.Text;
+            clsUsuario.Usuario = txtUsuario.Text;
             clsUsuario.Password = txtConfirmaPass.Text;
             clsUsuario.RutaImagen = validarImagen(this.RutaImagen);
             
@@ -94,7 +94,7 @@ namespace CapaPresentacion.Usuario
             txtApellidos.Text = "";
             txtNombre.Text = "";
             txtCedula.Text = "";
-            txtCorreo.Text = "";
+            txtUsuario.Text = "";
             txtPass.Text = "";
             txtConfirmaPass.Text = "";
             this.RutaImagen = "";

@@ -58,12 +58,14 @@ namespace CapaPresentacion.Login
             try
             {
                 SqlConnection conexion = abrirConexionSqlServer();
-                String cadena = ("SELECT usuario, password FROM  datos WHERE usuario = " + user + "AND password = " + password);
+                String cadena = ("SELECT NombreUsuario, password FROM Usuario WHERE NombreUsuario = '"+user+"' AND password = '"+password+"'");
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 SqlDataReader registros = comando.ExecuteReader();
                 if (registros.Read())
                 {
-                    MessageBox.Show("usuario encontrado");
+                    frmMenu menu = new frmMenu();
+                    menu.Show();
+                    this.Hide();
                 }
                 else
                 {

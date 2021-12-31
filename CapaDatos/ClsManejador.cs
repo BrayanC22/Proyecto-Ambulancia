@@ -207,7 +207,7 @@ namespace CapaDatos
             List<Object> lstCliente = new List<Object>();
 
             SqlConnection conexion = abrir_conexion();
-            string cadena = "Select Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Imagen ,CodigoCliente from Cliente ";
+            string cadena = "Select Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Imagen ,CodigoCliente from Cliente";
             SqlCommand comando = new SqlCommand(cadena, conexion);
             SqlDataReader registros = comando.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
             while (registros.Read())  // leo la informacion almacenada en registro
@@ -284,14 +284,14 @@ namespace CapaDatos
                 SqlConnection conexionAbierta = abrir_conexion();
 
                 string query = "INSERT INTO Usuario " +
-                    "(Nombre, Apellido, Cedula, Correo, Password, RutaImagen)" +
-                    " VALUES (@Nombre, @Apellido, @Cedula, @Correo,@Password, @RutaImagen)";
+                    "(Nombre, Apellido, Cedula, NombreUsuario, Password, RutaImagen)" +
+                    " VALUES (@Nombre, @Apellido, @Cedula, @NombreUsuario,@Password, @RutaImagen)";
                 SqlCommand command = new SqlCommand(query, conexionAbierta);
                 //valores para cada parámetro dado en el query
                 command.Parameters.AddWithValue("@Nombre", lst[0].Nombre);
                 command.Parameters.AddWithValue("@Apellido", lst[0].Apellido);
                 command.Parameters.AddWithValue("@Cedula", lst[0].Cedula);
-                command.Parameters.AddWithValue("@Correo", lst[0].Correo);
+                command.Parameters.AddWithValue("@NombreUsuario", lst[0].Usuario);
                 command.Parameters.AddWithValue("@Password", lst[0].Password);
                 command.Parameters.AddWithValue("@RutaImagen", lst[0].RutaImagen);
 
