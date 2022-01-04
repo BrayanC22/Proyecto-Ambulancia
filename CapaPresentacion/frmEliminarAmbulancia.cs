@@ -13,7 +13,7 @@ namespace CapaPresentacion
 {
     public partial class frmEliminarAmbulancia : Form
     {
-        ClsAmbulancia Al;
+        ClsAmbulancia Ambulancia1;
         List<Object> lst_ambulancia_tmp;
 
 
@@ -23,12 +23,12 @@ namespace CapaPresentacion
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
         }
-        public frmEliminarAmbulancia(ClsAmbulancia Al)
+        public frmEliminarAmbulancia(ClsAmbulancia Ambulancia1)
         {
             InitializeComponent();
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
-            this.Al = Al;
+            this.Ambulancia1 = Ambulancia1;
             btn_eliminar.Enabled = false;
         }
 
@@ -39,7 +39,7 @@ namespace CapaPresentacion
             {
                 dgv_listarTodos.Rows.Clear();
                 dgv_listarTodos.Refresh();
-                lst_ambulancia_tmp = Al.buscar(txtnunplaca.Text);
+                lst_ambulancia_tmp = Ambulancia1.buscar(txtnunplaca.Text);
 
                 foreach (var ambulancia in lst_ambulancia_tmp)
                 {
@@ -51,13 +51,10 @@ namespace CapaPresentacion
                         String tipoAmbulancia = (String)type.GetProperty("tipoAmbulancia").GetValue(ambulancia);
                         String placa = (String)type.GetProperty("placa").GetValue(ambulancia);
                         String matricula = (String)type.GetProperty("matricula").GetValue(ambulancia);
-                        String fechaActivacion = (String)type.GetProperty("fechaActivacion").GetValue(ambulancia);
-                        String estado = (String)type.GetProperty("estado").GetValue(ambulancia);
-                        String observacion = (String)type.GetProperty("observacion").GetValue(ambulancia);
+                      
 
 
-
-                        dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion);
+                        dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula);
 
 
                         btn_eliminar.Enabled = true;
@@ -75,7 +72,7 @@ namespace CapaPresentacion
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            Al.eliminar(txtnunplaca.Text);
+            Ambulancia1.eliminar(txtnunplaca.Text);
             btn_eliminar.Enabled = false;
             dgv_listarTodos.Rows.Clear();
             dgv_listarTodos.Refresh();
@@ -84,7 +81,7 @@ namespace CapaPresentacion
         private void btnregresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmGuardarAmbulancia frmEst = new frmGuardarAmbulancia(Al);
+            frmGuardarAmbulancia frmEst = new frmGuardarAmbulancia(Ambulancia1);
             frmEst.Show();
         }
     }

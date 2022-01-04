@@ -14,7 +14,7 @@ namespace CapaPresentacion
     public partial class frmGuardarAmbulancia : Form
     {
 
-        ClsAmbulancia Al = new ClsAmbulancia();
+        ClsAmbulancia Ambulancia1 = new ClsAmbulancia();
         public bool vacio;
         List<Object> lst_ambulancia_tmp;
 
@@ -24,11 +24,11 @@ namespace CapaPresentacion
             InitializeComponent();
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
-        public frmGuardarAmbulancia(ClsAmbulancia Al)
+        public frmGuardarAmbulancia(ClsAmbulancia Ambulancia1)
         {
             InitializeComponent();
-            this.Al = Al;
-            this.lst_ambulancia_tmp = Al.listar();
+            this.Ambulancia1 = Ambulancia1;
+            this.lst_ambulancia_tmp = Ambulancia1.listar();
 
         }
 
@@ -40,16 +40,13 @@ namespace CapaPresentacion
 
             try
             {
-                Al.Modelo = comboBoxModelo.Text;
-                Al.TipoAmbulancia = comboBoxTipo.Text;
-                Al.Placa = txtplaca.Text;
-                Al.Matricula = txtMatricula.Text;
-                Al.FechaActivacion = txtAñoActivacion.Text;
-                Al.Estado = comboBoxEstado.Text;
-                Al.Observacion = richTextBoxObservacion.Text;
+                Ambulancia1.Modelo = comboBoxModelo.Text;
+                Ambulancia1.TipoAmbulancia = comboBoxTipo.Text;
+                Ambulancia1.Placa = txtplaca.Text;
+                Ambulancia1.Matricula = txtMatricula.Text;
+             
 
-
-                msj =Al.registrar();
+                msj = Ambulancia1.registrar();
                 MessageBox.Show(msj);
             }
 
@@ -65,14 +62,14 @@ namespace CapaPresentacion
         private void txtconsultar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmConsultarAmbulanciacs frmEstCons = new frmConsultarAmbulanciacs(Al);
+            frmConsultarAmbulanciacs frmEstCons = new frmConsultarAmbulanciacs(Ambulancia1);
             frmEstCons.Show();
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmEliminarAmbulancia frmEliminar = new frmEliminarAmbulancia(Al);
+            frmEliminarAmbulancia frmEliminar = new frmEliminarAmbulancia(Ambulancia1);
             frmEliminar.Show();
 
         }

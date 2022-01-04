@@ -39,9 +39,6 @@ namespace CapaPresentacion
             this.tipoAmbulancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaActivacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +47,7 @@ namespace CapaPresentacion
             this.btnregresar.BackColor = System.Drawing.Color.Transparent;
             this.btnregresar.FlatAppearance.BorderSize = 0;
             this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregresar.Location = new System.Drawing.Point(751, 220);
+            this.btnregresar.Location = new System.Drawing.Point(424, 214);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(105, 24);
@@ -64,7 +61,7 @@ namespace CapaPresentacion
             this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnbuscar.FlatAppearance.BorderSize = 0;
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.Location = new System.Drawing.Point(528, 20);
+            this.btnbuscar.Location = new System.Drawing.Point(360, 20);
             this.btnbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(57, 25);
@@ -75,7 +72,7 @@ namespace CapaPresentacion
             // 
             // txtnunplaca
             // 
-            this.txtnunplaca.Location = new System.Drawing.Point(388, 22);
+            this.txtnunplaca.Location = new System.Drawing.Point(220, 22);
             this.txtnunplaca.Margin = new System.Windows.Forms.Padding(2);
             this.txtnunplaca.MaxLength = 8;
             this.txtnunplaca.Name = "txtnunplaca";
@@ -86,7 +83,7 @@ namespace CapaPresentacion
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(293, 25);
+            this.label1.Location = new System.Drawing.Point(125, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
@@ -98,7 +95,7 @@ namespace CapaPresentacion
             this.btn_eliminar.BackColor = System.Drawing.Color.Transparent;
             this.btn_eliminar.FlatAppearance.BorderSize = 0;
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar.Location = new System.Drawing.Point(421, 220);
+            this.btn_eliminar.Location = new System.Drawing.Point(249, 214);
             this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(57, 24);
@@ -115,17 +112,14 @@ namespace CapaPresentacion
             this.modelo,
             this.tipoAmbulancia,
             this.placa,
-            this.matricula,
-            this.fechaActivacion,
-            this.estado,
-            this.observacion});
+            this.matricula});
             this.dgv_listarTodos.Location = new System.Drawing.Point(10, 59);
             this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_listarTodos.Name = "dgv_listarTodos";
             this.dgv_listarTodos.ReadOnly = true;
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(847, 135);
+            this.dgv_listarTodos.Size = new System.Drawing.Size(519, 135);
             this.dgv_listarTodos.TabIndex = 126;
             // 
             // modelo
@@ -153,32 +147,12 @@ namespace CapaPresentacion
             this.matricula.Name = "matricula";
             this.matricula.ReadOnly = true;
             // 
-            // fechaActivacion
-            // 
-            this.fechaActivacion.HeaderText = "Año de Activacion";
-            this.fechaActivacion.Name = "fechaActivacion";
-            this.fechaActivacion.ReadOnly = true;
-            this.fechaActivacion.Width = 80;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // observacion
-            // 
-            this.observacion.HeaderText = "Observacion";
-            this.observacion.Name = "observacion";
-            this.observacion.ReadOnly = true;
-            this.observacion.Width = 180;
-            // 
             // frmEliminarAmbulancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo1;
-            this.ClientSize = new System.Drawing.Size(867, 271);
+            this.ClientSize = new System.Drawing.Size(540, 271);
             this.Controls.Add(this.dgv_listarTodos);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btnregresar);
@@ -204,8 +178,5 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoAmbulancia;
         private System.Windows.Forms.DataGridViewTextBoxColumn placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn matricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaActivacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
     }
 }

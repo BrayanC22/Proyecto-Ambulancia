@@ -15,7 +15,7 @@ namespace CapaPresentacion
     {
       //  frmActualizarEstudiantes frActualizar = new frmActualizarEstudiantes();
         List<Object> lst_ambulancia_tmp;
-        ClsAmbulancia Al;
+        ClsAmbulancia Ambulancia1;
       
 
         public frmConsultarAmbulanciacs()
@@ -25,13 +25,13 @@ namespace CapaPresentacion
 
         }
 
-        public frmConsultarAmbulanciacs(ClsAmbulancia Al)
+        public frmConsultarAmbulanciacs(ClsAmbulancia Ambulancia1)
         {
             InitializeComponent();
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
-            this.Al = Al;
-            this.lst_ambulancia_tmp = Al.listar();
+            this.Ambulancia1 = Ambulancia1;
+            this.lst_ambulancia_tmp = Ambulancia1.listar();
             bloquear();
             llenar_datagridview_ambulancia();
             buttonactualizar.Enabled = false;
@@ -53,12 +53,8 @@ namespace CapaPresentacion
                 String tipoAmbulancia = (String)type.GetProperty("tipoAmbulancia").GetValue(ambulancia);
                 String placa = (String)type.GetProperty("placa").GetValue(ambulancia);
                 String matricula = (String)type.GetProperty("matricula").GetValue(ambulancia);
-                String fechaActivacion = (String)type.GetProperty("fechaActivacion").GetValue(ambulancia);
-                String estado = (String)type.GetProperty("estado").GetValue(ambulancia);
-                String observacion = (String)type.GetProperty("observacion").GetValue(ambulancia);
-
-
-                dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion);
+               
+                dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula);
             }
 
         }
@@ -69,9 +65,7 @@ namespace CapaPresentacion
             txtplaca.Enabled = false;
             textBoxTipoAmbulancia.Enabled = false;
             txtMatricula.Enabled = false;
-            txtAñoActivacion.Enabled = false;
-            textBoxEstado.Enabled = false;
-            richTextBoxObservacion.Enabled = false;
+         
 
         }
 
@@ -81,9 +75,7 @@ namespace CapaPresentacion
             txtplaca.Clear();
             textBoxTipoAmbulancia.Clear();
             txtMatricula.Clear();
-            txtAñoActivacion.Clear();
-            textBoxEstado.Clear();
-            richTextBoxObservacion.Clear();
+        
         }
 
       /*  public void llenarframeActualizar() // cargar datos de un frame a otro 
@@ -114,7 +106,7 @@ namespace CapaPresentacion
         private void btnregresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmGuardarAmbulancia frmEst = new frmGuardarAmbulancia(Al);
+            frmGuardarAmbulancia frmEst = new frmGuardarAmbulancia(Ambulancia1);
             frmEst.Show();
         }
 
@@ -125,7 +117,7 @@ namespace CapaPresentacion
                 dgv_listarTodos.Rows.Clear();
                 dgv_listarTodos.Refresh();
                 limpiar();
-                lst_ambulancia_tmp = Al.buscar(txtnunplaca.Text);
+                lst_ambulancia_tmp = Ambulancia1.buscar(txtnunplaca.Text);
 
                 foreach (var ambulancia in lst_ambulancia_tmp)
                 {
@@ -137,20 +129,15 @@ namespace CapaPresentacion
                         String tipoAmbulancia = (String)type.GetProperty("tipoAmbulancia").GetValue(ambulancia);
                         String placa = (String)type.GetProperty("placa").GetValue(ambulancia);
                         String matricula = (String)type.GetProperty("matricula").GetValue(ambulancia);
-                        String fechaActivacion = (String)type.GetProperty("fechaActivacion").GetValue(ambulancia);
-                        String estado = (String)type.GetProperty("estado").GetValue(ambulancia);
-                        String observacion = (String)type.GetProperty("observacion").GetValue(ambulancia);
+                   
 
 
                         textBoxModelo.Text = modelo;
                         textBoxTipoAmbulancia.Text = tipoAmbulancia;
                         txtplaca.Text = placa;
                         txtMatricula.Text = matricula;
-                        txtAñoActivacion.Text = fechaActivacion;
-                        textBoxEstado.Text = estado;
-                        richTextBoxObservacion.Text = observacion;
-
-                        dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion);
+                     
+                        dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula);
                         buttonactualizar.Enabled = true;
 
                     }
@@ -167,7 +154,7 @@ namespace CapaPresentacion
             /*
             this.Hide();
             buttonactualizar.Enabled = false;
-            frActualizar = new frmActualizarEstudiantes(txtcedula.Text, Al);
+            frActualizar = new frmActualizarEstudiantes(txtcedula.Text, Ambulancia1);
             llenarframeActualizar();
             frActualizar.Show();*/
         }
@@ -175,7 +162,7 @@ namespace CapaPresentacion
         private void btn_todos_Click(object sender, EventArgs e)
         {
             limpiar();
-            this.lst_ambulancia_tmp = Al.listar();
+            this.lst_ambulancia_tmp = Ambulancia1.listar();
             llenar_datagridview_ambulancia();
             buttonactualizar.Enabled = false;
         }
