@@ -101,12 +101,12 @@ namespace CapaNegocio
             if (buscar(placa) != null)
                 M.eliminar_ambulancia(placa);
         }
-        /*
-        public int actualizar_x_placa(string cedula, string nombre, string apellido, string edad, string direccion, string sexo, string nacionalidad, string provincias, string cantones, string imagen, string semestre)
+        
+        public int actualizar_x_placa( string Modelo, string TipoAmbulancia, string Placa, string Matricula)
         {
-           return M.actualizar_alumno_individual(cedula, nombre, apellido, edad, direccion, sexo, nacionalidad, provincias, cantones, imagen, semestre);
+          return M.actualizar_ambulancia_individual(Modelo, TipoAmbulancia, Placa, Matricula);
         }
-    */}
+    }
 
 }
 

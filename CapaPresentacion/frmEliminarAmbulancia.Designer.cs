@@ -160,6 +160,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.txtnunplaca);
             this.Controls.Add(this.label1);
             this.Name = "frmEliminarAmbulancia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEliminarAmbulancia";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).EndInit();
             this.ResumeLayout(false);
