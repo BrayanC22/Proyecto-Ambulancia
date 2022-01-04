@@ -16,7 +16,8 @@ namespace CapaPresentacion
       //  frmActualizarEstudiantes frActualizar = new frmActualizarEstudiantes();
         List<Object> lst_ambulancia_tmp;
         ClsAmbulancia Ambulancia1;
-      
+        frmActualizarAmbulancia frmActualizar = new frmActualizarAmbulancia();
+
 
         public frmConsultarAmbulanciacs()
         {
@@ -65,8 +66,6 @@ namespace CapaPresentacion
             txtplaca.Enabled = false;
             textBoxTipoAmbulancia.Enabled = false;
             txtMatricula.Enabled = false;
-         
-
         }
 
         public void limpiar()
@@ -74,35 +73,21 @@ namespace CapaPresentacion
             textBoxModelo.Clear();
             txtplaca.Clear();
             textBoxTipoAmbulancia.Clear();
-            txtMatricula.Clear();
-        
+            txtMatricula.Clear();  
         }
 
-      /*  public void llenarframeActualizar() // cargar datos de un frame a otro 
+       public void llenarframeActualizar() // cargar datos de un frame a otro 
         {
-            frActualizar = new frmActualizarEstudiantes(txtcedula.Text, Al);
-            frActualizar.textBoxcedula.Text = textcedula.Text;
-            frActualizar.txtnombres.Text = txtnombres.Text;
-            frActualizar.txtapellidos.Text = txtapellidos.Text;
-            frActualizar.txtedad.Text = txtedad.Text.ToString();
-            frActualizar.txtdireccion.Text = txtdireccion.Text;
-            frActualizar.txtsemestre.Text = txtsemestre.Text.ToString();
-            frActualizar.pictureBox1Actualizar.Image = pictureBox1Consultar.Image;
-
-            if (textsexo.Text.Equals("Masculino"))
-            {
-                frActualizar.radioButtonMasculino.Text = textsexo.Text.ToString();
-                frActualizar.radioButtonMasculino.Select();
-            }
-            if (textsexo.Text.Equals("Femenino"))
-            {
-
-                frActualizar.radioButtonFemenino.Text = textsexo.Text.ToString();
-                frActualizar.radioButtonFemenino.Select();
-            }
-
+            frmActualizar = new frmActualizarAmbulancia(txtnunplaca.Text, Ambulancia1);
+         
+          
+                frmActualizar.comboBoxModelo.SelectedItem = textBoxModelo.Text;
+                frmActualizar.txtplaca.Text = txtplaca.Text;
+                frmActualizar.txtMatricula.Text = txtMatricula.Text;
+                frmActualizar.comboBoxTipo.SelectedItem = textBoxTipoAmbulancia.Text;
+          
         }
-      */
+
         private void btnregresar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -151,12 +136,12 @@ namespace CapaPresentacion
 
         private void buttonactualizar_Click(object sender, EventArgs e)
         {
-            /*
+          
             this.Hide();
             buttonactualizar.Enabled = false;
-            frActualizar = new frmActualizarEstudiantes(txtcedula.Text, Ambulancia1);
+            frmActualizar = new frmActualizarAmbulancia(txtnunplaca.Text, Ambulancia1);
             llenarframeActualizar();
-            frActualizar.Show();*/
+            frmActualizar.ShowDialog();
         }
 
         private void btn_todos_Click(object sender, EventArgs e)

@@ -72,7 +72,7 @@ namespace CapaDatos
             List<Object> lstAmbulancia = new List<Object>();
 
             SqlConnection conexion = abrir_conexion();
-            string cadena = "Select modelo, tipoAmbulancia, placa, matricula ";
+            string cadena = "Select modelo, tipoAmbulancia, placa, matricula from Ambulancia";
             SqlCommand comando = new SqlCommand(cadena, conexion);
             SqlDataReader registros = comando.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
             while (registros.Read())  // leo la informacion almacenada en registro
@@ -133,33 +133,23 @@ namespace CapaDatos
             return resultado;
         }
 
-        /*
-        public int actualizar_alumno_individual(String param_cedula, String param_nombre, String param_apellido, String param_edad, String param_direccion,
-          String param_sexo, String param_nacionalidad, String param_provincias, String param_cantones, String param_imagen, String param_semestre)
+       
+        public int actualizar_ambulancia_individual(String param_modelo, String param_tipo, String param_placa, String param_matricula)
         {
             SqlConnection conexion = abrir_conexion();
-            string actualizar = "update estudiante set Nombres=@param_nombre, Apellidos=@param_apellido,  Edad=@param_edad, " +
-                " Direccion=@param_direccion, Sexo=@param_sexo, Nacionalidad=@param_nacionalidad,  Provincias=@param_provincias," +
-                "  Cantones=@param_cantones,  Imagen=@param_imagen,  Semestre=@param_semestre where Cedula=@param_cedula";
-            SqlCommand cmd = new SqlCommand(actualizar, conexion);
-            cmd.Parameters.AddWithValue("@param_cedula", param_cedula);
-            cmd.Parameters.AddWithValue("@param_nombre", param_nombre);
-            cmd.Parameters.AddWithValue("@param_apellido", param_apellido);
-            cmd.Parameters.AddWithValue("@param_edad", param_edad);
-            cmd.Parameters.AddWithValue("@param_direccion", param_direccion);
-            cmd.Parameters.AddWithValue("@param_sexo", param_sexo);
-            cmd.Parameters.AddWithValue("@param_nacionalidad", param_nacionalidad);
-            cmd.Parameters.AddWithValue("@param_provincias", param_provincias);
-            cmd.Parameters.AddWithValue("@param_cantones", param_cantones);
-            cmd.Parameters.AddWithValue("@param_imagen", param_imagen);
-            cmd.Parameters.AddWithValue("@param_semestre", param_semestre);
+            string actualizar = "update Ambulancia set modelo=@param_modelo,tipoAmbulancia=@param_tipo, matricula=@param_matricula WHERE placa = @param_placa";
+            SqlCommand comannd = new SqlCommand(actualizar, conexion);
+            comannd.Parameters.AddWithValue("@param_modelo", param_modelo); // a la variable de tip Mysql comand agregar un valor al parametro
+            comannd.Parameters.AddWithValue("@param_tipo", param_tipo); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
+            comannd.Parameters.AddWithValue("@param_placa", param_placa);
+            comannd.Parameters.AddWithValue("@param_matricula", param_matricula);
 
-            int resultado_operacion = Convert.ToInt32(cmd.ExecuteScalar());
+            int resultado_operacion = Convert.ToInt32(comannd.ExecuteScalar());
             cerrar_conexion(conexion);
 
             return resultado_operacion;
         
-        } */
+        } 
 
         //Cliente
         public void insertar_cliente(List<ClsParametrosCliente> lst)
