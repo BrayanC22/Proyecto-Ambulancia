@@ -42,8 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClsDatosAmbulancia.cs" />
-    <Compile Include="ClsDatosCliente.cs" />
     <Compile Include="ClsManejador.cs" />
     <Compile Include="ClsParametrosAmbulancia.cs" />
     <Compile Include="ClsParametrosCliente.cs" />

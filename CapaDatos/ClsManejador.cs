@@ -11,8 +11,6 @@ namespace CapaDatos
 {
     public class ClsManejador
     {
-        List<ClsDatosAmbulancia> datosambulancia = new List<ClsDatosAmbulancia>();
-        List<ClsDatosCliente> datosCliente = new List<ClsDatosCliente>();
 
         private SqlConnection conexion;
 
@@ -51,17 +49,14 @@ namespace CapaDatos
                 {
                     SqlConnection conexion = abrir_conexion();
                     string cadena = "INSERT INTO Ambulancia" +
-                                    "(modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion) " +
-                                    "VALUES" + "(@modelo, @tipoAmbulancia, @placa, @matricula, @fechaActivacion, @estado, @observacion)";
+                                    "(modelo, tipoAmbulancia, placa, matricula) " +
+                                    "VALUES" + "(@modelo, @tipoAmbulancia, @placa, @matricula)";
 
                     SqlCommand comannd = new SqlCommand(cadena, conexion);
                     comannd.Parameters.AddWithValue("@modelo", lst[0].Modelo); // a la variable de tip Mysql comand agregar un valor al parametro
                     comannd.Parameters.AddWithValue("@tipoAmbulancia", lst[0].TipoAmbulancia); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
                     comannd.Parameters.AddWithValue("@placa", lst[0].Placa);
                     comannd.Parameters.AddWithValue("@matricula", lst[0].Matricula);
-                    comannd.Parameters.AddWithValue("@fechaActivacion", lst[0].FechaActivacion);
-                    comannd.Parameters.AddWithValue("@estado", lst[0].Estado);
-                    comannd.Parameters.AddWithValue("@observacion", lst[0].Observacion);
  
 
                     int t = Convert.ToInt32(comannd.ExecuteScalar()); // con esa linea executa el insert a la bd
@@ -77,7 +72,7 @@ namespace CapaDatos
             List<Object> lstAmbulancia = new List<Object>();
 
             SqlConnection conexion = abrir_conexion();
-            string cadena = "Select modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion from Ambulancia ";
+            string cadena = "Select modelo, tipoAmbulancia, placa, matricula ";
             SqlCommand comando = new SqlCommand(cadena, conexion);
             SqlDataReader registros = comando.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
             while (registros.Read())  // leo la informacion almacenada en registro
@@ -88,9 +83,6 @@ namespace CapaDatos
                     tipoAmbulancia = registros["tipoAmbulancia"].ToString(),
                     placa = registros["placa"].ToString(),
                     matricula = registros["matricula"].ToString(),
-                    fechaActivacion = registros["fechaActivacion"].ToString(),
-                    estado = registros["estado"].ToString(),
-                    observacion = registros["observacion"].ToString(),
                   
                 };
 
@@ -106,7 +98,7 @@ namespace CapaDatos
             List<Object> lstAmbulancia = new List<Object>();
 
             SqlConnection conexion = abrir_conexion();
-            string cadena = "Select modelo, tipoAmbulancia, placa, matricula, fechaActivacion, estado, observacion from Ambulancia WHERE placa = @placa";
+            string cadena = "Select modelo, tipoAmbulancia, placa, matricula from Ambulancia WHERE placa = @placa";
             SqlCommand comando = new SqlCommand(cadena, conexion);
             comando.Parameters.AddWithValue("@placa", placa);
 
@@ -119,9 +111,6 @@ namespace CapaDatos
                     tipoAmbulancia = registros["tipoAmbulancia"].ToString(),
                     placa = registros["placa"].ToString(),
                     matricula = registros["matricula"].ToString(),
-                    fechaActivacion = registros["fechaActivacion"].ToString(),
-                    estado = registros["estado"].ToString(),
-                    observacion = registros["observacion"].ToString(),
 
                 };
                 lstAmbulancia.Add(tmp);

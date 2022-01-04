@@ -14,23 +14,19 @@ namespace CapaNegocio
         protected String tipoAmbulancia;  //Asistenciales, no asistenciales.
         protected String placa;
         protected String matricula;
-        protected String fechaActivacion;
-        protected String estado;
-        protected String observacion;
+    
 
         private List<Object> lst_obj;
         ClsManejador M = new ClsManejador();
 
         public ClsAmbulancia() { }
-        public ClsAmbulancia(String modelo, String tipoAmbulancia,String placa, String matricula, String fechaActivacion,String estado,String observacion)
+        public ClsAmbulancia(String modelo, String tipoAmbulancia,String placa, String matricula)
         {
             this.modelo = modelo;
             this.tipoAmbulancia = tipoAmbulancia;
             this.placa = placa;
             this.matricula = matricula;
-            this.fechaActivacion = fechaActivacion;
-            this.estado = estado;
-            this.observacion = observacion;
+  
          
         }
 
@@ -59,25 +55,7 @@ namespace CapaNegocio
             set { matricula = value; }
         }
 
-        public String FechaActivacion
-        {
-            get { return fechaActivacion; }
-            set { fechaActivacion = value; }
-        }
-
-        public String Estado
-        {
-
-            get { return estado; }
-            set { estado = value; }
-        }
-
-        public String Observacion
-        {
-            get { return observacion; }
-            set { observacion = value; }
-        }
-
+        
 
         public String registrar()
         {
@@ -91,7 +69,7 @@ namespace CapaNegocio
             {
                 
                     //Pasar los parámetros hacia la capa de acceso a datos
-                    lst.Add(new ClsParametrosAmbulancia(Modelo, TipoAmbulancia, Placa, Matricula, FechaActivacion, Estado, Observacion));
+                    lst.Add(new ClsParametrosAmbulancia(Modelo, TipoAmbulancia, Placa, Matricula));
                     M.insertar_ambulancia(lst);
 
 
