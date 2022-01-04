@@ -33,10 +33,6 @@ namespace CapaPresentacion
 
 
 
-        private void buttonregresar_Click_1(object sender, EventArgs e)
-        {
-        }
-
         private void buttonActualizarCambios_Click(object sender, EventArgs e)
         {
             try
