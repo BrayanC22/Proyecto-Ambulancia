@@ -38,6 +38,7 @@ namespace CapaPresentacion.Usuario
 
         private void btnSeleccionarFoto_Click(object sender, EventArgs e)
         {
+            openFileDialog1.Filter = "Archivo de imagen (*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
             try
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -45,6 +46,7 @@ namespace CapaPresentacion.Usuario
                     String imagen = openFileDialog1.FileName;
 
                     this.RutaImagen = imagen;
+                    
                     pboxPerfil.Image = Image.FromFile(imagen);
                 }
             }
@@ -102,5 +104,67 @@ namespace CapaPresentacion.Usuario
         }
 
 
+        private bool nivelSeguridad(string password)
+        {
+            bool validado = false;
+            bool mayuscula = false;
+            bool minuscula = false; 
+            bool numero = false;
+            bool carespecial = false;
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (Char.IsUpper(password, i))
+                {
+                    mayuscula = true;
+                }
+                else if (Char.IsLower(password, i))
+                {
+                    minuscula = true;
+                }
+                else if (Char.IsDigit(password, i))
+                {
+                    numero = true;
+                }
+                else
+                {
+                    carespecial = true;
+                }
+            }
+
+            if (mayuscula && minuscula && numero && carespecial && password.Length >= 8)
+            {
+                lblNivelSeguridad.BackColor = Color.Green;
+                validado = true;
+
+            }
+            else
+            {
+                lblNivelSeguridad.BackColor = Color.Red;
+                validado = false;
+            }
+
+
+            return validado;
+        }
+
+        private void txtPass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (nivelSeguridad(txtPass.Text))
+            {
+                txtConfirmaPass.ReadOnly = false;
+            }
+        }
+
+        private void txtConfirmaPass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtPass.Text.Equals(txtConfirmaPass.Text)){
+                lblPassIdenticas.Text = "¡Todo listo!";
+                btnRegistrar.Enabled = true;
+            }
+            else
+            {
+                lblPassIdenticas.Text = "Las contraseñas no coinciden";
+            }
+        }
     }
 }

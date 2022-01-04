@@ -280,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\A-Editar.png" />
+    <Content Include="Resources\A-info.png" />
     <Content Include="Resources\A-save.png" />
     <Content Include="Resources\A-Usuario.png" />
     <Content Include="Resources\BaseDatosScript\SQLAmbulancia.sql" />

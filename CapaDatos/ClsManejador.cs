@@ -285,12 +285,13 @@ namespace CapaDatos
                 command.Parameters.AddWithValue("@RutaImagen", lst[0].RutaImagen);
 
                 int t = Convert.ToInt32(command.ExecuteNonQuery());
-                mensaje = "Registrado con éxito, " + t;
+                mensaje = "Registrado con éxito, ";
                 cerrar_conexion(conexionAbierta);
             }
             catch (SqlException ex)
             {
-                mensaje = "Base de datos inaccesible, Error: " + ex;
+                mensaje = "Error, base de datos inaccesible. ";
+                Console.WriteLine(ex);
             }
             return mensaje;
         }

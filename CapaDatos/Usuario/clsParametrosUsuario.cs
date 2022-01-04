@@ -15,17 +15,7 @@ namespace CapaDatos.Usuario
         private String password;
         private String rutaImagen;
 
-
-        /* Constructor parametrizado*/
-        public clsParametrosUsuario(String nombre, String apellido, String cedula, String usuario, String password, String rutaImagen)
-        {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.cedula = cedula;
-            this.usuario = usuario;
-            this.password = password;
-            this.rutaImagen = rutaImagen;
-        }
+        public clsParametrosUsuario() { }
 
 
         /* --------------- Getters y Setters ------------------------- */

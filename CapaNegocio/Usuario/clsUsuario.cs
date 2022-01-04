@@ -18,16 +18,7 @@ namespace CapaNegocio.Usuario
         String rutaImagen;
 
 
-        /* Constructor parametrizado*/
-        public clsUsuario(String nombre, String apellido, String cedula, String usuario, String password, String rutaImagen)
-        {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.cedula = cedula;
-            this.usuario = usuario;
-            this.password = password;
-            this.rutaImagen = rutaImagen;
-        }
+        /* Constructor*/
         public clsUsuario()
         {
 
@@ -69,14 +60,24 @@ namespace CapaNegocio.Usuario
             set { rutaImagen = value; }
         }
 
-        /* -------------------------- Metodos ---------------------- */
+        
         ClsManejador manejadorUsuario = new ClsManejador();
 
+        
         public String registrarUsuario()
         {
             List<clsParametrosUsuario> lstUsuarios = new List<clsParametrosUsuario>();
+            clsParametrosUsuario parametrosUsuario = new clsParametrosUsuario();
 
-                lstUsuarios.Add(new clsParametrosUsuario(Nombre, Apellido, Cedula, Usuario,Password, RutaImagen));
+            /* parametrosUsuario es el objeto intermediario entre los datos ingresados desde la capa vista a la base de datos*/
+            parametrosUsuario.Nombre = this.Nombre;
+            parametrosUsuario.Apellido = this.Apellido;
+            parametrosUsuario.Cedula = this.Cedula;
+            parametrosUsuario.Usuario = this.Usuario;
+            parametrosUsuario.Password = this.Password;
+            parametrosUsuario.RutaImagen = this.RutaImagen;
+
+            lstUsuarios.Add(parametrosUsuario);
             
             return manejadorUsuario.RegistrarUsuario(lstUsuarios); ;
         }
