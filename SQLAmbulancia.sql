@@ -9,7 +9,7 @@ CREATE TABLE Ambulancia
   modelo         VARCHAR (40) not null,
   tipoAmbulancia              VARCHAR (40) not null ,
   placa           VARCHAR (40) unique not null ,
-  matricula                 VARCHAR(40)  not null ,
+  matricula                 VARCHAR(40) unique not null ,
 
   Primary Key(Id_Ambulancia)
 );
