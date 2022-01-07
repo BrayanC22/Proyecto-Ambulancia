@@ -38,7 +38,7 @@ namespace CapaPresentacion
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.lblLicencia = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblDomicilio = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCedula = new System.Windows.Forms.Label();
@@ -50,6 +50,11 @@ namespace CapaPresentacion
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.imgAmbulancia = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rButtonFemenino = new System.Windows.Forms.RadioButton();
+            this.rButtonMasculino = new System.Windows.Forms.RadioButton();
+            this.lblSexo = new System.Windows.Forms.Label();
+            this.lblEdad = new System.Windows.Forms.Label();
+            this.txtEdad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgAmbulancia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,14 +80,14 @@ namespace CapaPresentacion
             // 
             // txtLicencia
             // 
-            this.txtLicencia.Location = new System.Drawing.Point(131, 341);
+            this.txtLicencia.Location = new System.Drawing.Point(131, 430);
             this.txtLicencia.Name = "txtLicencia";
             this.txtLicencia.Size = new System.Drawing.Size(166, 20);
             this.txtLicencia.TabIndex = 32;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(131, 306);
+            this.txtDireccion.Location = new System.Drawing.Point(131, 310);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(166, 20);
             this.txtDireccion.TabIndex = 31;
@@ -96,14 +101,14 @@ namespace CapaPresentacion
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(131, 231);
+            this.txtNombre.Location = new System.Drawing.Point(131, 230);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(166, 20);
             this.txtNombre.TabIndex = 29;
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(131, 193);
+            this.txtCedula.Location = new System.Drawing.Point(131, 190);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(166, 20);
             this.txtCedula.TabIndex = 28;
@@ -113,29 +118,29 @@ namespace CapaPresentacion
             this.lblLicencia.AutoSize = true;
             this.lblLicencia.BackColor = System.Drawing.Color.Transparent;
             this.lblLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLicencia.Location = new System.Drawing.Point(53, 342);
+            this.lblLicencia.Location = new System.Drawing.Point(53, 430);
             this.lblLicencia.Name = "lblLicencia";
             this.lblLicencia.Size = new System.Drawing.Size(58, 16);
             this.lblLicencia.TabIndex = 27;
             this.lblLicencia.Text = "Licencia";
             // 
-            // lblDireccion
+            // lblDomicilio
             // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.BackColor = System.Drawing.Color.Transparent;
-            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(53, 307);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(65, 16);
-            this.lblDireccion.TabIndex = 26;
-            this.lblDireccion.Text = "Dirección";
+            this.lblDomicilio.AutoSize = true;
+            this.lblDomicilio.BackColor = System.Drawing.Color.Transparent;
+            this.lblDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomicilio.Location = new System.Drawing.Point(53, 310);
+            this.lblDomicilio.Name = "lblDomicilio";
+            this.lblDomicilio.Size = new System.Drawing.Size(64, 16);
+            this.lblDomicilio.TabIndex = 26;
+            this.lblDomicilio.Text = "Domicilio";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.BackColor = System.Drawing.Color.Transparent;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(53, 271);
+            this.lblApellido.Location = new System.Drawing.Point(53, 270);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(58, 16);
             this.lblApellido.TabIndex = 25;
@@ -146,7 +151,7 @@ namespace CapaPresentacion
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(53, 233);
+            this.lblNombre.Location = new System.Drawing.Point(53, 230);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(57, 16);
             this.lblNombre.TabIndex = 24;
@@ -157,7 +162,7 @@ namespace CapaPresentacion
             this.lblCedula.AutoSize = true;
             this.lblCedula.BackColor = System.Drawing.Color.Transparent;
             this.lblCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.Location = new System.Drawing.Point(53, 194);
+            this.lblCedula.Location = new System.Drawing.Point(53, 190);
             this.lblCedula.Name = "lblCedula";
             this.lblCedula.Size = new System.Drawing.Size(51, 16);
             this.lblCedula.TabIndex = 23;
@@ -178,7 +183,7 @@ namespace CapaPresentacion
             // 
             this.lblRegistrar.AutoSize = true;
             this.lblRegistrar.BackColor = System.Drawing.Color.Transparent;
-            this.lblRegistrar.Location = new System.Drawing.Point(176, 421);
+            this.lblRegistrar.Location = new System.Drawing.Point(176, 519);
             this.lblRegistrar.Name = "lblRegistrar";
             this.lblRegistrar.Size = new System.Drawing.Size(45, 13);
             this.lblRegistrar.TabIndex = 34;
@@ -192,7 +197,7 @@ namespace CapaPresentacion
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnSalir.Location = new System.Drawing.Point(368, 375);
+            this.btnSalir.Location = new System.Drawing.Point(368, 473);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(51, 43);
             this.btnSalir.TabIndex = 37;
@@ -241,13 +246,14 @@ namespace CapaPresentacion
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRegistrar.Location = new System.Drawing.Point(173, 375);
+            this.btnRegistrar.Location = new System.Drawing.Point(176, 473);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(51, 43);
+            this.btnRegistrar.Size = new System.Drawing.Size(45, 45);
             this.btnRegistrar.TabIndex = 33;
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // imgAmbulancia
             // 
@@ -270,6 +276,61 @@ namespace CapaPresentacion
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 20;
             // 
+            // rButtonFemenino
+            // 
+            this.rButtonFemenino.AutoSize = true;
+            this.rButtonFemenino.BackColor = System.Drawing.Color.Transparent;
+            this.rButtonFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButtonFemenino.Location = new System.Drawing.Point(238, 390);
+            this.rButtonFemenino.Name = "rButtonFemenino";
+            this.rButtonFemenino.Size = new System.Drawing.Size(86, 20);
+            this.rButtonFemenino.TabIndex = 77;
+            this.rButtonFemenino.TabStop = true;
+            this.rButtonFemenino.Text = "Femenino";
+            this.rButtonFemenino.UseVisualStyleBackColor = false;
+            // 
+            // rButtonMasculino
+            // 
+            this.rButtonMasculino.AutoSize = true;
+            this.rButtonMasculino.BackColor = System.Drawing.Color.Transparent;
+            this.rButtonMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButtonMasculino.Location = new System.Drawing.Point(132, 390);
+            this.rButtonMasculino.Name = "rButtonMasculino";
+            this.rButtonMasculino.Size = new System.Drawing.Size(87, 20);
+            this.rButtonMasculino.TabIndex = 76;
+            this.rButtonMasculino.TabStop = true;
+            this.rButtonMasculino.Text = "Masculino";
+            this.rButtonMasculino.UseVisualStyleBackColor = false;
+            // 
+            // lblSexo
+            // 
+            this.lblSexo.AutoSize = true;
+            this.lblSexo.BackColor = System.Drawing.Color.Transparent;
+            this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSexo.Location = new System.Drawing.Point(60, 390);
+            this.lblSexo.Name = "lblSexo";
+            this.lblSexo.Size = new System.Drawing.Size(39, 16);
+            this.lblSexo.TabIndex = 78;
+            this.lblSexo.Text = "Sexo";
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.BackColor = System.Drawing.Color.Transparent;
+            this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdad.Location = new System.Drawing.Point(60, 350);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(41, 16);
+            this.lblEdad.TabIndex = 79;
+            this.lblEdad.Text = "Edad";
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(131, 350);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(61, 20);
+            this.txtEdad.TabIndex = 80;
+            // 
             // FrmConductores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,7 +338,12 @@ namespace CapaPresentacion
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(457, 455);
+            this.ClientSize = new System.Drawing.Size(479, 546);
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.lblEdad);
+            this.Controls.Add(this.lblSexo);
+            this.Controls.Add(this.rButtonFemenino);
+            this.Controls.Add(this.rButtonMasculino);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSalir);
@@ -290,7 +356,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.lblLicencia);
-            this.Controls.Add(this.lblDireccion);
+            this.Controls.Add(this.lblDomicilio);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCedula);
@@ -320,7 +386,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label lblLicencia;
-        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.Label lblDomicilio;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCedula;
@@ -328,5 +394,10 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox imgAmbulancia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRegistrar;
+        private System.Windows.Forms.RadioButton rButtonFemenino;
+        private System.Windows.Forms.RadioButton rButtonMasculino;
+        private System.Windows.Forms.Label lblSexo;
+        private System.Windows.Forms.Label lblEdad;
+        private System.Windows.Forms.TextBox txtEdad;
     }
 }

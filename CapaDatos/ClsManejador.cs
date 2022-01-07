@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos.Usuario;
+using CapaDatos.Conductor;
 
 namespace CapaDatos
 {
@@ -284,6 +285,37 @@ namespace CapaDatos
                 Console.WriteLine(ex);
             }
             return mensaje;
+        }
+
+
+
+        /* ----------------------- MÓDULO DE CONDUCTORES ------------------------- */
+        public void insertar_conductor(List<ClsParametrosConductor> lst)
+        {
+            try
+            {
+                if (lst != null)
+                {
+                    SqlConnection conexion = abrir_conexion();
+                    string cadena = "INSERT INTO Conductor" +
+                                    "(Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia) " +
+                                    "VALUES" + " (@cedula, @nombre, @apellido, @edad, @domicilio, @sexo, @licencia)";
+
+                    SqlCommand comannd = new SqlCommand(cadena, conexion);
+                    comannd.Parameters.AddWithValue("@cedula", lst[0].Cedula);      //@cedula = campo vacio de referencia que se va a llenar con algún dato
+                    comannd.Parameters.AddWithValue("@nombre", lst[0].Nombre);     // lst[0].Cedula = dato con el que llenaremos el campo de referencia, proviene de...
+                    comannd.Parameters.AddWithValue("@apellido", lst[0].Apellido);//...la lista creada en la CapaNegocio
+                    comannd.Parameters.AddWithValue("@edad", lst[0].Edad);
+                    comannd.Parameters.AddWithValue("@domicilio", lst[0].Domicilio);
+                    comannd.Parameters.AddWithValue("@sexo", lst[0].Sexo);
+                    comannd.Parameters.AddWithValue("@licencia", lst[0].Licencia);
+                 
+                    int t = Convert.ToInt32(comannd.ExecuteScalar()); // Ejecuta el insert
+                    cerrar_conexion(conexion);
+                }
+            }
+            catch (Exception ex)
+            { throw ex; }
         }
     }
 
