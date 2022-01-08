@@ -283,9 +283,14 @@
     <Content Include="Resources\A-info.png" />
     <Content Include="Resources\A-save.png" />
     <Content Include="Resources\A-Usuario.png" />
+    <None Include="Resources\agregarCondoctor.png" />
     <Content Include="Resources\BaseDatosScript\SQLAmbulancia.sql" />
     <Content Include="Resources\BaseDatosScript\SQLCliente.sql" />
     <Content Include="Resources\BaseDatosScript\SQLUsuario.sql" />
+    <None Include="Resources\editarConductor.png" />
+    <None Include="Resources\eliminarConductor.png" />
+    <None Include="Resources\consultarConductor1.png" />
+    <None Include="Resources\consultarConductor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,7 +30,6 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConductores));
-            this.lblEliminar = new System.Windows.Forms.Label();
             this.txtLicencia = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -42,7 +41,6 @@ namespace CapaPresentacion
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCedula = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblRegistrar = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -54,27 +52,19 @@ namespace CapaPresentacion
             this.lblSexo = new System.Windows.Forms.Label();
             this.lblEdad = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.lblConsultar = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.lblAtras = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgAmbulancia)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblEliminar
-            // 
-            this.lblEliminar.AutoSize = true;
-            this.lblEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.lblEliminar.Enabled = false;
-            this.lblEliminar.Location = new System.Drawing.Point(376, 313);
-            this.lblEliminar.Name = "lblEliminar";
-            this.lblEliminar.Size = new System.Drawing.Size(43, 13);
-            this.lblEliminar.TabIndex = 39;
-            this.lblEliminar.Text = "Eliminar";
             // 
             // txtLicencia
             // 
             this.txtLicencia.Location = new System.Drawing.Point(131, 430);
+            this.txtLicencia.MaxLength = 10;
             this.txtLicencia.Name = "txtLicencia";
             this.txtLicencia.Size = new System.Drawing.Size(166, 20);
             this.txtLicencia.TabIndex = 32;
+            this.txtLicencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLicencia_KeyPress);
             // 
             // txtDireccion
             // 
@@ -89,6 +79,7 @@ namespace CapaPresentacion
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(166, 20);
             this.txtApellido.TabIndex = 30;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // txtNombre
             // 
@@ -96,14 +87,17 @@ namespace CapaPresentacion
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(166, 20);
             this.txtNombre.TabIndex = 29;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(131, 190);
+            this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(166, 20);
             this.txtCedula.TabIndex = 28;
             this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // lblLicencia
             // 
@@ -171,27 +165,18 @@ namespace CapaPresentacion
             this.label2.TabIndex = 22;
             this.label2.Text = "REGISTRO DE CONDUCTORES";
             // 
-            // lblRegistrar
-            // 
-            this.lblRegistrar.AutoSize = true;
-            this.lblRegistrar.BackColor = System.Drawing.Color.Transparent;
-            this.lblRegistrar.Location = new System.Drawing.Point(176, 519);
-            this.lblRegistrar.Name = "lblRegistrar";
-            this.lblRegistrar.Size = new System.Drawing.Size(45, 13);
-            this.lblRegistrar.TabIndex = 34;
-            this.lblRegistrar.Text = "Guardar";
-            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnSalir.Location = new System.Drawing.Point(368, 473);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(51, 43);
+            this.btnSalir.Size = new System.Drawing.Size(48, 47);
             this.btnSalir.TabIndex = 37;
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -201,52 +186,53 @@ namespace CapaPresentacion
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(318, 294);
+            this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.eliminarConductor;
+            this.btnEliminar.Location = new System.Drawing.Point(332, 259);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(51, 43);
+            this.btnEliminar.Size = new System.Drawing.Size(118, 57);
             this.btnEliminar.TabIndex = 36;
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnConsultar
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.Transparent;
-            this.btnConsultar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsultar.BackgroundImage")));
-            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnConsultar.Location = new System.Drawing.Point(318, 220);
+            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
+            this.btnConsultar.Location = new System.Drawing.Point(332, 190);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(0);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(51, 43);
+            this.btnConsultar.Size = new System.Drawing.Size(118, 57);
             this.btnConsultar.TabIndex = 35;
-            this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.BackgroundImage")));
             this.btnRegistrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegistrar.Enabled = false;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRegistrar.Location = new System.Drawing.Point(176, 473);
+            this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.agregarCondoctor;
+            this.btnRegistrar.Location = new System.Drawing.Point(162, 473);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(45, 45);
+            this.btnRegistrar.Size = new System.Drawing.Size(118, 61);
             this.btnRegistrar.TabIndex = 33;
-            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
@@ -322,19 +308,40 @@ namespace CapaPresentacion
             // txtEdad
             // 
             this.txtEdad.Location = new System.Drawing.Point(131, 350);
+            this.txtEdad.MaxLength = 2;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(61, 20);
             this.txtEdad.TabIndex = 80;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
-            // lblConsultar
+            // btnModificar
             // 
-            this.lblConsultar.AutoSize = true;
-            this.lblConsultar.BackColor = System.Drawing.Color.Transparent;
-            this.lblConsultar.Location = new System.Drawing.Point(375, 236);
-            this.lblConsultar.Name = "lblConsultar";
-            this.lblConsultar.Size = new System.Drawing.Size(51, 13);
-            this.lblConsultar.TabIndex = 38;
-            this.lblConsultar.Text = "Consultar";
+            this.btnModificar.BackColor = System.Drawing.Color.Transparent;
+            this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModificar.Enabled = false;
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnModificar.Image = global::CapaPresentacion.Properties.Resources.editarConductor;
+            this.btnModificar.Location = new System.Drawing.Point(332, 328);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(118, 57);
+            this.btnModificar.TabIndex = 81;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // lblAtras
+            // 
+            this.lblAtras.AutoSize = true;
+            this.lblAtras.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtras.Location = new System.Drawing.Point(383, 522);
+            this.lblAtras.Name = "lblAtras";
+            this.lblAtras.Size = new System.Drawing.Size(31, 13);
+            this.lblAtras.TabIndex = 82;
+            this.lblAtras.Text = "Atrás";
             // 
             // FrmConductores
             // 
@@ -344,13 +351,13 @@ namespace CapaPresentacion
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(479, 546);
+            this.Controls.Add(this.lblAtras);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.lblEdad);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.rButtonFemenino);
             this.Controls.Add(this.rButtonMasculino);
-            this.Controls.Add(this.lblEliminar);
-            this.Controls.Add(this.lblConsultar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnConsultar);
@@ -368,7 +375,6 @@ namespace CapaPresentacion
             this.Controls.Add(this.label2);
             this.Controls.Add(this.imgAmbulancia);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblRegistrar);
             this.Name = "FrmConductores";
             this.Text = "FrmConductores";
             ((System.ComponentModel.ISupportInitialize)(this.imgAmbulancia)).EndInit();
@@ -378,8 +384,6 @@ namespace CapaPresentacion
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnConsultar;
@@ -397,12 +401,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox imgAmbulancia;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblRegistrar;
         private System.Windows.Forms.RadioButton rButtonFemenino;
         private System.Windows.Forms.RadioButton rButtonMasculino;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.Label lblConsultar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label lblAtras;
     }
 }

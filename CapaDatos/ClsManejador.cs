@@ -393,6 +393,35 @@ namespace CapaDatos
             cerrar_conexion(conexion);
             return lstConductor;
         }
+
+        public void modificar_conductor(List<ClsParametrosConductor> lst)
+        {
+            try
+            {
+                if (lst != null)
+                {
+                    SqlConnection conexion = abrir_conexion();
+                    string cadena = "UPDATE Conductor set " +
+                                    "Cedula=@cedula, Nombre=@nombre, Apellido=@apellido, Edad=@edad, Domicilio=@domicilio, " +
+                                    "Sexo=@sexo, Licencia=@licencia " + "WHERE Cedula=@cedula";
+
+                    SqlCommand comannd = new SqlCommand(cadena, conexion);
+                    comannd.Parameters.AddWithValue("@cedula", lst[0].Cedula);      //@cedula = campo vacio de referencia que se va a llenar con algún dato
+                    comannd.Parameters.AddWithValue("@nombre", lst[0].Nombre);     // lst[0].Cedula = dato con el que llenaremos el campo de referencia, proviene de...
+                    comannd.Parameters.AddWithValue("@apellido", lst[0].Apellido);//...la lista creada en la CapaNegocio
+                    comannd.Parameters.AddWithValue("@edad", lst[0].Edad);
+                    comannd.Parameters.AddWithValue("@domicilio", lst[0].Domicilio);
+                    comannd.Parameters.AddWithValue("@sexo", lst[0].Sexo);
+                    comannd.Parameters.AddWithValue("@licencia", lst[0].Licencia);
+
+                    comannd.ExecuteNonQuery(); // Ejecuta el update
+                    //int t = Convert.ToInt32(comannd.ExecuteScalar()); 
+                    cerrar_conexion(conexion);
+                }
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
     }
 
 }

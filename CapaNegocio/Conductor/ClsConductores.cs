@@ -69,5 +69,31 @@ namespace CapaNegocio.Conductor
         {
             return M.listar_conductor();
         }
+
+        public String actualizar_x_cedula()
+        {
+            string msj = "";
+
+
+            //Lista genérica de parámetros
+            List<ClsParametrosConductor> lst = new List<ClsParametrosConductor>();
+
+            try
+            {
+                //Pasar los parámetros hacia la capa de acceso a datos
+                lst.Add(new ClsParametrosConductor(Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia));
+                M.modificar_conductor(lst);
+                msj = "Modificado correctamente";
+
+            }
+            catch (Exception ex)
+            {
+                msj = "Error al modificar los datos";
+                return msj;
+                throw ex;
+            }
+
+            return msj;
+        }
     }
 }

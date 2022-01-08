@@ -44,7 +44,6 @@ namespace CapaPresentacion
             this.columnaSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaLicencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).BeginInit();
-
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -55,13 +54,16 @@ namespace CapaPresentacion
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(186, 23);
+            this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(142, 20);
             this.txtCedula.TabIndex = 8;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // lblIngreseCedula
             // 
@@ -81,6 +83,7 @@ namespace CapaPresentacion
             this.btnVerTodos.TabIndex = 10;
             this.btnVerTodos.Text = "Ver todos";
             this.btnVerTodos.UseVisualStyleBackColor = true;
+            this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
             // 
             // btnAtras
             // 
@@ -90,6 +93,7 @@ namespace CapaPresentacion
             this.btnAtras.TabIndex = 11;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // dgv_listarTodos
             // 
