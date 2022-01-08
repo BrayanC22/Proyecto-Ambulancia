@@ -30,8 +30,7 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConductores));
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEliminar = new System.Windows.Forms.Label();
             this.txtLicencia = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -55,28 +54,20 @@ namespace CapaPresentacion
             this.lblSexo = new System.Windows.Forms.Label();
             this.lblEdad = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
+            this.lblConsultar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgAmbulancia)).BeginInit();
             this.SuspendLayout();
             // 
-            // label4
+            // lblEliminar
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(376, 313);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Eliminar";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(375, 236);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Consultar";
+            this.lblEliminar.AutoSize = true;
+            this.lblEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.lblEliminar.Enabled = false;
+            this.lblEliminar.Location = new System.Drawing.Point(376, 313);
+            this.lblEliminar.Name = "lblEliminar";
+            this.lblEliminar.Size = new System.Drawing.Size(43, 13);
+            this.lblEliminar.TabIndex = 39;
+            this.lblEliminar.Text = "Eliminar";
             // 
             // txtLicencia
             // 
@@ -112,6 +103,7 @@ namespace CapaPresentacion
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(166, 20);
             this.txtCedula.TabIndex = 28;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             // 
             // lblLicencia
             // 
@@ -211,6 +203,7 @@ namespace CapaPresentacion
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -221,6 +214,7 @@ namespace CapaPresentacion
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnConsultar
             // 
@@ -331,6 +325,16 @@ namespace CapaPresentacion
             this.txtEdad.Size = new System.Drawing.Size(61, 20);
             this.txtEdad.TabIndex = 80;
             // 
+            // lblConsultar
+            // 
+            this.lblConsultar.AutoSize = true;
+            this.lblConsultar.BackColor = System.Drawing.Color.Transparent;
+            this.lblConsultar.Location = new System.Drawing.Point(375, 236);
+            this.lblConsultar.Name = "lblConsultar";
+            this.lblConsultar.Size = new System.Drawing.Size(51, 13);
+            this.lblConsultar.TabIndex = 38;
+            this.lblConsultar.Text = "Consultar";
+            // 
             // FrmConductores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,8 +348,8 @@ namespace CapaPresentacion
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.rButtonFemenino);
             this.Controls.Add(this.rButtonMasculino);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblEliminar);
+            this.Controls.Add(this.lblConsultar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnConsultar);
@@ -374,8 +378,7 @@ namespace CapaPresentacion
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnConsultar;
@@ -399,5 +402,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.Label lblConsultar;
     }
 }

@@ -49,5 +49,20 @@ namespace CapaNegocio.Conductor
 
             return msj;
         }
+
+        public override List<Object> buscar(String cedula)
+        {
+            List<Object> lst;
+            lst= M.buscar_conductor(cedula);
+            return lst;
+        }
+
+        public override void eliminar(String cedula)
+        {
+            if (buscar(cedula).Count != 0)
+            {
+                M.eliminar_conductor(cedula);
+            }
+        }
     }
 }

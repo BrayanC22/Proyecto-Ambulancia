@@ -317,6 +317,55 @@ namespace CapaDatos
             catch (Exception ex)
             { throw ex; }
         }
+
+        public List<Object> buscar_conductor(String cedula)
+        {
+            List<Object> lstConductor = new List<Object>();
+            
+            SqlConnection conexion = abrir_conexion();
+            string cadena = "Select Cedula, Nombre, Apellido, Edad, Domicilio, Sexo,  Licencia from Conductor WHERE Cedula = @cedula";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            comando.Parameters.AddWithValue("@cedula", cedula);
+
+            SqlDataReader registros = comando.ExecuteReader();
+            while (registros.Read())
+            {
+                var tmp = new
+                {
+                    cedula = registros["Cedula"].ToString(),
+                    nombre = registros["Nombre"].ToString(),
+                    apellido = registros["Apellido"].ToString(),
+                    edad = Int16.Parse(registros["Edad"].ToString()),
+                    domicilio = registros["Domicilio"].ToString(),
+                    sexo = registros["Sexo"].ToString(),
+                    licencia = registros["Licencia"].ToString(),
+                };
+                
+                lstConductor.Add(tmp);
+            }
+
+            cerrar_conexion(conexion);
+            return lstConductor;
+        }
+
+        public void eliminar_conductor(String cedula)
+        {
+            try
+            {
+                SqlConnection conexion = abrir_conexion();
+                string cadena = "DELETE FROM Conductor WHERE Cedula = @cedula";
+                SqlCommand command = new SqlCommand(cadena, conexion);
+                command.Parameters.AddWithValue("@cedula", cedula);
+                int resultado = Convert.ToInt32(command.ExecuteScalar());
+                cerrar_conexion(conexion);
+                MessageBox.Show("Eliminado exitosamente");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al eliminar, motivo: " + e);
+            }
+           
+        }
     }
 
 }
