@@ -1,5 +1,6 @@
 ﻿using System;
 using CapaNegocio.Conductor;
+using CapaNegocio;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,17 +76,17 @@ namespace CapaPresentacion
                 try
                 {
 
-                    foreach (var o in lstConductor)
+                    foreach (var conductor in lstConductor)
                     {
-                        Type type = o.GetType();
+                        Type type = conductor.GetType();
 
-                        String cedula = (String)type.GetProperty("cedula").GetValue(o);
-                        String nombre = (String)type.GetProperty("nombre").GetValue(o);
-                        String apellido = (String)type.GetProperty("apellido").GetValue(o);
-                        String edad = ((short)type.GetProperty("edad").GetValue(o)).ToString();
-                        String domicilio = (String)type.GetProperty("domicilio").GetValue(o);
-                        String sexo = (String)type.GetProperty("sexo").GetValue(o);
-                        String licencia = (String)type.GetProperty("licencia").GetValue(o);
+                        String cedula = (String)type.GetProperty("cedula").GetValue(conductor);
+                        String nombre = (String)type.GetProperty("nombre").GetValue(conductor);
+                        String apellido = (String)type.GetProperty("apellido").GetValue(conductor);
+                        String edad = ((short)type.GetProperty("edad").GetValue(conductor)).ToString();
+                        String domicilio = (String)type.GetProperty("domicilio").GetValue(conductor);
+                        String sexo = (String)type.GetProperty("sexo").GetValue(conductor);
+                        String licencia = (String)type.GetProperty("licencia").GetValue(conductor);
 
                         // dgvUsuarios.Rows.Add(cedula, nombre, apellido, edad,
                         //  direccion, sexo, nacionalidad, rol, contraseña);
@@ -136,6 +137,13 @@ namespace CapaPresentacion
             rButtonMasculino.Checked = false;
             rButtonFemenino.Checked = false;
             txtLicencia.Text = "";
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmConsultarConductores frm = new FrmConsultarConductores(chofer);
+            frm.Show();
         }
     }
 }

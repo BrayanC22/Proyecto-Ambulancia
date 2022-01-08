@@ -30,78 +30,82 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarConductores));
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtLicencia = new System.Windows.Forms.TextBox();
-            this.lblIngreseLicencia = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.lblIngreseCedula = new System.Windows.Forms.Label();
+            this.btnVerTodos = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.dgv_listarTodos = new System.Windows.Forms.DataGridView();
             this.columnaCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaEdad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaLicencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).BeginInit();
+
             this.SuspendLayout();
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(358, 358);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(88, 27);
-            this.btnEditar.TabIndex = 11;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(465, 358);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 27);
-            this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(308, 20);
+            this.btnBuscar.Location = new System.Drawing.Point(340, 21);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "buscar";
+            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // txtLicencia
+            // txtCedula
             // 
-            this.txtLicencia.Location = new System.Drawing.Point(148, 23);
-            this.txtLicencia.Name = "txtLicencia";
-            this.txtLicencia.Size = new System.Drawing.Size(142, 20);
-            this.txtLicencia.TabIndex = 8;
+            this.txtCedula.Location = new System.Drawing.Point(186, 23);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(142, 20);
+            this.txtCedula.TabIndex = 8;
             // 
-            // lblIngreseLicencia
+            // lblIngreseCedula
             // 
-            this.lblIngreseLicencia.AutoSize = true;
-            this.lblIngreseLicencia.BackColor = System.Drawing.Color.Transparent;
-            this.lblIngreseLicencia.Location = new System.Drawing.Point(40, 26);
-            this.lblIngreseLicencia.Name = "lblIngreseLicencia";
-            this.lblIngreseLicencia.Size = new System.Drawing.Size(95, 13);
-            this.lblIngreseLicencia.TabIndex = 7;
-            this.lblIngreseLicencia.Text = "Ingrese la licencia:";
+            this.lblIngreseCedula.AutoSize = true;
+            this.lblIngreseCedula.BackColor = System.Drawing.Color.Transparent;
+            this.lblIngreseCedula.Location = new System.Drawing.Point(40, 26);
+            this.lblIngreseCedula.Name = "lblIngreseCedula";
+            this.lblIngreseCedula.Size = new System.Drawing.Size(144, 13);
+            this.lblIngreseCedula.TabIndex = 7;
+            this.lblIngreseCedula.Text = "Ingrese el número de cédula:";
             // 
-            // dataGridView1
+            // btnVerTodos
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnVerTodos.Location = new System.Drawing.Point(441, 21);
+            this.btnVerTodos.Name = "btnVerTodos";
+            this.btnVerTodos.Size = new System.Drawing.Size(75, 23);
+            this.btnVerTodos.TabIndex = 10;
+            this.btnVerTodos.Text = "Ver todos";
+            this.btnVerTodos.UseVisualStyleBackColor = true;
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Location = new System.Drawing.Point(661, 21);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(75, 23);
+            this.btnAtras.TabIndex = 11;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            // 
+            // dgv_listarTodos
+            // 
+            this.dgv_listarTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listarTodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaCedula,
             this.columnaNombre,
             this.columnaApellido,
+            this.columnaEdad,
             this.columnaDireccion,
+            this.columnaSexo,
             this.columnaLicencia});
-            this.dataGridView1.Location = new System.Drawing.Point(43, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(541, 274);
-            this.dataGridView1.TabIndex = 6;
+            this.dgv_listarTodos.Location = new System.Drawing.Point(43, 68);
+            this.dgv_listarTodos.Name = "dgv_listarTodos";
+            this.dgv_listarTodos.Size = new System.Drawing.Size(693, 288);
+            this.dgv_listarTodos.TabIndex = 12;
             // 
             // columnaCedula
             // 
@@ -118,10 +122,21 @@ namespace CapaPresentacion
             this.columnaApellido.HeaderText = "Apellido";
             this.columnaApellido.Name = "columnaApellido";
             // 
+            // columnaEdad
+            // 
+            this.columnaEdad.HeaderText = "Edad";
+            this.columnaEdad.Name = "columnaEdad";
+            this.columnaEdad.Width = 50;
+            // 
             // columnaDireccion
             // 
             this.columnaDireccion.HeaderText = "Dirección";
             this.columnaDireccion.Name = "columnaDireccion";
+            // 
+            // columnaSexo
+            // 
+            this.columnaSexo.HeaderText = "Sexo";
+            this.columnaSexo.Name = "columnaSexo";
             // 
             // columnaLicencia
             // 
@@ -134,33 +149,34 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(624, 404);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnEliminar);
+            this.ClientSize = new System.Drawing.Size(780, 386);
+            this.Controls.Add(this.dgv_listarTodos);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.btnVerTodos);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtLicencia);
-            this.Controls.Add(this.lblIngreseLicencia);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.lblIngreseCedula);
             this.Name = "FrmConsultarConductores";
             this.Text = "FrmConsultarConductores";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtLicencia;
-        private System.Windows.Forms.Label lblIngreseLicencia;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.Label lblIngreseCedula;
+        private System.Windows.Forms.Button btnVerTodos;
+        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.DataGridView dgv_listarTodos;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaEdad;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaLicencia;
     }
 }

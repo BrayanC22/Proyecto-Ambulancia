@@ -64,5 +64,10 @@ namespace CapaNegocio.Conductor
                 M.eliminar_conductor(cedula);
             }
         }
+
+        public override List<Object> listar()
+        {
+            return M.listar_conductor();
+        }
     }
 }

@@ -366,6 +366,33 @@ namespace CapaDatos
             }
            
         }
+
+        public List<Object> listar_conductor()
+        {
+            List<Object> lstConductor = new List<Object>();
+
+            SqlConnection conexion = abrir_conexion();
+            string cadena = "Select Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia from Conductor";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            SqlDataReader registros = comando.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
+            while (registros.Read())  // leo la informacion almacenada en registro
+            {
+                var tmp = new
+                {
+                    cedula = registros["Cedula"].ToString(),  // para asignar valores de la base a la variable cedula
+                    nombre = registros["Nombre"].ToString(),
+                    apellido = registros["Apellido"].ToString(),
+                    edad = Int16.Parse(registros["Edad"].ToString()),
+                    domicilio = registros["Domicilio"].ToString(),
+                    sexo = registros["Sexo"].ToString(),
+                    licencia = registros["Licencia"].ToString(),
+                };
+
+                lstConductor.Add(tmp);
+            }
+            cerrar_conexion(conexion);
+            return lstConductor;
+        }
     }
 
 }
