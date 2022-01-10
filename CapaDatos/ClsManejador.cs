@@ -256,6 +256,7 @@ namespace CapaDatos
 
 
         /* ----------------------- Registro de usuario ------------------------- */
+
         public String RegistrarUsuario(List<clsParametrosUsuario> lst)
         {
             String mensaje = "";
@@ -263,10 +264,12 @@ namespace CapaDatos
             {
                 SqlConnection conexionAbierta = abrir_conexion();
 
-                string query = "INSERT INTO Usuario " +
-                    "(Nombre, Apellido, Cedula, NombreUsuario, Password, RutaImagen)" +
-                    " VALUES (@Nombre, @Apellido, @Cedula, @NombreUsuario,@Password, @RutaImagen)";
-                SqlCommand command = new SqlCommand(query, conexionAbierta);
+                SqlCommand command = new SqlCommand();
+                
+                command.Connection = conexionAbierta;
+
+                command.CommandText = "UsuarioInsertCommand";
+                command.CommandType = System.Data.CommandType.StoredProcedure;
                 //valores para cada parámetro dado en el query
                 command.Parameters.AddWithValue("@Nombre", lst[0].Nombre);
                 command.Parameters.AddWithValue("@Apellido", lst[0].Apellido);
@@ -276,18 +279,17 @@ namespace CapaDatos
                 command.Parameters.AddWithValue("@RutaImagen", lst[0].RutaImagen);
 
                 int t = Convert.ToInt32(command.ExecuteNonQuery());
-                mensaje = "Registrado con éxito, ";
+                mensaje = "Registrado con éxito";
                 cerrar_conexion(conexionAbierta);
             }
             catch (SqlException ex)
             {
-                mensaje = "Error, base de datos inaccesible. ";
+                mensaje = "Error, base de datos inaccesible.";
                 Console.WriteLine(ex);
             }
             return mensaje;
         }
-
-
+        
 
         /* ----------------------- MÓDULO DE CONDUCTORES ------------------------- */
         public void insertar_conductor(List<ClsParametrosConductor> lst)

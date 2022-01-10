@@ -275,10 +275,7 @@
     <Content Include="Resources\A-save.png" />
     <Content Include="Resources\A-Usuario.png" />
     <None Include="Resources\agregarCondoctor.png" />
-    <Content Include="Resources\BaseDatosScript\SQLAmbulancia.sql" />
-    <Content Include="Resources\BaseDatosScript\SQLCliente.sql" />
-    <Content Include="Resources\BaseDatosScript\SQLConductor.sql" />
-    <Content Include="Resources\BaseDatosScript\SQLUsuario.sql" />
+    <Content Include="Resources\BaseDatosScript\SQLGeneral.sql" />
     <None Include="Resources\editarConductor.png" />
     <None Include="Resources\eliminarConductor.png" />
     <None Include="Resources\consultarConductor1.png" />
