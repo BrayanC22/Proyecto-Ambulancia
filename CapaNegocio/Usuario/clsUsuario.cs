@@ -79,7 +79,7 @@ namespace CapaNegocio.Usuario
 
             lstUsuarios.Add(parametrosUsuario);
             
-            return manejadorUsuario.RegistrarUsuario(lstUsuarios); ;
+            return manejadorUsuario.RegistrarUsuario(lstUsuarios); 
         }
 
     }
