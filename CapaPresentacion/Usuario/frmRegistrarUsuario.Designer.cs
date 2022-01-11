@@ -31,6 +31,7 @@ namespace CapaPresentacion.Usuario
         {
             this.components = new System.ComponentModel.Container();
             this.GroupRegistroUsuario = new System.Windows.Forms.GroupBox();
+            this.lblPassIdenticas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNivelSeguridad = new System.Windows.Forms.Label();
             this.btnSeleccionarFoto = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@ namespace CapaPresentacion.Usuario
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.lblPassIdenticas = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.GroupRegistroUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,15 +83,24 @@ namespace CapaPresentacion.Usuario
             this.GroupRegistroUsuario.ForeColor = System.Drawing.Color.DarkCyan;
             this.GroupRegistroUsuario.Location = new System.Drawing.Point(0, 3);
             this.GroupRegistroUsuario.Name = "GroupRegistroUsuario";
-            this.GroupRegistroUsuario.Size = new System.Drawing.Size(383, 516);
+            this.GroupRegistroUsuario.Size = new System.Drawing.Size(383, 528);
             this.GroupRegistroUsuario.TabIndex = 0;
             this.GroupRegistroUsuario.TabStop = false;
             this.GroupRegistroUsuario.Text = "INGRESE LOS DATOS SOLICITADOS";
             // 
+            // lblPassIdenticas
+            // 
+            this.lblPassIdenticas.AutoSize = true;
+            this.lblPassIdenticas.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassIdenticas.Location = new System.Drawing.Point(160, 415);
+            this.lblPassIdenticas.Name = "lblPassIdenticas";
+            this.lblPassIdenticas.Size = new System.Drawing.Size(0, 12);
+            this.lblPassIdenticas.TabIndex = 17;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.A_info;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 337);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 350);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +111,7 @@ namespace CapaPresentacion.Usuario
             // lblNivelSeguridad
             // 
             this.lblNivelSeguridad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNivelSeguridad.Location = new System.Drawing.Point(335, 340);
+            this.lblNivelSeguridad.Location = new System.Drawing.Point(335, 353);
             this.lblNivelSeguridad.Name = "lblNivelSeguridad";
             this.lblNivelSeguridad.Size = new System.Drawing.Size(20, 16);
             this.lblNivelSeguridad.TabIndex = 15;
@@ -112,7 +121,7 @@ namespace CapaPresentacion.Usuario
             this.btnSeleccionarFoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionarFoto.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionarFoto.Location = new System.Drawing.Point(122, 135);
+            this.btnSeleccionarFoto.Location = new System.Drawing.Point(126, 148);
             this.btnSeleccionarFoto.Name = "btnSeleccionarFoto";
             this.btnSeleccionarFoto.Size = new System.Drawing.Size(124, 26);
             this.btnSeleccionarFoto.TabIndex = 14;
@@ -122,9 +131,9 @@ namespace CapaPresentacion.Usuario
             // 
             // pboxPerfil
             // 
-            this.pboxPerfil.Location = new System.Drawing.Point(159, 59);
+            this.pboxPerfil.Location = new System.Drawing.Point(144, 34);
             this.pboxPerfil.Name = "pboxPerfil";
-            this.pboxPerfil.Size = new System.Drawing.Size(50, 57);
+            this.pboxPerfil.Size = new System.Drawing.Size(90, 110);
             this.pboxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxPerfil.TabIndex = 13;
             this.pboxPerfil.TabStop = false;
@@ -135,7 +144,7 @@ namespace CapaPresentacion.Usuario
             this.txtConfirmaPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmaPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmaPass.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmaPass.Location = new System.Drawing.Point(159, 381);
+            this.txtConfirmaPass.Location = new System.Drawing.Point(159, 394);
             this.txtConfirmaPass.Name = "txtConfirmaPass";
             this.txtConfirmaPass.Size = new System.Drawing.Size(170, 16);
             this.txtConfirmaPass.TabIndex = 12;
@@ -148,7 +157,7 @@ namespace CapaPresentacion.Usuario
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPass.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(159, 340);
+            this.txtPass.Location = new System.Drawing.Point(159, 353);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(170, 16);
             this.txtPass.TabIndex = 11;
@@ -161,7 +170,7 @@ namespace CapaPresentacion.Usuario
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsuario.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(159, 300);
+            this.txtUsuario.Location = new System.Drawing.Point(159, 313);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(170, 16);
             this.txtUsuario.TabIndex = 10;
@@ -172,7 +181,7 @@ namespace CapaPresentacion.Usuario
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCedula.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCedula.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(159, 260);
+            this.txtCedula.Location = new System.Drawing.Point(159, 273);
             this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(170, 16);
@@ -185,7 +194,7 @@ namespace CapaPresentacion.Usuario
             this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellidos.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellidos.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidos.Location = new System.Drawing.Point(159, 220);
+            this.txtApellidos.Location = new System.Drawing.Point(159, 233);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(170, 16);
             this.txtApellidos.TabIndex = 8;
@@ -196,7 +205,7 @@ namespace CapaPresentacion.Usuario
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(159, 180);
+            this.txtNombre.Location = new System.Drawing.Point(159, 193);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(170, 16);
             this.txtNombre.TabIndex = 7;
@@ -211,7 +220,7 @@ namespace CapaPresentacion.Usuario
             this.btnRegistrar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.A_save;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRegistrar.Location = new System.Drawing.Point(122, 429);
+            this.btnRegistrar.Location = new System.Drawing.Point(122, 433);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(124, 80);
             this.btnRegistrar.TabIndex = 6;
@@ -224,7 +233,7 @@ namespace CapaPresentacion.Usuario
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(46, 381);
+            this.label6.Location = new System.Drawing.Point(46, 394);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 19);
             this.label6.TabIndex = 5;
@@ -234,7 +243,7 @@ namespace CapaPresentacion.Usuario
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 340);
+            this.label5.Location = new System.Drawing.Point(46, 353);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 19);
             this.label5.TabIndex = 4;
@@ -244,7 +253,7 @@ namespace CapaPresentacion.Usuario
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 300);
+            this.label4.Location = new System.Drawing.Point(46, 313);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 19);
             this.label4.TabIndex = 3;
@@ -254,7 +263,7 @@ namespace CapaPresentacion.Usuario
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 260);
+            this.label3.Location = new System.Drawing.Point(46, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 19);
             this.label3.TabIndex = 2;
@@ -264,7 +273,7 @@ namespace CapaPresentacion.Usuario
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 220);
+            this.label2.Location = new System.Drawing.Point(46, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 19);
             this.label2.TabIndex = 1;
@@ -274,7 +283,7 @@ namespace CapaPresentacion.Usuario
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 180);
+            this.label1.Location = new System.Drawing.Point(46, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 19);
             this.label1.TabIndex = 0;
@@ -284,22 +293,13 @@ namespace CapaPresentacion.Usuario
             // 
             this.openFileDialog1.FileName = "Seleccionar...";
             // 
-            // lblPassIdenticas
-            // 
-            this.lblPassIdenticas.AutoSize = true;
-            this.lblPassIdenticas.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassIdenticas.Location = new System.Drawing.Point(161, 401);
-            this.lblPassIdenticas.Name = "lblPassIdenticas";
-            this.lblPassIdenticas.Size = new System.Drawing.Size(0, 12);
-            this.lblPassIdenticas.TabIndex = 17;
-            // 
             // frmRegistrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(770, 519);
+            this.ClientSize = new System.Drawing.Size(770, 528);
             this.Controls.Add(this.GroupRegistroUsuario);
             this.Name = "frmRegistrarUsuario";
             this.Text = "REGISTRAR USUARIO";
