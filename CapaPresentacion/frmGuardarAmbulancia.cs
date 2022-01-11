@@ -71,7 +71,6 @@ namespace CapaPresentacion
             this.Hide();
             frmEliminarAmbulancia frmEliminar = new frmEliminarAmbulancia(Ambulancia1);
             frmEliminar.Show();
-
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
@@ -84,7 +83,6 @@ namespace CapaPresentacion
         private void txtAñoActivacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloNumeros(e);
-
        }
         public void SoloNumeros(KeyPressEventArgs e)
         {
@@ -103,8 +101,6 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
-
-    
-       }
+    }
     
 }
