@@ -254,6 +254,31 @@ namespace CapaDatos
             return resultado;
         }
 
+        public int actualizar_cliente_individual(String param_cedula, String param_nombre, string param_apellido, string param_edad, string param_domicilio,
+         string param_sexo, string param_imagen, string param_codigoCliente)
+        {
+            SqlConnection conexion = abrir_conexion();
+            string actualizar = "update  Cliente set  Nombre=@param_nombre, Apellido=@param_apellido, Edad=@param_edad, Domicilio=@param_domicilio, Sexo=@param_sexo, Imagen=@param_imagen ,CodigoCliente=@param_ccliente WHERE Cedula = @param_cedula";
+            SqlCommand comannd = new SqlCommand(actualizar, conexion);
+            comannd.Parameters.AddWithValue("@param_nombre", param_nombre); // a la variable de tip Mysql comand agregar un valor al parametro
+            comannd.Parameters.AddWithValue("@param_apellido", param_apellido); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
+            comannd.Parameters.AddWithValue("@param_edad", param_edad);
+            comannd.Parameters.AddWithValue("@param_domicilio", param_domicilio);
+            comannd.Parameters.AddWithValue("@param_domicilio", param_domicilio);
+            comannd.Parameters.AddWithValue("@param_domicilio", param_domicilio);
+            comannd.Parameters.AddWithValue("@param_domicilio", param_domicilio);
+            comannd.Parameters.AddWithValue("@param_domicilio", param_domicilio);
+
+            int resultado_operacion = Convert.ToInt32(comannd.ExecuteScalar());
+            cerrar_conexion(conexion);
+
+            return resultado_operacion;
+
+        }
+
+
+
+
 
         /* ----------------------- Registro de usuario ------------------------- */
 

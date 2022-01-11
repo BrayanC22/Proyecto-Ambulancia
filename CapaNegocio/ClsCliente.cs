@@ -81,10 +81,11 @@ namespace CapaNegocio
         }
 
 
-        // public override int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string direccion, string sexo, string nacionalidad, string provincias, string cantones, string imagen, string semestre)
-        // {
-        //  return M.actualizar_alumno_individual(cedula, nombre, apellido, edad, direccion, sexo, nacionalidad, provincias, cantones, imagen, semestre);
-        ///  }
+        public override int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio,
+         string sexo, string imagen, string codigoCliente)
+        {
+        return M.actualizar_cliente_individual(cedula, nombre, apellido, edad, domicilio, sexo, imagen, codigoCliente);
+        }
 
 
 

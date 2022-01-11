@@ -75,12 +75,11 @@ namespace CapaNegocio
 
         public virtual List<Object> buscar(String cedula) { return lst_obj; }
         public virtual void eliminar(String cedula) { }
-        // public virtual int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio,
-        //   string sexo, string imagen, string codigoCliente)
-        // { return 0; }
-
-
-
+        
+        
+        public virtual int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio,
+         string sexo, string imagen, string codigoCliente)
+        { return 0; }
 
 
     }
