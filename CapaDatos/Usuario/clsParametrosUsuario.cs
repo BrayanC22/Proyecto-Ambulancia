@@ -13,7 +13,7 @@ namespace CapaDatos.Usuario
         private String cedula;
         private String usuario;
         private String password;
-        private String rutaImagen;
+        private Byte[] rutaImagen;
 
         public clsParametrosUsuario() { }
 
@@ -47,7 +47,7 @@ namespace CapaDatos.Usuario
             get { return password; }
             set { password = value; }
         }
-        public String RutaImagen
+        public Byte[] RutaImagen
         {
             get { return rutaImagen; }
             set { rutaImagen = value; }

@@ -29,6 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonActualizarCambios = new System.Windows.Forms.Button();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
@@ -40,6 +41,9 @@ namespace CapaPresentacion
             this.comboBoxModelo = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxnumambuancia = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +53,7 @@ namespace CapaPresentacion
             this.buttonActualizarCambios.FlatAppearance.BorderSize = 0;
             this.buttonActualizarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActualizarCambios.ForeColor = System.Drawing.Color.Black;
-            this.buttonActualizarCambios.Location = new System.Drawing.Point(134, 354);
+            this.buttonActualizarCambios.Location = new System.Drawing.Point(115, 364);
             this.buttonActualizarCambios.Margin = new System.Windows.Forms.Padding(2);
             this.buttonActualizarCambios.Name = "buttonActualizarCambios";
             this.buttonActualizarCambios.Size = new System.Drawing.Size(111, 32);
@@ -60,12 +64,13 @@ namespace CapaPresentacion
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(177, 273);
+            this.txtMatricula.Location = new System.Drawing.Point(156, 313);
             this.txtMatricula.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatricula.MaxLength = 8;
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(145, 20);
             this.txtMatricula.TabIndex = 144;
+            this.toolTip1.SetToolTip(this.txtMatricula, "Verifique que su matricula no exista");
             // 
             // comboBoxTipo
             // 
@@ -73,14 +78,14 @@ namespace CapaPresentacion
             this.comboBoxTipo.Items.AddRange(new object[] {
             "Asistenciales",
             "No asistenciales"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(177, 310);
+            this.comboBoxTipo.Location = new System.Drawing.Point(156, 246);
             this.comboBoxTipo.Name = "comboBoxTipo";
             this.comboBoxTipo.Size = new System.Drawing.Size(145, 21);
             this.comboBoxTipo.TabIndex = 143;
             // 
             // txtplaca
             // 
-            this.txtplaca.Location = new System.Drawing.Point(177, 234);
+            this.txtplaca.Location = new System.Drawing.Point(156, 281);
             this.txtplaca.Margin = new System.Windows.Forms.Padding(2);
             this.txtplaca.MaxLength = 8;
             this.txtplaca.Name = "txtplaca";
@@ -92,7 +97,7 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(54, 279);
+            this.label4.Location = new System.Drawing.Point(33, 314);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 15);
@@ -104,7 +109,7 @@ namespace CapaPresentacion
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(54, 240);
+            this.label3.Location = new System.Drawing.Point(33, 281);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 15);
@@ -116,7 +121,7 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 316);
+            this.label2.Location = new System.Drawing.Point(33, 246);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 15);
@@ -128,7 +133,7 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 204);
+            this.label1.Location = new System.Drawing.Point(33, 214);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 15);
@@ -144,7 +149,7 @@ namespace CapaPresentacion
             "Chevrolet Heavy Duty",
             "Ford F-350",
             "Ford F-550"});
-            this.comboBoxModelo.Location = new System.Drawing.Point(177, 198);
+            this.comboBoxModelo.Location = new System.Drawing.Point(156, 213);
             this.comboBoxModelo.Name = "comboBoxModelo";
             this.comboBoxModelo.Size = new System.Drawing.Size(145, 21);
             this.comboBoxModelo.TabIndex = 145;
@@ -153,7 +158,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.ambulancia4;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 61);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 42);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(232, 118);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -166,12 +171,33 @@ namespace CapaPresentacion
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(53, 38);
+            this.label5.Location = new System.Drawing.Point(43, 19);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(258, 20);
             this.label5.TabIndex = 147;
             this.label5.Text = "ACTUALIZAR AMBULANCIAS";
+            // 
+            // textBoxnumambuancia
+            // 
+            this.textBoxnumambuancia.Location = new System.Drawing.Point(156, 179);
+            this.textBoxnumambuancia.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxnumambuancia.MaxLength = 8;
+            this.textBoxnumambuancia.Name = "textBoxnumambuancia";
+            this.textBoxnumambuancia.Size = new System.Drawing.Size(145, 20);
+            this.textBoxnumambuancia.TabIndex = 149;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(33, 179);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 15);
+            this.label6.TabIndex = 148;
+            this.label6.Text = "Numero-Amb";
             // 
             // frmActualizarAmbulancia
             // 
@@ -179,7 +205,9 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(364, 395);
+            this.ClientSize = new System.Drawing.Size(339, 423);
+            this.Controls.Add(this.textBoxnumambuancia);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBoxModelo);
@@ -212,5 +240,8 @@ namespace CapaPresentacion
         public System.Windows.Forms.ComboBox comboBoxModelo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox textBoxnumambuancia;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

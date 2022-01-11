@@ -35,6 +35,7 @@ namespace CapaPresentacion
             this.label1 = new System.Windows.Forms.Label();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.dgv_listarTodos = new System.Windows.Forms.DataGridView();
+            this.id_ambulancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoAmbulancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,7 @@ namespace CapaPresentacion
             this.btnregresar.BackColor = System.Drawing.Color.Transparent;
             this.btnregresar.FlatAppearance.BorderSize = 0;
             this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregresar.Location = new System.Drawing.Point(424, 214);
+            this.btnregresar.Location = new System.Drawing.Point(511, 193);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(105, 24);
@@ -61,7 +62,7 @@ namespace CapaPresentacion
             this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnbuscar.FlatAppearance.BorderSize = 0;
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.Location = new System.Drawing.Point(360, 20);
+            this.btnbuscar.Location = new System.Drawing.Point(398, 23);
             this.btnbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(57, 25);
@@ -72,7 +73,7 @@ namespace CapaPresentacion
             // 
             // txtnunplaca
             // 
-            this.txtnunplaca.Location = new System.Drawing.Point(220, 22);
+            this.txtnunplaca.Location = new System.Drawing.Point(258, 25);
             this.txtnunplaca.Margin = new System.Windows.Forms.Padding(2);
             this.txtnunplaca.MaxLength = 8;
             this.txtnunplaca.Name = "txtnunplaca";
@@ -83,7 +84,7 @@ namespace CapaPresentacion
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(125, 25);
+            this.label1.Location = new System.Drawing.Point(163, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
@@ -95,7 +96,7 @@ namespace CapaPresentacion
             this.btn_eliminar.BackColor = System.Drawing.Color.Transparent;
             this.btn_eliminar.FlatAppearance.BorderSize = 0;
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar.Location = new System.Drawing.Point(249, 214);
+            this.btn_eliminar.Location = new System.Drawing.Point(293, 193);
             this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(57, 24);
@@ -109,18 +110,25 @@ namespace CapaPresentacion
             this.dgv_listarTodos.BackgroundColor = System.Drawing.Color.White;
             this.dgv_listarTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listarTodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_ambulancia,
             this.modelo,
             this.tipoAmbulancia,
             this.placa,
             this.matricula});
-            this.dgv_listarTodos.Location = new System.Drawing.Point(10, 59);
+            this.dgv_listarTodos.Location = new System.Drawing.Point(13, 49);
             this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_listarTodos.Name = "dgv_listarTodos";
             this.dgv_listarTodos.ReadOnly = true;
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(519, 135);
+            this.dgv_listarTodos.Size = new System.Drawing.Size(603, 124);
             this.dgv_listarTodos.TabIndex = 126;
+            // 
+            // id_ambulancia
+            // 
+            this.id_ambulancia.HeaderText = "Numero Ambulancia";
+            this.id_ambulancia.Name = "id_ambulancia";
+            this.id_ambulancia.ReadOnly = true;
             // 
             // modelo
             // 
@@ -152,7 +160,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo1;
-            this.ClientSize = new System.Drawing.Size(540, 271);
+            this.ClientSize = new System.Drawing.Size(627, 230);
             this.Controls.Add(this.dgv_listarTodos);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btnregresar);
@@ -175,6 +183,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.DataGridView dgv_listarTodos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_ambulancia;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoAmbulancia;
         private System.Windows.Forms.DataGridViewTextBoxColumn placa;

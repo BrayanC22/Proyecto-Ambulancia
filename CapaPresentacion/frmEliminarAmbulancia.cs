@@ -46,7 +46,7 @@ namespace CapaPresentacion
                     if (ambulancia != null)
                     {
                         System.Type type = ambulancia.GetType();
-
+                        Int16 Id_Ambulancia = (Int16)type.GetProperty("Id_Ambulancia").GetValue(ambulancia);
                         String modelo = (String)type.GetProperty("modelo").GetValue(ambulancia);
                         String tipoAmbulancia = (String)type.GetProperty("tipoAmbulancia").GetValue(ambulancia);
                         String placa = (String)type.GetProperty("placa").GetValue(ambulancia);
@@ -54,7 +54,7 @@ namespace CapaPresentacion
                       
 
 
-                        dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula);
+                        dgv_listarTodos.Rows.Add(Id_Ambulancia, modelo, tipoAmbulancia, placa, matricula);
 
 
                         btn_eliminar.Enabled = true;

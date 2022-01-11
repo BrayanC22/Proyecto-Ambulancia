@@ -29,6 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label5 = new System.Windows.Forms.Label();
             this.txtplaca = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@ namespace CapaPresentacion
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.txtconsultar = new System.Windows.Forms.Button();
             this.cmdregistrar = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +69,7 @@ namespace CapaPresentacion
             this.txtplaca.Name = "txtplaca";
             this.txtplaca.Size = new System.Drawing.Size(145, 20);
             this.txtplaca.TabIndex = 36;
+            this.toolTip1.SetToolTip(this.txtplaca, "Verifique que su placa no se repita");
             // 
             // label4
             // 
@@ -149,6 +152,7 @@ namespace CapaPresentacion
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(145, 20);
             this.txtMatricula.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.txtMatricula, "Verifique que su matricula no se repita");
             // 
             // pictureBox1
             // 
@@ -274,5 +278,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.ComboBox comboBoxTipo;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
