@@ -32,6 +32,7 @@ namespace CapaPresentacion
             this.buttonactualizar = new System.Windows.Forms.Button();
             this.btnregresar = new System.Windows.Forms.Button();
             this.dgv_listarTodos = new System.Windows.Forms.DataGridView();
+            this.id_ambulancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoAmbulancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,14 +41,6 @@ namespace CapaPresentacion
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtnunplaca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.txtplaca = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxModelo = new System.Windows.Forms.TextBox();
-            this.textBoxTipoAmbulancia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +49,7 @@ namespace CapaPresentacion
             this.buttonactualizar.BackColor = System.Drawing.Color.Transparent;
             this.buttonactualizar.FlatAppearance.BorderSize = 0;
             this.buttonactualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonactualizar.Location = new System.Drawing.Point(385, 264);
+            this.buttonactualizar.Location = new System.Drawing.Point(255, 253);
             this.buttonactualizar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonactualizar.Name = "buttonactualizar";
             this.buttonactualizar.Size = new System.Drawing.Size(130, 25);
@@ -70,7 +63,7 @@ namespace CapaPresentacion
             this.btnregresar.BackColor = System.Drawing.Color.Transparent;
             this.btnregresar.FlatAppearance.BorderSize = 0;
             this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregresar.Location = new System.Drawing.Point(385, 319);
+            this.btnregresar.Location = new System.Drawing.Point(478, 251);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(130, 29);
@@ -84,18 +77,25 @@ namespace CapaPresentacion
             this.dgv_listarTodos.BackgroundColor = System.Drawing.Color.White;
             this.dgv_listarTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listarTodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_ambulancia,
             this.modelo,
             this.tipoAmbulancia,
             this.placa,
             this.matricula});
-            this.dgv_listarTodos.Location = new System.Drawing.Point(10, 65);
+            this.dgv_listarTodos.Location = new System.Drawing.Point(19, 58);
             this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_listarTodos.Name = "dgv_listarTodos";
             this.dgv_listarTodos.ReadOnly = true;
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(505, 175);
+            this.dgv_listarTodos.Size = new System.Drawing.Size(603, 175);
             this.dgv_listarTodos.TabIndex = 78;
+            // 
+            // id_ambulancia
+            // 
+            this.id_ambulancia.HeaderText = "Numero Ambulancia";
+            this.id_ambulancia.Name = "id_ambulancia";
+            this.id_ambulancia.ReadOnly = true;
             // 
             // modelo
             // 
@@ -127,7 +127,7 @@ namespace CapaPresentacion
             this.btn_todos.BackColor = System.Drawing.Color.Transparent;
             this.btn_todos.FlatAppearance.BorderSize = 0;
             this.btn_todos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_todos.Location = new System.Drawing.Point(385, 20);
+            this.btn_todos.Location = new System.Drawing.Point(493, 19);
             this.btn_todos.Margin = new System.Windows.Forms.Padding(2);
             this.btn_todos.Name = "btn_todos";
             this.btn_todos.Size = new System.Drawing.Size(130, 24);
@@ -171,96 +171,12 @@ namespace CapaPresentacion
             this.label1.TabIndex = 74;
             this.label1.Text = "Ingrese su placa: ";
             // 
-            // txtMatricula
-            // 
-            this.txtMatricula.Location = new System.Drawing.Point(252, 347);
-            this.txtMatricula.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(121, 20);
-            this.txtMatricula.TabIndex = 113;
-            // 
-            // txtplaca
-            // 
-            this.txtplaca.Location = new System.Drawing.Point(252, 319);
-            this.txtplaca.Margin = new System.Windows.Forms.Padding(2);
-            this.txtplaca.Name = "txtplaca";
-            this.txtplaca.Size = new System.Drawing.Size(121, 20);
-            this.txtplaca.TabIndex = 107;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(143, 347);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 105;
-            this.label4.Text = "Matricula:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(143, 319);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 104;
-            this.label3.Text = "Placa:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(143, 292);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
-            this.label2.TabIndex = 103;
-            this.label2.Text = "Tipo Ambulancia:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(143, 264);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 102;
-            this.label5.Text = "Modelo:";
-            // 
-            // textBoxModelo
-            // 
-            this.textBoxModelo.Location = new System.Drawing.Point(252, 257);
-            this.textBoxModelo.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxModelo.Name = "textBoxModelo";
-            this.textBoxModelo.Size = new System.Drawing.Size(121, 20);
-            this.textBoxModelo.TabIndex = 116;
-            // 
-            // textBoxTipoAmbulancia
-            // 
-            this.textBoxTipoAmbulancia.Location = new System.Drawing.Point(252, 287);
-            this.textBoxTipoAmbulancia.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxTipoAmbulancia.Name = "textBoxTipoAmbulancia";
-            this.textBoxTipoAmbulancia.Size = new System.Drawing.Size(121, 20);
-            this.textBoxTipoAmbulancia.TabIndex = 117;
-            // 
             // frmConsultarAmbulanciacs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo1;
-            this.ClientSize = new System.Drawing.Size(538, 411);
-            this.Controls.Add(this.textBoxTipoAmbulancia);
-            this.Controls.Add(this.textBoxModelo);
-            this.Controls.Add(this.txtMatricula);
-            this.Controls.Add(this.txtplaca);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(634, 303);
             this.Controls.Add(this.buttonactualizar);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.dgv_listarTodos);
@@ -286,14 +202,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtnunplaca;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMatricula;
-        private System.Windows.Forms.TextBox txtplaca;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxModelo;
-        private System.Windows.Forms.TextBox textBoxTipoAmbulancia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_ambulancia;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoAmbulancia;
         private System.Windows.Forms.DataGridViewTextBoxColumn placa;

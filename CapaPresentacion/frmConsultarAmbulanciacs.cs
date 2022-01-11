@@ -33,7 +33,6 @@ namespace CapaPresentacion
 
             this.Ambulancia1 = Ambulancia1;
             this.lst_ambulancia_tmp = Ambulancia1.listar();
-            bloquear();
             llenar_datagridview_ambulancia();
             buttonactualizar.Enabled = false;
 
@@ -49,44 +48,17 @@ namespace CapaPresentacion
             {
                 System.Type type = ambulancia.GetType();
 
-            
+                Int16 Id_Ambulancia = (Int16)type.GetProperty("Id_Ambulancia").GetValue(ambulancia);
                 String modelo = (String)type.GetProperty("modelo").GetValue(ambulancia);
                 String tipoAmbulancia = (String)type.GetProperty("tipoAmbulancia").GetValue(ambulancia);
                 String placa = (String)type.GetProperty("placa").GetValue(ambulancia);
                 String matricula = (String)type.GetProperty("matricula").GetValue(ambulancia);
                
-                dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula);
+                dgv_listarTodos.Rows.Add(Id_Ambulancia,modelo, tipoAmbulancia, placa, matricula);
             }
 
         }
 
-        public void bloquear()
-        {
-            textBoxModelo.Enabled = false;
-            txtplaca.Enabled = false;
-            textBoxTipoAmbulancia.Enabled = false;
-            txtMatricula.Enabled = false;
-        }
-
-        public void limpiar()
-        {
-            textBoxModelo.Clear();
-            txtplaca.Clear();
-            textBoxTipoAmbulancia.Clear();
-            txtMatricula.Clear();  
-        }
-
-       public void llenarframeActualizar() // cargar datos de un frame a otro 
-        {
-            frmActualizar = new frmActualizarAmbulancia(txtnunplaca.Text, Ambulancia1);
-         
-          
-                frmActualizar.comboBoxModelo.SelectedItem = textBoxModelo.Text;
-                frmActualizar.txtplaca.Text = txtplaca.Text;
-                frmActualizar.txtMatricula.Text = txtMatricula.Text;
-                frmActualizar.comboBoxTipo.SelectedItem = textBoxTipoAmbulancia.Text;
-          
-        }
 
         private void btnregresar_Click(object sender, EventArgs e)
         {
@@ -101,7 +73,6 @@ namespace CapaPresentacion
             {
                 dgv_listarTodos.Rows.Clear();
                 dgv_listarTodos.Refresh();
-                limpiar();
                 lst_ambulancia_tmp = Ambulancia1.buscar(txtnunplaca.Text);
 
                 foreach (var ambulancia in lst_ambulancia_tmp)
@@ -110,19 +81,13 @@ namespace CapaPresentacion
                     {
                         System.Type type = ambulancia.GetType();
 
+                        Int16 Id_Ambulancia = (Int16)type.GetProperty("Id_Ambulancia").GetValue(ambulancia);
                         String modelo = (String)type.GetProperty("modelo").GetValue(ambulancia);
                         String tipoAmbulancia = (String)type.GetProperty("tipoAmbulancia").GetValue(ambulancia);
                         String placa = (String)type.GetProperty("placa").GetValue(ambulancia);
                         String matricula = (String)type.GetProperty("matricula").GetValue(ambulancia);
-                   
-
-
-                        textBoxModelo.Text = modelo;
-                        textBoxTipoAmbulancia.Text = tipoAmbulancia;
-                        txtplaca.Text = placa;
-                        txtMatricula.Text = matricula;
-                     
-                        dgv_listarTodos.Rows.Add(modelo, tipoAmbulancia, placa, matricula);
+    
+                        dgv_listarTodos.Rows.Add(Id_Ambulancia, modelo, tipoAmbulancia, placa, matricula);
                         buttonactualizar.Enabled = true;
 
                     }
@@ -139,14 +104,12 @@ namespace CapaPresentacion
           
             this.Hide();
             buttonactualizar.Enabled = false;
-            frmActualizar = new frmActualizarAmbulancia(txtnunplaca.Text, Ambulancia1);
-            llenarframeActualizar();
+            frmActualizar = new frmActualizarAmbulancia(dgv_listarTodos.CurrentRow.Cells[0].Value.ToString(), Ambulancia1);
             frmActualizar.ShowDialog();
         }
 
         private void btn_todos_Click(object sender, EventArgs e)
         {
-            limpiar();
             this.lst_ambulancia_tmp = Ambulancia1.listar();
             llenar_datagridview_ambulancia();
             buttonactualizar.Enabled = false;
@@ -155,7 +118,6 @@ namespace CapaPresentacion
         private void txtnunplaca_TextChanged(object sender, EventArgs e)
         {
             buttonactualizar.Enabled = false;
-
         }
     }
 }

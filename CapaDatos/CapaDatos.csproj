@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsManejador.cs" />
+    <Compile Include="ClsManejadorAmbulancia.cs" />
     <Compile Include="ClsParametrosAmbulancia.cs" />
     <Compile Include="ClsParametrosCliente.cs" />
     <Compile Include="Conductor\ClsParametrosConductor.cs" />

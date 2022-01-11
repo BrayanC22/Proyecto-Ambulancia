@@ -17,7 +17,7 @@ namespace CapaNegocio
     
 
         private List<Object> lst_obj;
-        ClsManejador M = new ClsManejador();
+        ClsManejadorAmbulancia M = new ClsManejadorAmbulancia();
 
         public ClsAmbulancia() { }
         public ClsAmbulancia(String modelo, String tipoAmbulancia,String placa, String matricula)
@@ -102,7 +102,7 @@ namespace CapaNegocio
                 M.eliminar_ambulancia(placa);
         }
         
-        public int actualizar_x_placa( string Modelo, string TipoAmbulancia, string Placa, string Matricula)
+        public int actualizar_x_placa(string Modelo, string TipoAmbulancia, string Placa, string Matricula)
         {
           return M.actualizar_ambulancia_individual(Modelo, TipoAmbulancia, Placa, Matricula);
         }

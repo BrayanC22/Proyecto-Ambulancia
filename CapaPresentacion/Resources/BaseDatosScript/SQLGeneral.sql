@@ -41,7 +41,6 @@ INSERT INTO [Usuario] ([Nombre], [Apellido], [Cedula], [NombreUsuario], [Passwor
 	
 SELECT Id_Usuario, Nombre, Apellido, Cedula, NombreUsuario, Password, RutaImagen FROM Usuario WHERE (Id_Usuario = SCOPE_IDENTITY())
 
-
 GO
 
 /* ---------------------- CLIENTE -------------------------- */
@@ -71,17 +70,119 @@ CREATE TABLE Cliente
 
 CREATE TABLE Ambulancia
 (
- 
   Id_Ambulancia      int  identity (1,1) not null,
   modelo         VARCHAR (40) not null,
   tipoAmbulancia              VARCHAR (40) not null ,
   placa           VARCHAR (40) unique not null ,
-  matricula                 VARCHAR(40)  not null ,
-  fechaActivacion            VARCHAR(40) not null,
-  estado	               VARCHAR(40) not null,
-  observacion 		   VARCHAR(40) not null,
+  matricula                 VARCHAR(40) unique not null ,
+
   Primary Key(Id_Ambulancia)
 );
+
+
+USE [LosRapidosSAbd]
+GO
+
+/******  Insertar Ambulancia *****/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[ambInsertCommand]
+(
+	@modelo varchar(40),
+	@tipoAmbulancia varchar(40),
+	@placa varchar(40),
+	@matricula varchar(40)
+)
+AS
+	SET NOCOUNT OFF;
+INSERT INTO [Ambulancia] ([modelo], [tipoAmbulancia], [placa], [matricula]) VALUES (@modelo, @tipoAmbulancia, @placa, @matricula);
+	
+SELECT Id_Ambulancia, modelo, tipoAmbulancia, placa, matricula FROM Ambulancia WHERE (Id_Ambulancia = SCOPE_IDENTITY())
+GO
+
+
+
+/******  Buscar ******/
+
+GO
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[ambSelectCommand]
+AS
+	SET NOCOUNT ON;
+SELECT        Ambulancia.*
+FROM            Ambulancia
+GO
+
+/****** Buscar individual   ******/
+
+
+USE [LosRapidosSAbd]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[ambSelectindividualCommand]
+AS
+	SET NOCOUNT ON;
+SELECT        Ambulancia.*
+FROM            Ambulancia
+WHERE placa = @placa;
+
+GO
+
+/****** Delete Ambulancia ******/
+
+USE [LosRapidosSAbd]
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[AmbDeleteCommand]
+(
+	@Original_placa varchar(40)
+)
+AS
+SET NOCOUNT OFF;
+DELETE FROM [Ambulancia] WHERE ([placa] = @Original_placa)
+GO
+
+/****** Update Ambulancia ******/
+
+
+GO
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[ambUpdateCommand]
+(
+	@modelo varchar(40),
+	@tipoAmbulancia varchar(40),
+	@placa varchar(40),
+	@matricula varchar(40)
+)
+AS
+	SET NOCOUNT OFF;
+UPDATE [Ambulancia] SET [modelo] = @modelo, [tipoAmbulancia] = @tipoAmbulancia, [matricula] = @matricula WHERE ([placa] = @placa);
+
+GO
+
 
 
 /* ---------------------- CONDUCTOR ------------------------ */
