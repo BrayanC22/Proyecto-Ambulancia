@@ -8,10 +8,10 @@ CREATE TABLE Usuario
   Id_Usuario      int  identity (1,1) not null,
   Nombre         VARCHAR (40) not null,
   Apellido              VARCHAR (40) not null ,
-  Cedula           VARCHAR (40) unique not null ,
-  NombreUsuario                 VARCHAR(40)  not null ,
+  Cedula           VARCHAR (10) unique not null ,
+  NombreUsuario                 VARCHAR(40) unique not null ,
   Password            VARCHAR(40) not null,
-  RutaImagen	               VARCHAR(500) not null,
+  Foto	               image not null,
   Primary Key(Id_Usuario));
   -- drop table Usuario;
 
@@ -30,16 +30,16 @@ CREATE OR ALTER PROCEDURE [dbo].[UsuarioInsertCommand]
 (
 	@Nombre varchar(40),
 	@Apellido varchar(40),
-	@Cedula varchar(40),
+	@Cedula varchar(10),
 	@NombreUsuario varchar(40),
 	@Password varchar(40),
-	@RutaImagen varchar(500)
+	@Foto image
 )
 AS
 	SET NOCOUNT OFF;
-INSERT INTO [Usuario] ([Nombre], [Apellido], [Cedula], [NombreUsuario], [Password], [RutaImagen]) VALUES (@Nombre, @Apellido, @Cedula, @NombreUsuario, @Password, @RutaImagen);
+INSERT INTO [Usuario] ([Nombre], [Apellido], [Cedula], [NombreUsuario], [Password], [Foto]) VALUES (@Nombre, @Apellido, @Cedula, @NombreUsuario, @Password, @Foto);
 	
-SELECT Id_Usuario, Nombre, Apellido, Cedula, NombreUsuario, Password, RutaImagen FROM Usuario WHERE (Id_Usuario = SCOPE_IDENTITY())
+SELECT Id_Usuario, Nombre, Apellido, Cedula, NombreUsuario, Password, Foto FROM Usuario WHERE (Id_Usuario = SCOPE_IDENTITY())
 
 GO
 
@@ -73,11 +73,11 @@ CREATE TABLE Ambulancia
   Id_Ambulancia      int  identity (1,1) not null,
   modelo         VARCHAR (40) not null,
   tipoAmbulancia              VARCHAR (40) not null ,
-  placa           VARCHAR (40) unique not null ,
-  matricula                 VARCHAR(40) unique not null ,
-
+  placa           VARCHAR (40) unique not null,
+  matricula                 VARCHAR(40) unique not null,
   Primary Key(Id_Ambulancia)
 );
+-- drop table Ambulancia;
 
 
 USE [LosRapidosSAbd]

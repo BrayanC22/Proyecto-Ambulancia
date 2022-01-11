@@ -99,7 +99,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtPassword.Location = new System.Drawing.Point(92, 255);
-            this.txtPassword.MaxLength = 10;
+            this.txtPassword.MaxLength = 15;
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(211, 21);

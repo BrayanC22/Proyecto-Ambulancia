@@ -146,9 +146,10 @@ namespace CapaDatos
 
         /* ----------------------- Registro de usuario ------------------------- */
 
-        public String RegistrarUsuario(List<clsParametrosUsuario> lst)
+        public Tuple<String, bool> RegistrarUsuario(List<clsParametrosUsuario> lst)
         {
             String mensaje = "";
+            bool ingreso = false;
             try
             {
                 SqlConnection conexionAbierta = abrir_conexion();
@@ -165,18 +166,19 @@ namespace CapaDatos
                 command.Parameters.AddWithValue("@Cedula", lst[0].Cedula);
                 command.Parameters.AddWithValue("@NombreUsuario", lst[0].Usuario);
                 command.Parameters.AddWithValue("@Password", lst[0].Password);
-                command.Parameters.AddWithValue("@RutaImagen", lst[0].RutaImagen);
+                command.Parameters.AddWithValue("@Foto", lst[0].RutaImagen);
 
                 int t = Convert.ToInt32(command.ExecuteNonQuery());
-                mensaje = "Registrado con éxito";
+                mensaje = "Usuario registrado con éxito";
+                ingreso = true;
                 cerrar_conexion(conexionAbierta);
             }
             catch (SqlException ex)
             {
-                mensaje = "Error, base de datos inaccesible.";
-                Console.WriteLine(ex);
+                mensaje = "Motivos de error:\n\n- No se puede acceder a la base de datos\n- Los datos ingresados ya existen";
+                Console.WriteLine(ex.Message);
             }
-            return mensaje;
+            return Tuple.Create(mensaje, ingreso);
         }
         
 

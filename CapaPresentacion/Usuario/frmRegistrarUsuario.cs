@@ -24,16 +24,39 @@ namespace CapaPresentacion.Usuario
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            clsUsuario.Nombre = txtNombre.Text;
-            clsUsuario.Apellido = txtApellidos.Text;
-            clsUsuario.Cedula = txtCedula.Text;
-            clsUsuario.Usuario = txtUsuario.Text;
-            clsUsuario.Password = txtConfirmaPass.Text;
-            clsUsuario.RutaImagen = validarImagen(this.RutaImagen);
             
-            MessageBox.Show(clsUsuario.registrarUsuario());
-            limpiarDatos();
-            this.Close();
+            if (datosLlenos())
+            {
+                clsUsuario.Nombre = txtNombre.Text;
+                clsUsuario.Apellido = txtApellidos.Text;
+                clsUsuario.Cedula = txtCedula.Text;
+                clsUsuario.Usuario = txtUsuario.Text;
+                clsUsuario.Password = txtConfirmaPass.Text;
+
+                validarImagen(this.RutaImagen);
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                pboxPerfil.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                clsUsuario.RutaImagen = ms.GetBuffer();
+
+                // Devuelve un valor booleano para verificar el registro y un String con el mensaje obteenido
+                Tuple<String, bool> resultado = clsUsuario.registrarUsuario();
+
+                MessageBox.Show(resultado.Item1, "Resultado de registro");
+                if (resultado.Item2)
+                {
+                    limpiarDatos();
+                    this.Close();
+                }
+                else
+                {
+                    txtNombre.Focus();
+                }
+            }
+            else
+            {
+                txtNombre.Focus();
+                MessageBox.Show("¡Atención!:\n\n- Ingrese todos los datos solicitados\n- Verifique que la cédula sea correcta", "Error de datos");
+            }
         }
 
         private void btnSeleccionarFoto_Click(object sender, EventArgs e)
@@ -52,7 +75,8 @@ namespace CapaPresentacion.Usuario
             }
             catch (Exception ex)
             {
-                MessageBox.Show("El archivo no es válido: "+ex);
+                MessageBox.Show("El archivo no es válido");
+                Console.Write(ex);
             }
         }
 
@@ -101,6 +125,15 @@ namespace CapaPresentacion.Usuario
             txtConfirmaPass.Text = "";
             this.RutaImagen = "";
 
+        }
+        private bool datosLlenos()
+        {
+            bool estanllenos = true;
+            if (txtApellidos.Text.Equals("") || txtNombre.Text.Equals("") || (txtCedula.Text.Length<10) || txtUsuario.Text.Equals("")) {
+                estanllenos = false;
+            }
+
+            return estanllenos;
         }
 
 

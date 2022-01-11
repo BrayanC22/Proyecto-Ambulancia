@@ -15,7 +15,7 @@ namespace CapaNegocio.Usuario
         String cedula;
         String usuario;
         String password;
-        String rutaImagen;
+        Byte[] rutaImagen;
 
 
         /* Constructor*/
@@ -54,7 +54,7 @@ namespace CapaNegocio.Usuario
             get { return password; }
             set { password = value; }
         }
-        public String RutaImagen
+        public Byte[] RutaImagen
         {
             get { return rutaImagen; }
             set { rutaImagen = value; }
@@ -62,13 +62,12 @@ namespace CapaNegocio.Usuario
 
         
         ClsManejador manejadorUsuario = new ClsManejador();
+        List<clsParametrosUsuario> lstUsuarios = new List<clsParametrosUsuario>();
+        clsParametrosUsuario parametrosUsuario = new clsParametrosUsuario();
 
-        
-        public String registrarUsuario()
+        public Tuple<String, bool> registrarUsuario()
         {
-            List<clsParametrosUsuario> lstUsuarios = new List<clsParametrosUsuario>();
-            clsParametrosUsuario parametrosUsuario = new clsParametrosUsuario();
-
+            
             /* parametrosUsuario es el objeto intermediario entre los datos ingresados desde la capa vista a la base de datos*/
             parametrosUsuario.Nombre = this.Nombre;
             parametrosUsuario.Apellido = this.Apellido;
