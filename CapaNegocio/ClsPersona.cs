@@ -8,28 +8,24 @@ namespace CapaNegocio
 {
     public class ClsPersona
     {
-
-
         protected String cedula;
         protected String nombre;
         protected String apellido;
         protected Int16 edad;
         protected String domicilio;
         protected String sexo;
-
-
         private List<Object> lst_obj;
 
         public ClsPersona() { }
 
-        public ClsPersona(String cedula, String nombre, String apellido, Int16 edad, String domicilio, String sexo)
+       public ClsPersona(String cedula, String nombre, String apellido, Int16 edad, String domicilio, String sexo)
         {
-            this.cedula = cedula;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.edad = edad;
-            this.domicilio = domicilio;
-            this.sexo = sexo;
+           this.cedula = cedula;
+           this.nombre = nombre;
+           this.apellido = apellido;
+           this.edad = edad;
+           this.domicilio = domicilio;
+           this.sexo = sexo;
 
         }
         //metodos get /set
@@ -75,12 +71,11 @@ namespace CapaNegocio
 
         public virtual List<Object> buscar(String cedula) { return lst_obj; }
         public virtual void eliminar(String cedula) { }
-        // public virtual int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio,
-        //   string sexo, string imagen, string codigoCliente)
-        // { return 0; }
-
-
-
+        
+        
+        public virtual int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio,
+         string sexo, string imagen, string codigoCliente)
+        { return 0; }
 
 
     }

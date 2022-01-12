@@ -52,6 +52,12 @@
     <Compile Include="frmActualizarAmbulancia.Designer.cs">
       <DependentUpon>frmActualizarAmbulancia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmActualizarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizarCliente.Designer.cs">
+      <DependentUpon>frmActualizarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAsignar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </Compile>
     <EmbeddedResource Include="frmActualizarAmbulancia.resx">
       <DependentUpon>frmActualizarAmbulancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActualizarCliente.resx">
+      <DependentUpon>frmActualizarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsignar.resx">
       <DependentUpon>frmAsignar.cs</DependentUpon>
