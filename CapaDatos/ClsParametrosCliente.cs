@@ -19,21 +19,8 @@ namespace CapaDatos
         //Atri-hija
         private string imagen;
         private string codigoCliente;
-
-        public ClsParametrosCliente(String cedula, String nombre, String apellido, Int16 edad, String domicilio, String sexo, String imag, String codC)
-        {
-
-
-            this.cedula = cedula;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.edad = edad;
-            this.domicilio = domicilio;
-            this.sexo = sexo;
-            this.imagen = imag;
-            this.codigoCliente = codC;
-
-        }
+        public ClsParametrosCliente() { }
+       
         //metodos get /set
         public String Cedula
         {

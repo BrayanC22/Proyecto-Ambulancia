@@ -8,28 +8,24 @@ namespace CapaNegocio
 {
     public class ClsPersona
     {
-
-
         protected String cedula;
         protected String nombre;
         protected String apellido;
         protected Int16 edad;
         protected String domicilio;
         protected String sexo;
-
-
         private List<Object> lst_obj;
 
         public ClsPersona() { }
 
-        public ClsPersona(String cedula, String nombre, String apellido, Int16 edad, String domicilio, String sexo)
+       public ClsPersona(String cedula, String nombre, String apellido, Int16 edad, String domicilio, String sexo)
         {
-            this.cedula = cedula;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.edad = edad;
-            this.domicilio = domicilio;
-            this.sexo = sexo;
+           this.cedula = cedula;
+           this.nombre = nombre;
+           this.apellido = apellido;
+           this.edad = edad;
+           this.domicilio = domicilio;
+           this.sexo = sexo;
 
         }
         //metodos get /set
