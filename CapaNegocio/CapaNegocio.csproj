@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsAmbulancia.cs" />
+    <Compile Include="ClsAsignacion.cs" />
     <Compile Include="ClsCliente.cs" />
     <Compile Include="ClsPersona.cs" />
     <Compile Include="Conductor\ClsConductores.cs" />

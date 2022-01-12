@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace CapaPresentacion
         frmCliente cliente = new frmCliente();
         frmGuardarAmbulancia guardarAmbulancia = new frmGuardarAmbulancia();
         FrmConductores conductores = new FrmConductores();
+        ClsAmbulancia Ambulancia1;
+
         public frmMenu()
         {
             InitializeComponent();
@@ -54,6 +57,14 @@ namespace CapaPresentacion
         {
             conductores.Show();
             this.Close();
+        }
+
+  
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmAsignar asignar = new frmAsignar();
+            asignar.Show();
+            this.Hide();
         }
     }
 }

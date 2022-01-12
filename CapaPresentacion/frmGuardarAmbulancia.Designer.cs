@@ -173,7 +173,7 @@ namespace CapaPresentacion
             this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_regresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_regresar.Image = global::CapaPresentacion.Properties.Resources.salir;
-            this.btn_regresar.Location = new System.Drawing.Point(356, 341);
+            this.btn_regresar.Location = new System.Drawing.Point(353, 334);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(85, 42);

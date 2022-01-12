@@ -101,7 +101,6 @@ namespace CapaPresentacion
 
         private void buttonactualizar_Click(object sender, EventArgs e)
         {
-          
             this.Hide();
             buttonactualizar.Enabled = false;
             frmActualizar = new frmActualizarAmbulancia(dgv_listarTodos.CurrentRow.Cells[0].Value.ToString(), Ambulancia1);

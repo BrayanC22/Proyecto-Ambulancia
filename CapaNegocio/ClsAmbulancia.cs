@@ -56,25 +56,20 @@ namespace CapaNegocio
         }
 
         
-
         public String registrar()
         {
             string msj = "";
-
 
             //Lista genérica de parámetros
             List<ClsParametrosAmbulancia> lst = new List<ClsParametrosAmbulancia>();
 
             try
-            {
-                
+            {     
                     //Pasar los parámetros hacia la capa de acceso a datos
                     lst.Add(new ClsParametrosAmbulancia(Modelo, TipoAmbulancia, Placa, Matricula));
                     M.insertar_ambulancia(lst);
 
-
                     msj = "Insertado correctamente";
-                
                 
             }
             catch (Exception ex)

@@ -134,7 +134,9 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE OR ALTER PROCEDURE [dbo].[ambSelectindividualCommand]
+CREATE OR ALTER PROCEDURE [dbo].[ambSelectindividualCommand](
+@placa varchar(40)
+)
 AS
 	SET NOCOUNT ON;
 SELECT        Ambulancia.*
@@ -182,8 +184,40 @@ AS
 UPDATE [Ambulancia] SET [modelo] = @modelo, [tipoAmbulancia] = @tipoAmbulancia, [matricula] = @matricula WHERE ([placa] = @placa);
 
 GO
+/* ---------------------- Asignacion ------------------------ */
+
+CREATE TABLE Asignacion
+(
+
+  Id_Asignacion int identity (1,1) not null,
+  Id_Ambulancia  int not null,
+  Id_ConductorAsignacion  int not null,
+  
+  Primary Key(Id_Asignacion)
+);
 
 
+USE [LosRapidosSAbd]
+GO
+
+/****** INSERT ASIGNACION ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[AsignacionInsertCommand]
+(
+	@Id_Ambulancia int,
+	@Id_ConductorAsignacion int
+)
+AS
+	SET NOCOUNT OFF;
+INSERT INTO [Asignacion] ([Id_Ambulancia], [Id_ConductorAsignacion]) VALUES (@Id_Ambulancia, @Id_ConductorAsignacion);
+	
+SELECT Id_Asignacion, Id_Ambulancia, Id_ConductorAsignacion FROM Asignacion WHERE (Id_Asignacion = SCOPE_IDENTITY())
+GO
 
 /* ---------------------- CONDUCTOR ------------------------ */
 
@@ -200,6 +234,8 @@ CREATE TABLE Conductor
 
   Primary Key(Id_Conductor)
 );
+
+
 
 
 /* ------------------------ PAGOS -------------------------- */

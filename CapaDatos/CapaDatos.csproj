@@ -45,6 +45,7 @@
     <Compile Include="ClsManejador.cs" />
     <Compile Include="ClsManejadorAmbulancia.cs" />
     <Compile Include="ClsParametrosAmbulancia.cs" />
+    <Compile Include="ClsParametrosAsignacion.cs" />
     <Compile Include="ClsParametrosCliente.cs" />
     <Compile Include="Conductor\ClsParametrosConductor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

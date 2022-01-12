@@ -107,6 +107,8 @@ namespace CapaPresentacion
             // 
             // dgv_listarTodos
             // 
+            this.dgv_listarTodos.AllowUserToAddRows = false;
+            this.dgv_listarTodos.AllowUserToDeleteRows = false;
             this.dgv_listarTodos.BackgroundColor = System.Drawing.Color.White;
             this.dgv_listarTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listarTodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -121,6 +123,7 @@ namespace CapaPresentacion
             this.dgv_listarTodos.ReadOnly = true;
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
+            this.dgv_listarTodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listarTodos.Size = new System.Drawing.Size(603, 124);
             this.dgv_listarTodos.TabIndex = 126;
             // 

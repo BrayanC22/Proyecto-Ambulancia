@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,6 +41,7 @@
             this.pboxAmbulancia = new System.Windows.Forms.PictureBox();
             this.pboxCliente = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxConductor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAmbulancia)).BeginInit();
@@ -48,6 +51,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnConductor);
             this.panel1.Controls.Add(this.btnAmbulancia);
@@ -58,8 +63,30 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(882, 373);
+            this.panel1.Size = new System.Drawing.Size(985, 386);
             this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(776, 250);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Asignar";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.conductor;
+            this.pictureBox1.Location = new System.Drawing.Point(758, 125);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -68,7 +95,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(879, 55);
+            this.panel2.Size = new System.Drawing.Size(985, 55);
             this.panel2.TabIndex = 6;
             // 
             // lblUsername
@@ -97,7 +124,7 @@
             // 
             this.btnConductor.AutoSize = true;
             this.btnConductor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConductor.Location = new System.Drawing.Point(688, 268);
+            this.btnConductor.Location = new System.Drawing.Point(575, 250);
             this.btnConductor.Name = "btnConductor";
             this.btnConductor.Size = new System.Drawing.Size(73, 17);
             this.btnConductor.TabIndex = 5;
@@ -108,7 +135,7 @@
             // 
             this.btnAmbulancia.AutoSize = true;
             this.btnAmbulancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAmbulancia.Location = new System.Drawing.Point(402, 268);
+            this.btnAmbulancia.Location = new System.Drawing.Point(361, 250);
             this.btnAmbulancia.Name = "btnAmbulancia";
             this.btnAmbulancia.Size = new System.Drawing.Size(81, 17);
             this.btnAmbulancia.TabIndex = 4;
@@ -119,7 +146,7 @@
             // 
             this.btnCliente.AutoSize = true;
             this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCliente.Location = new System.Drawing.Point(133, 268);
+            this.btnCliente.Location = new System.Drawing.Point(175, 250);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(51, 17);
             this.btnCliente.TabIndex = 3;
@@ -130,7 +157,7 @@
             // 
             this.pboxConductor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxConductor.Image = global::CapaPresentacion.Properties.Resources.conductor;
-            this.pboxConductor.Location = new System.Drawing.Point(670, 143);
+            this.pboxConductor.Location = new System.Drawing.Point(557, 125);
             this.pboxConductor.Name = "pboxConductor";
             this.pboxConductor.Size = new System.Drawing.Size(96, 96);
             this.pboxConductor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -142,7 +169,7 @@
             // 
             this.pboxAmbulancia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxAmbulancia.Image = global::CapaPresentacion.Properties.Resources.ambulancia1;
-            this.pboxAmbulancia.Location = new System.Drawing.Point(395, 143);
+            this.pboxAmbulancia.Location = new System.Drawing.Point(354, 125);
             this.pboxAmbulancia.Name = "pboxAmbulancia";
             this.pboxAmbulancia.Size = new System.Drawing.Size(96, 96);
             this.pboxAmbulancia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -154,7 +181,7 @@
             // 
             this.pboxCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxCliente.Image = global::CapaPresentacion.Properties.Resources.user;
-            this.pboxCliente.Location = new System.Drawing.Point(111, 143);
+            this.pboxCliente.Location = new System.Drawing.Point(154, 125);
             this.pboxCliente.Name = "pboxCliente";
             this.pboxCliente.Size = new System.Drawing.Size(96, 96);
             this.pboxCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -165,7 +192,7 @@
             // frmMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(882, 373);
+            this.ClientSize = new System.Drawing.Size(985, 386);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -174,6 +201,7 @@
             this.Text = "frmMenu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxConductor)).EndInit();
@@ -195,5 +223,7 @@
         private System.Windows.Forms.PictureBox pboxConductor;
         private System.Windows.Forms.PictureBox pboxAmbulancia;
         private System.Windows.Forms.PictureBox pboxCliente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

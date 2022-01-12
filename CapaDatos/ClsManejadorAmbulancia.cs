@@ -139,5 +139,39 @@ namespace CapaDatos
             return resultado_operacion;
 
         }
+
+        /*Metodos para asignacion*/
+
+        public void insertar_asignacion(List<ClsParametrosAsignacion> lst)
+        {
+            try
+            {
+                if (lst != null)
+                {
+                    SqlConnection conexion = Maneja.abrir_conexion();
+
+
+                    SqlCommand command = new SqlCommand();
+
+                    command.Connection = conexion;
+
+                    command.CommandText = "AsignacionInsertCommand";
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+                    command.Parameters.AddWithValue("@Id_Ambulancia", lst[0].ID_AmbulanciaAsignacion); // a la variable de tip Mysql comand agregar un valor al parametro
+                    command.Parameters.AddWithValue("@Id_ConductorAsignacion", lst[0].ID_ConductorAsignacion); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
+
+
+
+                    int t = Convert.ToInt32(command.ExecuteScalar()); // con esa linea executa el insert a la bd
+                    Maneja.cerrar_conexion(conexion);
+                }
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
+
+
     }
 }
