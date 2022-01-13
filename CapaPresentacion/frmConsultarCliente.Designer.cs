@@ -52,25 +52,33 @@ namespace CapaPresentacion
             // 
             this.btnregresar.BackColor = System.Drawing.Color.Transparent;
             this.btnregresar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btnregresar.Location = new System.Drawing.Point(866, 396);
+            this.btnregresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnregresar.Image = global::CapaPresentacion.Properties.Resources.salir;
+            this.btnregresar.Location = new System.Drawing.Point(928, 381);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(115, 30);
+            this.btnregresar.Size = new System.Drawing.Size(115, 60);
             this.btnregresar.TabIndex = 87;
             this.btnregresar.Text = "Regresar";
+            this.btnregresar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnregresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnregresar.UseVisualStyleBackColor = false;
             this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
             // 
             // buttonactualizar
             // 
             this.buttonactualizar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonactualizar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.buttonactualizar.Location = new System.Drawing.Point(757, 59);
+            this.buttonactualizar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.buttonactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonactualizar.Image = global::CapaPresentacion.Properties.Resources.editarConductor;
+            this.buttonactualizar.Location = new System.Drawing.Point(421, 377);
             this.buttonactualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonactualizar.Name = "buttonactualizar";
-            this.buttonactualizar.Size = new System.Drawing.Size(173, 31);
+            this.buttonactualizar.Size = new System.Drawing.Size(229, 63);
             this.buttonactualizar.TabIndex = 86;
             this.buttonactualizar.Text = "Actualizar Datos";
+            this.buttonactualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonactualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonactualizar.UseVisualStyleBackColor = false;
             // 
             // dgv_listarTodos
@@ -162,7 +170,7 @@ namespace CapaPresentacion
             // 
             this.btn_todos.BackColor = System.Drawing.Color.Transparent;
             this.btn_todos.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btn_todos.Location = new System.Drawing.Point(1008, 59);
+            this.btn_todos.Location = new System.Drawing.Point(947, 68);
             this.btn_todos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_todos.Name = "btn_todos";
             this.btn_todos.Size = new System.Drawing.Size(153, 30);
@@ -196,12 +204,13 @@ namespace CapaPresentacion
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(36, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(320, 26);
             this.label1.TabIndex = 81;
-            this.label1.Text = "Ingrese el numero de Cédula: ";
+            this.label1.Text = "Ingrese el número de Cédula: ";
             // 
             // frmConsultarCliente
             // 

@@ -81,7 +81,7 @@ namespace CapaPresentacion
             // buttonCargarImagen
             // 
             this.buttonCargarImagen.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCargarImagen.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.buttonCargarImagen.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.buttonCargarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCargarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.buttonCargarImagen.Location = new System.Drawing.Point(688, 312);
@@ -146,45 +146,53 @@ namespace CapaPresentacion
             // btn_regresar
             // 
             this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_regresar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.btn_regresar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_regresar.Location = new System.Drawing.Point(744, 589);
+            this.btn_regresar.Image = global::CapaPresentacion.Properties.Resources.salir;
+            this.btn_regresar.Location = new System.Drawing.Point(771, 542);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(137, 37);
+            this.btn_regresar.Size = new System.Drawing.Size(137, 92);
             this.btn_regresar.TabIndex = 73;
             this.btn_regresar.Text = "Regresar";
+            this.btn_regresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
             // btn_eliminar
             // 
             this.btn_eliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_eliminar.Location = new System.Drawing.Point(387, 589);
+            this.btn_eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminarConductor;
+            this.btn_eliminar.Location = new System.Drawing.Point(560, 475);
             this.btn_eliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(137, 38);
+            this.btn_eliminar.Size = new System.Drawing.Size(162, 70);
             this.btn_eliminar.TabIndex = 72;
             this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_eliminar.UseVisualStyleBackColor = false;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // txtconsultar
             // 
             this.txtconsultar.BackColor = System.Drawing.Color.Transparent;
-            this.txtconsultar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.txtconsultar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.txtconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtconsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.txtconsultar.Location = new System.Drawing.Point(465, 528);
+            this.txtconsultar.Image = global::CapaPresentacion.Properties.Resources.consultarConductor;
+            this.txtconsultar.Location = new System.Drawing.Point(358, 475);
             this.txtconsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtconsultar.Name = "txtconsultar";
-            this.txtconsultar.Size = new System.Drawing.Size(137, 39);
+            this.txtconsultar.Size = new System.Drawing.Size(185, 63);
             this.txtconsultar.TabIndex = 71;
             this.txtconsultar.Text = "Consultar";
+            this.txtconsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtconsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.txtconsultar.UseVisualStyleBackColor = false;
             this.txtconsultar.Click += new System.EventHandler(this.txtconsultar_Click);
             // 
@@ -239,15 +247,18 @@ namespace CapaPresentacion
             // cmdregistrar
             // 
             this.cmdregistrar.BackColor = System.Drawing.Color.Transparent;
-            this.cmdregistrar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.cmdregistrar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.cmdregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdregistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.cmdregistrar.Location = new System.Drawing.Point(310, 528);
+            this.cmdregistrar.Image = global::CapaPresentacion.Properties.Resources.agregarCondoctor;
+            this.cmdregistrar.Location = new System.Drawing.Point(448, 584);
             this.cmdregistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmdregistrar.Name = "cmdregistrar";
-            this.cmdregistrar.Size = new System.Drawing.Size(137, 36);
+            this.cmdregistrar.Size = new System.Drawing.Size(170, 75);
             this.cmdregistrar.TabIndex = 70;
             this.cmdregistrar.Text = "Registrar";
+            this.cmdregistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmdregistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cmdregistrar.UseVisualStyleBackColor = false;
             this.cmdregistrar.Click += new System.EventHandler(this.cmdregistrar_Click);
             // 
