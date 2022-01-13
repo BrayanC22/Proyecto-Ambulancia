@@ -29,9 +29,9 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActualizarCliente));
             this.textCC = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.buttonCargarImagen = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.radioButtonFemenino = new System.Windows.Forms.RadioButton();
@@ -49,6 +49,7 @@ namespace CapaPresentacion
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonActualizarCambios = new System.Windows.Forms.Button();
+            this.buttonCargarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,20 +71,6 @@ namespace CapaPresentacion
             this.label9.Size = new System.Drawing.Size(173, 26);
             this.label9.TabIndex = 96;
             this.label9.Text = "Codigo Cliente:";
-            // 
-            // buttonCargarImagen
-            // 
-            this.buttonCargarImagen.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCargarImagen.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.buttonCargarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCargarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.buttonCargarImagen.Location = new System.Drawing.Point(631, 275);
-            this.buttonCargarImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonCargarImagen.Name = "buttonCargarImagen";
-            this.buttonCargarImagen.Size = new System.Drawing.Size(178, 44);
-            this.buttonCargarImagen.TabIndex = 95;
-            this.buttonCargarImagen.Text = "Cargar Imagen";
-            this.buttonCargarImagen.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -254,13 +241,30 @@ namespace CapaPresentacion
             this.buttonActualizarCambios.FlatAppearance.BorderSize = 0;
             this.buttonActualizarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActualizarCambios.ForeColor = System.Drawing.Color.Black;
-            this.buttonActualizarCambios.Location = new System.Drawing.Point(671, 456);
+            this.buttonActualizarCambios.Image = ((System.Drawing.Image)(resources.GetObject("buttonActualizarCambios.Image")));
+            this.buttonActualizarCambios.Location = new System.Drawing.Point(652, 377);
             this.buttonActualizarCambios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonActualizarCambios.Name = "buttonActualizarCambios";
-            this.buttonActualizarCambios.Size = new System.Drawing.Size(148, 39);
+            this.buttonActualizarCambios.Size = new System.Drawing.Size(148, 72);
             this.buttonActualizarCambios.TabIndex = 125;
             this.buttonActualizarCambios.Text = "Confirmar Cambios";
+            this.buttonActualizarCambios.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonActualizarCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonActualizarCambios.UseVisualStyleBackColor = false;
+            // 
+            // buttonCargarImagen
+            // 
+            this.buttonCargarImagen.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCargarImagen.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.buttonCargarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCargarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonCargarImagen.Location = new System.Drawing.Point(631, 268);
+            this.buttonCargarImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCargarImagen.Name = "buttonCargarImagen";
+            this.buttonCargarImagen.Size = new System.Drawing.Size(178, 44);
+            this.buttonCargarImagen.TabIndex = 126;
+            this.buttonCargarImagen.Text = "Cargar Imagen";
+            this.buttonCargarImagen.UseVisualStyleBackColor = false;
             // 
             // frmActualizarCliente
             // 
@@ -268,11 +272,11 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo1;
             this.ClientSize = new System.Drawing.Size(929, 506);
+            this.Controls.Add(this.buttonCargarImagen);
             this.Controls.Add(this.buttonActualizarCambios);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textCC);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.buttonCargarImagen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.radioButtonFemenino);
@@ -299,7 +303,6 @@ namespace CapaPresentacion
 
         private System.Windows.Forms.TextBox textCC;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button buttonCargarImagen;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton radioButtonFemenino;
@@ -317,5 +320,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonActualizarCambios;
+        private System.Windows.Forms.Button buttonCargarImagen;
     }
 }

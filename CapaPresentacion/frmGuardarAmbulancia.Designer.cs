@@ -30,6 +30,7 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGuardarAmbulancia));
             this.label5 = new System.Windows.Forms.Label();
             this.txtplaca = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,12 +40,12 @@ namespace CapaPresentacion
             this.comboBoxModelo = new System.Windows.Forms.ComboBox();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
             this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.txtconsultar = new System.Windows.Forms.Button();
             this.cmdregistrar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@ namespace CapaPresentacion
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(92, 30);
+            this.label5.Location = new System.Drawing.Point(112, 30);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(272, 20);
@@ -63,7 +64,7 @@ namespace CapaPresentacion
             // 
             // txtplaca
             // 
-            this.txtplaca.Location = new System.Drawing.Point(175, 247);
+            this.txtplaca.Location = new System.Drawing.Point(175, 265);
             this.txtplaca.Margin = new System.Windows.Forms.Padding(2);
             this.txtplaca.MaxLength = 8;
             this.txtplaca.Name = "txtplaca";
@@ -76,7 +77,7 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(52, 281);
+            this.label4.Location = new System.Drawing.Point(52, 305);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 15);
@@ -88,7 +89,7 @@ namespace CapaPresentacion
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 253);
+            this.label3.Location = new System.Drawing.Point(52, 270);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 15);
@@ -100,7 +101,7 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 226);
+            this.label2.Location = new System.Drawing.Point(52, 231);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 15);
@@ -139,31 +140,20 @@ namespace CapaPresentacion
             this.comboBoxTipo.Items.AddRange(new object[] {
             "Asistenciales",
             "No asistenciales"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(175, 220);
+            this.comboBoxTipo.Location = new System.Drawing.Point(175, 231);
             this.comboBoxTipo.Name = "comboBoxTipo";
             this.comboBoxTipo.Size = new System.Drawing.Size(145, 21);
             this.comboBoxTipo.TabIndex = 56;
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(175, 275);
+            this.txtMatricula.Location = new System.Drawing.Point(175, 300);
             this.txtMatricula.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatricula.MaxLength = 8;
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(145, 20);
             this.txtMatricula.TabIndex = 57;
             this.toolTip1.SetToolTip(this.txtMatricula, "Verifique que su matricula no se repita");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.ambulancia4;
-            this.pictureBox1.Location = new System.Drawing.Point(112, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 121);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 60;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_regresar
             // 
@@ -172,8 +162,8 @@ namespace CapaPresentacion
             this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_regresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_regresar.Image = global::CapaPresentacion.Properties.Resources.salir;
-            this.btn_regresar.Location = new System.Drawing.Point(353, 334);
+            this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
+            this.btn_regresar.Location = new System.Drawing.Point(350, 358);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(85, 42);
@@ -187,8 +177,8 @@ namespace CapaPresentacion
             this.btn_eliminar.FlatAppearance.BorderSize = 0;
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminar.Image = global::CapaPresentacion.Properties.Resources.EliminarIcon1;
-            this.btn_eliminar.Location = new System.Drawing.Point(338, 245);
+            this.btn_eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminarConductor;
+            this.btn_eliminar.Location = new System.Drawing.Point(338, 258);
             this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(122, 57);
@@ -204,11 +194,11 @@ namespace CapaPresentacion
             this.txtconsultar.FlatAppearance.BorderSize = 0;
             this.txtconsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtconsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtconsultar.Image = global::CapaPresentacion.Properties.Resources.consultar23;
-            this.txtconsultar.Location = new System.Drawing.Point(338, 183);
+            this.txtconsultar.Image = global::CapaPresentacion.Properties.Resources.consultarConductor;
+            this.txtconsultar.Location = new System.Drawing.Point(338, 192);
             this.txtconsultar.Margin = new System.Windows.Forms.Padding(2);
             this.txtconsultar.Name = "txtconsultar";
-            this.txtconsultar.Size = new System.Drawing.Size(122, 58);
+            this.txtconsultar.Size = new System.Drawing.Size(122, 62);
             this.txtconsultar.TabIndex = 43;
             this.txtconsultar.Text = "Consultar";
             this.txtconsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -221,17 +211,28 @@ namespace CapaPresentacion
             this.cmdregistrar.FlatAppearance.BorderSize = 0;
             this.cmdregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdregistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdregistrar.Image = global::CapaPresentacion.Properties.Resources.guardar2;
-            this.cmdregistrar.Location = new System.Drawing.Point(195, 327);
+            this.cmdregistrar.Image = global::CapaPresentacion.Properties.Resources.agregarCondoctor;
+            this.cmdregistrar.Location = new System.Drawing.Point(191, 341);
             this.cmdregistrar.Margin = new System.Windows.Forms.Padding(2);
             this.cmdregistrar.Name = "cmdregistrar";
             this.cmdregistrar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmdregistrar.Size = new System.Drawing.Size(76, 56);
+            this.cmdregistrar.Size = new System.Drawing.Size(77, 77);
             this.cmdregistrar.TabIndex = 41;
             this.cmdregistrar.Text = "Registrar";
             this.cmdregistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cmdregistrar.UseVisualStyleBackColor = false;
             this.cmdregistrar.Click += new System.EventHandler(this.cmdregistrar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(153, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(181, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 147;
+            this.pictureBox1.TabStop = false;
             // 
             // frmGuardarAmbulancia
             // 
@@ -239,9 +240,9 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo1;
-            this.ClientSize = new System.Drawing.Size(466, 413);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(487, 429);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtMatricula);
             this.Controls.Add(this.comboBoxTipo);
             this.Controls.Add(this.comboBoxModelo);
@@ -277,7 +278,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.ComboBox comboBoxModelo;
         private System.Windows.Forms.ComboBox comboBoxTipo;
         private System.Windows.Forms.TextBox txtMatricula;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

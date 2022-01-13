@@ -29,6 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEliminarAmbulancia));
             this.btnregresar = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtnunplaca = new System.Windows.Forms.TextBox();
@@ -48,12 +49,14 @@ namespace CapaPresentacion
             this.btnregresar.BackColor = System.Drawing.Color.Transparent;
             this.btnregresar.FlatAppearance.BorderSize = 0;
             this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregresar.Location = new System.Drawing.Point(511, 193);
+            this.btnregresar.Image = ((System.Drawing.Image)(resources.GetObject("btnregresar.Image")));
+            this.btnregresar.Location = new System.Drawing.Point(534, 155);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(105, 24);
+            this.btnregresar.Size = new System.Drawing.Size(47, 40);
             this.btnregresar.TabIndex = 124;
-            this.btnregresar.Text = "Regresar";
+            this.btnregresar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnregresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnregresar.UseVisualStyleBackColor = false;
             this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
             // 
@@ -62,7 +65,7 @@ namespace CapaPresentacion
             this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnbuscar.FlatAppearance.BorderSize = 0;
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.Location = new System.Drawing.Point(398, 23);
+            this.btnbuscar.Location = new System.Drawing.Point(399, 8);
             this.btnbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(57, 25);
@@ -73,7 +76,7 @@ namespace CapaPresentacion
             // 
             // txtnunplaca
             // 
-            this.txtnunplaca.Location = new System.Drawing.Point(258, 25);
+            this.txtnunplaca.Location = new System.Drawing.Point(267, 11);
             this.txtnunplaca.Margin = new System.Windows.Forms.Padding(2);
             this.txtnunplaca.MaxLength = 8;
             this.txtnunplaca.Name = "txtnunplaca";
@@ -84,7 +87,7 @@ namespace CapaPresentacion
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(163, 28);
+            this.label1.Location = new System.Drawing.Point(172, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
@@ -96,12 +99,16 @@ namespace CapaPresentacion
             this.btn_eliminar.BackColor = System.Drawing.Color.Transparent;
             this.btn_eliminar.FlatAppearance.BorderSize = 0;
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar.Location = new System.Drawing.Point(293, 193);
+            this.btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar.Image")));
+            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_eliminar.Location = new System.Drawing.Point(277, 155);
             this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(57, 24);
+            this.btn_eliminar.Size = new System.Drawing.Size(102, 47);
             this.btn_eliminar.TabIndex = 125;
             this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_eliminar.UseVisualStyleBackColor = false;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
@@ -117,14 +124,14 @@ namespace CapaPresentacion
             this.tipoAmbulancia,
             this.placa,
             this.matricula});
-            this.dgv_listarTodos.Location = new System.Drawing.Point(13, 49);
+            this.dgv_listarTodos.Location = new System.Drawing.Point(13, 46);
             this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_listarTodos.Name = "dgv_listarTodos";
             this.dgv_listarTodos.ReadOnly = true;
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
             this.dgv_listarTodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(603, 124);
+            this.dgv_listarTodos.Size = new System.Drawing.Size(603, 105);
             this.dgv_listarTodos.TabIndex = 126;
             // 
             // id_ambulancia
@@ -163,7 +170,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo1;
-            this.ClientSize = new System.Drawing.Size(627, 230);
+            this.ClientSize = new System.Drawing.Size(627, 216);
             this.Controls.Add(this.dgv_listarTodos);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btnregresar);

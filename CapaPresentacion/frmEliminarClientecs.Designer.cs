@@ -52,12 +52,15 @@ namespace CapaPresentacion
             this.btnregresar.BackColor = System.Drawing.Color.Transparent;
             this.btnregresar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
             this.btnregresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnregresar.Location = new System.Drawing.Point(1007, 400);
+            this.btnregresar.Image = global::CapaPresentacion.Properties.Resources.salir;
+            this.btnregresar.Location = new System.Drawing.Point(1019, 375);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(134, 30);
+            this.btnregresar.Size = new System.Drawing.Size(102, 65);
             this.btnregresar.TabIndex = 23;
             this.btnregresar.Text = "Regresar";
+            this.btnregresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnregresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnregresar.UseVisualStyleBackColor = false;
             this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
             // 
@@ -66,12 +69,15 @@ namespace CapaPresentacion
             this.btn_eliminar.BackColor = System.Drawing.Color.White;
             this.btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
             this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_eliminar.Location = new System.Drawing.Point(491, 390);
+            this.btn_eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminarConductor;
+            this.btn_eliminar.Location = new System.Drawing.Point(508, 369);
             this.btn_eliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(109, 30);
+            this.btn_eliminar.Size = new System.Drawing.Size(160, 71);
             this.btn_eliminar.TabIndex = 22;
             this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_eliminar.UseVisualStyleBackColor = false;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
