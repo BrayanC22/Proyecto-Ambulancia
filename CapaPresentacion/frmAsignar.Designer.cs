@@ -38,8 +38,6 @@ namespace CapaPresentacion
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtnunplaca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.NumAmbulanciaR = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmdregistrar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,7 +64,7 @@ namespace CapaPresentacion
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
             this.dgv_listarTodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(603, 93);
+            this.dgv_listarTodos.Size = new System.Drawing.Size(609, 93);
             this.dgv_listarTodos.TabIndex = 82;
             // 
             // id_ambulancia
@@ -134,33 +132,13 @@ namespace CapaPresentacion
             this.label1.TabIndex = 79;
             this.label1.Text = "Ingrese su placa: ";
             // 
-            // NumAmbulanciaR
-            // 
-            this.NumAmbulanciaR.Location = new System.Drawing.Point(657, 141);
-            this.NumAmbulanciaR.Margin = new System.Windows.Forms.Padding(2);
-            this.NumAmbulanciaR.MaxLength = 8;
-            this.NumAmbulanciaR.Name = "NumAmbulanciaR";
-            this.NumAmbulanciaR.Size = new System.Drawing.Size(88, 20);
-            this.NumAmbulanciaR.TabIndex = 83;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(642, 126);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 13);
-            this.label2.TabIndex = 84;
-            this.label2.Text = "Numero de Ambulancia:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(323, 23);
+            this.label5.Location = new System.Drawing.Point(216, 26);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(227, 20);
@@ -174,7 +152,7 @@ namespace CapaPresentacion
             this.cmdregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdregistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdregistrar.Image = global::CapaPresentacion.Properties.Resources.guardar2;
-            this.cmdregistrar.Location = new System.Drawing.Point(367, 424);
+            this.cmdregistrar.Location = new System.Drawing.Point(306, 424);
             this.cmdregistrar.Margin = new System.Windows.Forms.Padding(2);
             this.cmdregistrar.Name = "cmdregistrar";
             this.cmdregistrar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -191,7 +169,7 @@ namespace CapaPresentacion
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(274, 208);
+            this.label3.Location = new System.Drawing.Point(205, 208);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(238, 20);
@@ -203,7 +181,7 @@ namespace CapaPresentacion
             this.btnregresar.BackColor = System.Drawing.Color.Transparent;
             this.btnregresar.FlatAppearance.BorderSize = 0;
             this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregresar.Location = new System.Drawing.Point(632, 439);
+            this.btnregresar.Location = new System.Drawing.Point(500, 439);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(130, 29);
@@ -218,19 +196,19 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaPresentacion.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(796, 520);
+            this.ClientSize = new System.Drawing.Size(657, 520);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmdregistrar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.NumAmbulanciaR);
             this.Controls.Add(this.dgv_listarTodos);
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.txtnunplaca);
             this.Controls.Add(this.label1);
             this.Name = "frmAsignar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAsignar";
+            this.Shown += new System.EventHandler(this.frmAsignar_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -248,8 +226,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.TextBox txtnunplaca;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox NumAmbulanciaR;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button cmdregistrar;
         private System.Windows.Forms.Label label3;

@@ -37,7 +37,6 @@ namespace CapaPresentacion
         {
             String msj = "";
 
-
             try
             {
                 Ambulancia1.Modelo = comboBoxModelo.Text;
@@ -56,8 +55,6 @@ namespace CapaPresentacion
             } 
 }
 
-
-        
 
         private void txtconsultar_Click(object sender, EventArgs e)
         {

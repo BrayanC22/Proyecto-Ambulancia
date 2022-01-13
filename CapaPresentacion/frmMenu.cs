@@ -16,7 +16,8 @@ namespace CapaPresentacion
         frmCliente cliente = new frmCliente();
         frmGuardarAmbulancia guardarAmbulancia = new frmGuardarAmbulancia();
         FrmConductores conductores = new FrmConductores();
-        ClsAmbulancia Ambulancia1;
+  
+
 
         public frmMenu()
         {
@@ -26,37 +27,37 @@ namespace CapaPresentacion
         private void btnCliente_Click(object sender, EventArgs e)
         {
             cliente.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void pboxAmbulancia_Click(object sender, EventArgs e)
         {
             guardarAmbulancia.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void pboxConductor_Click(object sender, EventArgs e)
         {
             conductores.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void pboxCliente_Click(object sender, EventArgs e)
         {
             cliente.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnAmbulancia_Click(object sender, EventArgs e)
         {
             guardarAmbulancia.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnConductor_Click(object sender, EventArgs e)
         {
             conductores.Show();
-            this.Close();
+            this.Hide();
         }
 
   

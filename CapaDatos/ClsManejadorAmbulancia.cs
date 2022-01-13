@@ -46,6 +46,7 @@ namespace CapaDatos
 
         public List<Object> listar_ambulancia()
         {
+           
             List<Object> lstAmbulancia = new List<Object>();
 
             SqlConnection conexion = Maneja.abrir_conexion();

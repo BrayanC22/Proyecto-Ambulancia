@@ -1,4 +1,5 @@
-﻿using CapaNegocio;
+﻿using CapaDatos;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,50 +14,46 @@ namespace CapaPresentacion
 {
     public partial class frmAsignar : Form
     {
+        ClsAmbulancia Ambulancia1 = new ClsAmbulancia();
         List<Object> lst_ambulancia_tmp;
-        ClsAmbulancia Ambulancia1;
-       
+        ClsAsignacion Asignacion = new ClsAsignacion();
+
 
         public frmAsignar()
         {
             InitializeComponent();
         }
 
-        public frmAsignar(ClsAmbulancia Ambulancia1)
-        {
-            InitializeComponent();
-
-            this.Ambulancia1 = Ambulancia1;
-            this.lst_ambulancia_tmp = Ambulancia1.listar();
-         
-            cmdregistrar.Enabled = false;
-
-        }
-
-        public void llenar_datagridview_ambulancia()
-        {
-            dgv_listarTodos.Rows.Clear();
-            dgv_listarTodos.Refresh();
-
-            //Se recorre la lista de objetos y se trabaja con los tipos de datos anonymus
-            foreach (var ambulancia in lst_ambulancia_tmp)
-            {
-                System.Type type = ambulancia.GetType();
-
-                Int16 Id_Ambulancia = (Int16)type.GetProperty("Id_Ambulancia").GetValue(ambulancia);
-                String modelo = (String)type.GetProperty("modelo").GetValue(ambulancia);
-                String tipoAmbulancia = (String)type.GetProperty("tipoAmbulancia").GetValue(ambulancia);
-                String placa = (String)type.GetProperty("placa").GetValue(ambulancia);
-                String matricula = (String)type.GetProperty("matricula").GetValue(ambulancia);
-
-                dgv_listarTodos.Rows.Add(Id_Ambulancia, modelo, tipoAmbulancia, placa, matricula);
-            }
-
-        }
-
         private void btnbuscar_Click_1(object sender, EventArgs e)
         {
-            llenar_datagridview_ambulancia();
+            try
+            {
+                dgv_listarTodos.Rows.Clear();
+                dgv_listarTodos.Refresh();
+                lst_ambulancia_tmp = Ambulancia1.buscar(txtnunplaca.Text);
+
+                foreach (var ambulancia in lst_ambulancia_tmp)
+                {
+                    if (ambulancia != null)
+                    {
+                        System.Type type = ambulancia.GetType();
+
+                        Int16 Id_Ambulancia = (Int16)type.GetProperty("Id_Ambulancia").GetValue(ambulancia);
+                        String modelo = (String)type.GetProperty("modelo").GetValue(ambulancia);
+                        String tipoAmbulancia = (String)type.GetProperty("tipoAmbulancia").GetValue(ambulancia);
+                        String placa = (String)type.GetProperty("placa").GetValue(ambulancia);
+                        String matricula = (String)type.GetProperty("matricula").GetValue(ambulancia);
+
+                        dgv_listarTodos.Rows.Add(Id_Ambulancia, modelo, tipoAmbulancia, placa, matricula);
+                        cmdregistrar.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se encontro la ambulancia");
+
+            }
         }
 
         private void cmdregistrar_Click(object sender, EventArgs e)
@@ -65,10 +62,12 @@ namespace CapaPresentacion
 
             try
             {
-                // = NumAmbulanciaR.Text;
-              
+                Asignacion.ID_AmbulanciaAsignacion = Int16.Parse(dgv_listarTodos.CurrentRow.Cells[0].Value.ToString());
+  
+                /*Reemplaza en esta linea por el nombre de tu tabla*/
+                Asignacion.ID_ConductorAsignacion = Int16.Parse(dgv_listarTodos.CurrentRow.Cells[0].Value.ToString());
 
-                msj = Ambulancia1.registrar();
+                msj = Asignacion.registrar();
                 MessageBox.Show(msj);
             }
 
@@ -78,11 +77,21 @@ namespace CapaPresentacion
             }
         }
 
+
         private void btnregresar_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmMenu frmEst = new frmMenu();
             frmEst.Show();
+        }
+
+        /*Metodo importante*/
+        private void frmAsignar_Shown(object sender, EventArgs e)
+        {
+            this.lst_ambulancia_tmp = Ambulancia1.listar();
+            dgv_listarTodos.Rows.Clear();
+            dgv_listarTodos.Refresh();
+
         }
     }
 }

@@ -59,7 +59,6 @@ CREATE TABLE Cliente
 
   Primary Key(Id_Cliente)
 
-
 );
 -- drop table Cliente;
 -- Select Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Imagen ,CodigoCliente from Cliente
@@ -150,8 +149,7 @@ CREATE OR ALTER PROCEDURE [dbo].[CLIENTEDeleteCommand]
 (
 	
 	@Original_Cedula varchar(60)
-	
-	
+
 )
 AS
 	SET NOCOUNT OFF;
@@ -323,17 +321,24 @@ CREATE TABLE Asignacion
 (
 
   Id_Asignacion int identity (1,1) not null,
-  Id_Ambulancia  int not null,
+  Id_AmbulanciaAsignacion  int not null,
   Id_ConductorAsignacion  int not null,
   
   Primary Key(Id_Asignacion)
 );
 
+-------- Foraneas para Asignacion
+alter table Asignacion add constraint fk_Id_Ambulancia
+foreign key(Id_AmbulanciaAsignacion) REFERENCES Ambulancia(Id_Ambulancia) ON DELETE CASCADE;
 
+alter table Asignacion add constraint fk_Id_Conductor
+foreign key(Id_ConductorAsignacion) REFERENCES Conductor(Id_Conductor) ON DELETE CASCADE;
+
+/****** INSERT ASIGNACION ******/
 USE [LosRapidosSAbd]
 GO
 
-/****** INSERT ASIGNACION ******/
+
 SET ANSI_NULLS ON
 GO
 
@@ -342,14 +347,14 @@ GO
 
 CREATE OR ALTER PROCEDURE [dbo].[AsignacionInsertCommand]
 (
-	@Id_Ambulancia int,
+	@Id_AmbulanciaAsignacion int,
 	@Id_ConductorAsignacion int
 )
 AS
 	SET NOCOUNT OFF;
-INSERT INTO [Asignacion] ([Id_Ambulancia], [Id_ConductorAsignacion]) VALUES (@Id_Ambulancia, @Id_ConductorAsignacion);
+INSERT INTO [Asignacion] ([Id_AmbulanciaAsignacion], [Id_ConductorAsignacion]) VALUES (@Id_AmbulanciaAsignacion, @Id_ConductorAsignacion);
 	
-SELECT Id_Asignacion, Id_Ambulancia, Id_ConductorAsignacion FROM Asignacion WHERE (Id_Asignacion = SCOPE_IDENTITY())
+SELECT Id_Asignacion, Id_AmbulanciaAsignacion, Id_ConductorAsignacion FROM Asignacion WHERE (Id_Asignacion = SCOPE_IDENTITY())
 GO
 
 /* ---------------------- CONDUCTOR ------------------------ */
