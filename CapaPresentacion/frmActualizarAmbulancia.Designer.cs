@@ -30,6 +30,7 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActualizarAmbulancia));
             this.buttonActualizarCambios = new System.Windows.Forms.Button();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
@@ -53,12 +54,16 @@ namespace CapaPresentacion
             this.buttonActualizarCambios.FlatAppearance.BorderSize = 0;
             this.buttonActualizarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActualizarCambios.ForeColor = System.Drawing.Color.Black;
-            this.buttonActualizarCambios.Location = new System.Drawing.Point(115, 364);
+            this.buttonActualizarCambios.Image = global::CapaPresentacion.Properties.Resources.confirmarambulancia;
+            this.buttonActualizarCambios.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonActualizarCambios.Location = new System.Drawing.Point(111, 350);
             this.buttonActualizarCambios.Margin = new System.Windows.Forms.Padding(2);
             this.buttonActualizarCambios.Name = "buttonActualizarCambios";
-            this.buttonActualizarCambios.Size = new System.Drawing.Size(111, 32);
+            this.buttonActualizarCambios.Size = new System.Drawing.Size(111, 62);
             this.buttonActualizarCambios.TabIndex = 124;
             this.buttonActualizarCambios.Text = "Confirmar Cambios";
+            this.buttonActualizarCambios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonActualizarCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonActualizarCambios.UseVisualStyleBackColor = false;
             this.buttonActualizarCambios.Click += new System.EventHandler(this.buttonActualizarCambios_Click);
             // 
@@ -157,10 +162,10 @@ namespace CapaPresentacion
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.ambulancia4;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 42);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(81, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 118);
+            this.pictureBox1.Size = new System.Drawing.Size(181, 118);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 146;
             this.pictureBox1.TabStop = false;

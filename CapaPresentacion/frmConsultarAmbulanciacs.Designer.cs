@@ -29,6 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultarAmbulanciacs));
             this.buttonactualizar = new System.Windows.Forms.Button();
             this.btnregresar = new System.Windows.Forms.Button();
             this.dgv_listarTodos = new System.Windows.Forms.DataGridView();
@@ -49,12 +50,17 @@ namespace CapaPresentacion
             this.buttonactualizar.BackColor = System.Drawing.Color.Transparent;
             this.buttonactualizar.FlatAppearance.BorderSize = 0;
             this.buttonactualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonactualizar.Location = new System.Drawing.Point(255, 253);
+            this.buttonactualizar.Image = global::CapaPresentacion.Properties.Resources.editarConductor;
+            this.buttonactualizar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonactualizar.Location = new System.Drawing.Point(243, 237);
             this.buttonactualizar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonactualizar.Name = "buttonactualizar";
-            this.buttonactualizar.Size = new System.Drawing.Size(130, 25);
+            this.buttonactualizar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.buttonactualizar.Size = new System.Drawing.Size(153, 55);
             this.buttonactualizar.TabIndex = 101;
             this.buttonactualizar.Text = "Actualizar Datos";
+            this.buttonactualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonactualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonactualizar.UseVisualStyleBackColor = false;
             this.buttonactualizar.Click += new System.EventHandler(this.buttonactualizar_Click);
             // 
@@ -63,12 +69,12 @@ namespace CapaPresentacion
             this.btnregresar.BackColor = System.Drawing.Color.Transparent;
             this.btnregresar.FlatAppearance.BorderSize = 0;
             this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregresar.Location = new System.Drawing.Point(478, 251);
+            this.btnregresar.Image = ((System.Drawing.Image)(resources.GetObject("btnregresar.Image")));
+            this.btnregresar.Location = new System.Drawing.Point(526, 246);
             this.btnregresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(130, 29);
+            this.btnregresar.Size = new System.Drawing.Size(75, 46);
             this.btnregresar.TabIndex = 79;
-            this.btnregresar.Text = "Regresar";
             this.btnregresar.UseVisualStyleBackColor = false;
             this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
             // 
@@ -130,7 +136,7 @@ namespace CapaPresentacion
             this.btn_todos.BackColor = System.Drawing.Color.Transparent;
             this.btn_todos.FlatAppearance.BorderSize = 0;
             this.btn_todos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_todos.Location = new System.Drawing.Point(493, 19);
+            this.btn_todos.Location = new System.Drawing.Point(492, 23);
             this.btn_todos.Margin = new System.Windows.Forms.Padding(2);
             this.btn_todos.Name = "btn_todos";
             this.btn_todos.Size = new System.Drawing.Size(130, 24);
@@ -144,7 +150,7 @@ namespace CapaPresentacion
             this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnbuscar.FlatAppearance.BorderSize = 0;
             this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.Location = new System.Drawing.Point(243, 19);
+            this.btnbuscar.Location = new System.Drawing.Point(400, 20);
             this.btnbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(57, 25);
@@ -155,7 +161,7 @@ namespace CapaPresentacion
             // 
             // txtnunplaca
             // 
-            this.txtnunplaca.Location = new System.Drawing.Point(111, 22);
+            this.txtnunplaca.Location = new System.Drawing.Point(268, 23);
             this.txtnunplaca.Margin = new System.Windows.Forms.Padding(2);
             this.txtnunplaca.MaxLength = 8;
             this.txtnunplaca.Name = "txtnunplaca";
@@ -167,7 +173,7 @@ namespace CapaPresentacion
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(16, 25);
+            this.label1.Location = new System.Drawing.Point(173, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
