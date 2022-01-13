@@ -202,4 +202,10 @@
   <data name="agregarCondoctor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregarCondoctor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="chofer_Ambulancia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chofer_Ambulancia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conductor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conductor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

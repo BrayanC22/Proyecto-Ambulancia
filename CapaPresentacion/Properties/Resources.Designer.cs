@@ -133,6 +133,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chofer_Ambulancia {
+            get {
+                object obj = ResourceManager.GetObject("chofer_Ambulancia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coming_soon {
             get {
                 object obj = ResourceManager.GetObject("coming-soon", resourceCulture);
@@ -146,6 +156,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap conductor {
             get {
                 object obj = ResourceManager.GetObject("conductor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap conductor2 {
+            get {
+                object obj = ResourceManager.GetObject("conductor2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

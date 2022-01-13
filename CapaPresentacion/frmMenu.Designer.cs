@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnConductor = new System.Windows.Forms.Label();
             this.btnAmbulancia = new System.Windows.Forms.Label();
             this.btnCliente = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxConductor = new System.Windows.Forms.PictureBox();
             this.pboxAmbulancia = new System.Windows.Forms.PictureBox();
             this.pboxCliente = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxConductor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAmbulancia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCliente)).BeginInit();
@@ -75,18 +76,6 @@
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Asignar";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.conductor;
-            this.pictureBox1.Location = new System.Drawing.Point(758, 125);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -153,14 +142,26 @@
             this.btnCliente.Text = "Cliente";
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.conductor;
+            this.pictureBox1.Location = new System.Drawing.Point(758, 125);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // pboxConductor
             // 
             this.pboxConductor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboxConductor.Image = global::CapaPresentacion.Properties.Resources.conductor;
-            this.pboxConductor.Location = new System.Drawing.Point(557, 125);
+            this.pboxConductor.Image = ((System.Drawing.Image)(resources.GetObject("pboxConductor.Image")));
+            this.pboxConductor.Location = new System.Drawing.Point(561, 125);
             this.pboxConductor.Name = "pboxConductor";
             this.pboxConductor.Size = new System.Drawing.Size(96, 96);
-            this.pboxConductor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pboxConductor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxConductor.TabIndex = 2;
             this.pboxConductor.TabStop = false;
             this.pboxConductor.Click += new System.EventHandler(this.pboxConductor_Click);
@@ -201,9 +202,9 @@
             this.Text = "frmMenu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxConductor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAmbulancia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCliente)).EndInit();

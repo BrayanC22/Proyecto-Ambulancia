@@ -287,6 +287,8 @@
     <Content Include="Resources\A-info.png" />
     <Content Include="Resources\A-save.png" />
     <Content Include="Resources\A-Usuario.png" />
+    <None Include="Resources\conductor2.png" />
+    <None Include="Resources\chofer_Ambulancia.png" />
     <None Include="Resources\agregarCondoctor.png" />
     <Content Include="Resources\BaseDatosScript\SQLGeneral.sql" />
     <None Include="Resources\editarConductor.png" />

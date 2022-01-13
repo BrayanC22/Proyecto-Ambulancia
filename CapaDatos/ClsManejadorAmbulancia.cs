@@ -160,7 +160,7 @@ namespace CapaDatos
                     command.CommandType = System.Data.CommandType.StoredProcedure;
 
 
-                    command.Parameters.AddWithValue("@Id_Ambulancia", lst[0].ID_AmbulanciaAsignacion); // a la variable de tip Mysql comand agregar un valor al parametro
+                    command.Parameters.AddWithValue("@Id_AmbulanciaAsignacion", lst[0].ID_AmbulanciaAsignacion); // a la variable de tip Mysql comand agregar un valor al parametro
                     command.Parameters.AddWithValue("@Id_ConductorAsignacion", lst[0].ID_ConductorAsignacion); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
 
 

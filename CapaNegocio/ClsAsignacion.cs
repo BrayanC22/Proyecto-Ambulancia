@@ -54,7 +54,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                msj = "Error al insertar los datos";
+                msj = "Error al insertar los datos" + ex;
                 return msj;
                 throw ex;
             }

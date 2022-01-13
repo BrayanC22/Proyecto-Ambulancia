@@ -21,7 +21,7 @@ namespace CapaNegocio.Conductor
         }
         public string Licencia { get => licencia; set => licencia = value; }
 
-        ClsManejador M = new ClsManejador();
+        ClsManejadorConductor manejadorConductor = new ClsManejadorConductor();
 
         public override String registrar()
         {
@@ -35,7 +35,7 @@ namespace CapaNegocio.Conductor
             {
                 //Pasar los parámetros hacia la capa de acceso a datos
                 lst.Add(new ClsParametrosConductor(Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia));
-                M.insertar_conductor(lst);
+                manejadorConductor.insertar_conductor(lst);
 
                 msj = "Insertado correctamente";
 
@@ -53,7 +53,7 @@ namespace CapaNegocio.Conductor
         public override List<Object> buscar(String cedula)
         {
             List<Object> lst;
-            lst= M.buscar_conductor(cedula);
+            lst= manejadorConductor.buscar_conductor(cedula);
             return lst;
         }
 
@@ -61,13 +61,13 @@ namespace CapaNegocio.Conductor
         {
             if (buscar(cedula).Count != 0)
             {
-                M.eliminar_conductor(cedula);
+                manejadorConductor.eliminar_conductor(cedula);
             }
         }
 
         public override List<Object> listar()
         {
-            return M.listar_conductor();
+            return manejadorConductor.listar_conductor();
         }
 
         public String actualizar_x_cedula()
@@ -82,7 +82,7 @@ namespace CapaNegocio.Conductor
             {
                 //Pasar los parámetros hacia la capa de acceso a datos
                 lst.Add(new ClsParametrosConductor(Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia));
-                M.modificar_conductor(lst);
+                manejadorConductor.modificar_conductor(lst);
                 msj = "Modificado correctamente";
 
             }

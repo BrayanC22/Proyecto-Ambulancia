@@ -97,6 +97,9 @@ namespace CapaPresentacion
             // 
             // dgv_listarTodos
             // 
+            this.dgv_listarTodos.AllowUserToAddRows = false;
+            this.dgv_listarTodos.AllowUserToDeleteRows = false;
+            this.dgv_listarTodos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_listarTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listarTodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaCedula,
