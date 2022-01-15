@@ -17,7 +17,7 @@ namespace CapaPresentacion
         ClsCliente Al;
         List<Object> lst_cliente_tmp;
         String rutaimagen;
-
+        frmActualizarCliente frmActualizar = new frmActualizarCliente();
 
         public frmConsultarCliente()
         {
@@ -32,6 +32,7 @@ namespace CapaPresentacion
             this.Al = Al;
             this.lst_cliente_tmp = Al.listar();
             llenar_datagridview_alumnos();
+            buttonactualizar.Enabled = false;
 
         }
 
@@ -44,7 +45,7 @@ namespace CapaPresentacion
             foreach (var cliente in lst_cliente_tmp)
             {
                 System.Type type = cliente.GetType();
-
+                Int16 Id_Cliente = (Int16)type.GetProperty("Id_Cliente").GetValue(cliente);
                 String cedula = (String)type.GetProperty("cedula").GetValue(cliente);
                 String nombre = (String)type.GetProperty("nombre").GetValue(cliente);
                 String apellido = (String)type.GetProperty("apellido").GetValue(cliente);
@@ -55,7 +56,7 @@ namespace CapaPresentacion
                 String codigoCliente = (String)type.GetProperty("codigoCliente").GetValue(cliente);
 
 
-                dgv_listarTodos.Rows.Add(cedula, nombre, apellido, edad, domicilio, sexo, imagen, codigoCliente);
+                dgv_listarTodos.Rows.Add(Id_Cliente, cedula, nombre, apellido, edad, domicilio, sexo, imagen, codigoCliente);
             }
 
         }
@@ -74,7 +75,8 @@ namespace CapaPresentacion
                     if (cliente != null)
                     {
                         System.Type type = cliente.GetType();
-
+                      
+                        Int16 Id_Cliente = (Int16)type.GetProperty("Id_Cliente").GetValue(cliente);
                         String cedula = (String)type.GetProperty("cedula").GetValue(cliente);
                         String nombre = (String)type.GetProperty("nombre").GetValue(cliente);
                         String apellido = (String)type.GetProperty("apellido").GetValue(cliente);
@@ -85,7 +87,8 @@ namespace CapaPresentacion
                         String codigoCliente = (String)type.GetProperty("codigoCliente").GetValue(cliente);
 
 
-                        dgv_listarTodos.Rows.Add(cedula, nombre, apellido, edad, domicilio, sexo, imagen, codigoCliente);
+                        dgv_listarTodos.Rows.Add(Id_Cliente,cedula, nombre, apellido, edad, domicilio, sexo, imagen, codigoCliente);
+                        buttonactualizar.Enabled = true;
 
                     }
                 }
@@ -132,8 +135,18 @@ namespace CapaPresentacion
             }
         }
 
+        private void buttonactualizar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            buttonactualizar.Enabled = false;
+            frmActualizar = new frmActualizarCliente(dgv_listarTodos.CurrentRow.Cells[0].Value.ToString(), Al);
+            frmActualizar.ShowDialog();
+        }
 
-
+        private void txtcedula_TextChanged(object sender, EventArgs e)
+        {
+            buttonactualizar.Enabled = false;
+        }
     }
 
 

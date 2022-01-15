@@ -53,10 +53,10 @@ namespace CapaPresentacion
             this.btnregresar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
             this.btnregresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnregresar.Image = global::CapaPresentacion.Properties.Resources.salir;
-            this.btnregresar.Location = new System.Drawing.Point(1019, 375);
-            this.btnregresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnregresar.Location = new System.Drawing.Point(776, 295);
+            this.btnregresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(102, 65);
+            this.btnregresar.Size = new System.Drawing.Size(76, 63);
             this.btnregresar.TabIndex = 23;
             this.btnregresar.Text = "Regresar";
             this.btnregresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -70,10 +70,10 @@ namespace CapaPresentacion
             this.btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
             this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btn_eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminarConductor;
-            this.btn_eliminar.Location = new System.Drawing.Point(508, 369);
-            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_eliminar.Location = new System.Drawing.Point(430, 295);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(160, 71);
+            this.btn_eliminar.Size = new System.Drawing.Size(120, 63);
             this.btn_eliminar.TabIndex = 22;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -86,10 +86,10 @@ namespace CapaPresentacion
             this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
             this.btnbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnbuscar.Location = new System.Drawing.Point(678, 46);
-            this.btnbuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnbuscar.Location = new System.Drawing.Point(508, 37);
+            this.btnbuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(90, 39);
+            this.btnbuscar.Size = new System.Drawing.Size(68, 32);
             this.btnbuscar.TabIndex = 21;
             this.btnbuscar.Text = "Buscar";
             this.btnbuscar.UseVisualStyleBackColor = false;
@@ -97,10 +97,10 @@ namespace CapaPresentacion
             // 
             // txtcedula
             // 
-            this.txtcedula.Location = new System.Drawing.Point(427, 55);
-            this.txtcedula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtcedula.Location = new System.Drawing.Point(320, 45);
+            this.txtcedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtcedula.Name = "txtcedula";
-            this.txtcedula.Size = new System.Drawing.Size(184, 22);
+            this.txtcedula.Size = new System.Drawing.Size(139, 20);
             this.txtcedula.TabIndex = 20;
             this.txtcedula.TextChanged += new System.EventHandler(this.txtcedula_TextChanged);
             this.txtcedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedula_KeyPress);
@@ -110,9 +110,10 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(53, 51);
+            this.label1.Location = new System.Drawing.Point(40, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 26);
+            this.label1.Size = new System.Drawing.Size(257, 22);
             this.label1.TabIndex = 19;
             this.label1.Text = "Cédula del Cliente a eliminar: ";
             // 
@@ -128,13 +129,13 @@ namespace CapaPresentacion
             this.sexo,
             this.imagen,
             this.codigoCliente});
-            this.dgv_listarTodos.Location = new System.Drawing.Point(58, 126);
-            this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_listarTodos.Location = new System.Drawing.Point(44, 102);
+            this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_listarTodos.Name = "dgv_listarTodos";
             this.dgv_listarTodos.ReadOnly = true;
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(1150, 223);
+            this.dgv_listarTodos.Size = new System.Drawing.Size(862, 181);
             this.dgv_listarTodos.TabIndex = 86;
             // 
             // cedula
@@ -203,17 +204,19 @@ namespace CapaPresentacion
             // 
             // frmEliminarClientecs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1253, 451);
+            this.ClientSize = new System.Drawing.Size(940, 399);
             this.Controls.Add(this.dgv_listarTodos);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.txtcedula);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmEliminarClientecs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEliminarClientecs";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).EndInit();
             this.ResumeLayout(false);

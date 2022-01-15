@@ -14,7 +14,6 @@ namespace CapaPresentacion
     public partial class frmActualizarAmbulancia : Form
     {
         String idnumero;
-        List<Object> lst_alumnos_tmp;
         ClsAmbulancia Ambulancia1 = new ClsAmbulancia();
         
 
@@ -49,7 +48,7 @@ namespace CapaPresentacion
                  comboBoxTipo.SelectedItem = (String)type.GetProperty("tipoAmbulancia").GetValue(Amb);
                  txtplaca.Text = (String)type.GetProperty("placa").GetValue(Amb);
                  txtMatricula.Text = (String)type.GetProperty("matricula").GetValue(Amb);
-                   }
+               }
             }
         }
 

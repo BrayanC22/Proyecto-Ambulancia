@@ -83,14 +83,11 @@ namespace CapaNegocio
                 M.eliminar_cliente(cedula);
         }
 
-
-       /* public override int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio,
-         string sexo, string imagen, string codigoCliente)
+    
+      public override int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio, string sexo, string imagen, string codigoCliente)
         {
         return M.actualizar_cliente_individual(cedula, nombre, apellido, edad, domicilio, sexo, imagen, codigoCliente);
         }
-       */
-
-
+    
     }
 }

@@ -156,8 +156,9 @@ AS
 DELETE FROM [Cliente] WHERE( [Cedula] = @Original_Cedula) 
 GO
 
+---ACTUALIZAR-
 
----ACTUALIZAR--FALTA
+
 USE [LosRapidosSAbd]
 GO
 
@@ -177,23 +178,13 @@ CREATE OR ALTER PROCEDURE [dbo].[CLIENTEUpdateCommand]
 	@Domicilio varchar(60),
 	@Sexo varchar(60),
 	@Imagen varchar(400),
-	@CodigoCliente varchar(60),
-	@Original_Id_Cliente int,
-	@Original_Cedula varchar(60),
-	@Original_Nombre varchar(60),
-	@Original_Apellido varchar(60),
-	@Original_Edad int,
-	@Original_Domicilio varchar(60),
-	@Original_Sexo varchar(60),
-	@Original_Imagen varchar(400),
-	@Original_CodigoCliente varchar(60),
-	@Id_Cliente int
+	@CodigoCliente varchar(60)
+	
 )
 AS
 	SET NOCOUNT OFF;
-UPDATE [Cliente] SET [Cedula] = @Cedula, [Nombre] = @Nombre, [Apellido] = @Apellido, [Edad] = @Edad, [Domicilio] = @Domicilio, [Sexo] = @Sexo, [Imagen] = @Imagen, [CodigoCliente] = @CodigoCliente WHERE (([Id_Cliente] = @Original_Id_Cliente) AND ([Cedula] = @Original_Cedula) AND ([Nombre] = @Original_Nombre) AND ([Apellido] = @Original_Apellido) AND ([Edad] = @Original_Edad) AND ([Domicilio] = @Original_Domicilio) AND ([Sexo] = @Original_Sexo) AND ([Imagen] = @Original_Imagen) AND ([CodigoCliente] = @Original_CodigoCliente));
+UPDATE [Cliente] SET  [Nombre] = @Nombre, [Apellido] = @Apellido, [Edad] = @Edad, [Domicilio] = @Domicilio, [Sexo] = @Sexo, [Imagen] = @Imagen, [CodigoCliente] = @CodigoCliente WHERE ([Cedula] = @Cedula);
 	
-SELECT Id_Cliente, Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Imagen, CodigoCliente FROM Cliente WHERE (Id_Cliente = @Id_Cliente)
 GO
 
 
@@ -338,8 +329,8 @@ CREATE TABLE Asignacion
 (
 
   Id_Asignacion int identity (1,1) not null,
-  Id_AmbulanciaAsignacion  int not null,
-  Id_ConductorAsignacion  int not null,
+  Id_AmbulanciaAsignacion  int unique not null,
+  Id_ConductorAsignacion  int unique not null,
   
   Primary Key(Id_Asignacion)
 );

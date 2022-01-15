@@ -91,7 +91,7 @@ namespace CapaDatos
                 var tmp = new
                 {
                     Id_Ambulancia = Int16.Parse(registros["Id_Ambulancia"].ToString()),
-                    modelo = registros["modelo"].ToString(),  // para asignar valores de la base a la variable cedula
+                    modelo = registros["modelo"].ToString(), 
                     tipoAmbulancia = registros["tipoAmbulancia"].ToString(),
                     placa = registros["placa"].ToString(),
                     matricula = registros["matricula"].ToString(),
@@ -129,8 +129,8 @@ namespace CapaDatos
             command.CommandText = "ambUpdateCommand";
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            command.Parameters.AddWithValue("@modelo", param_modelo); // a la variable de tip Mysql comand agregar un valor al parametro
-            command.Parameters.AddWithValue("@tipoAmbulancia", param_tipo); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
+            command.Parameters.AddWithValue("@modelo", param_modelo); 
+            command.Parameters.AddWithValue("@tipoAmbulancia", param_tipo); 
             command.Parameters.AddWithValue("@placa", param_placa);
             command.Parameters.AddWithValue("@matricula", param_matricula);
 

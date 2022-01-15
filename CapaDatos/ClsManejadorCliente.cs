@@ -29,7 +29,6 @@ namespace CapaDatos
                     comannd.CommandText = "CLIENTEInsertCommand";
                     comannd.CommandType = System.Data.CommandType.StoredProcedure;
 
-
                     comannd.Parameters.AddWithValue("@cedula", lst[0].Cedula); // a la variable de tip Mysql comand agregar un valor al parametro
                     comannd.Parameters.AddWithValue("@nombre", lst[0].Nombre); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
                     comannd.Parameters.AddWithValue("@apellido", lst[0].Apellido);
@@ -64,6 +63,7 @@ namespace CapaDatos
             {
                 var tmp = new
                 {
+                    Id_Cliente = Int16.Parse(registros["Id_Cliente"].ToString()),
                     cedula = registros["Cedula"].ToString(),  // para asignar valores de la base a la variable cedula
                     nombre = registros["Nombre"].ToString(),
                     apellido = registros["Apellido"].ToString(),
@@ -98,6 +98,7 @@ namespace CapaDatos
             {
                 var tmp = new
                 {
+                    Id_Cliente = Int16.Parse(registros["Id_Cliente"].ToString()),
                     cedula = registros["Cedula"].ToString(),
                     nombre = registros["Nombre"].ToString(),
                     apellido = registros["Apellido"].ToString(),
@@ -113,7 +114,6 @@ namespace CapaDatos
             ManejaCliente.cerrar_conexion(conexion);
             return lstCliente;
         }
-
 
         public int eliminar_cliente(String cedula)
         {
@@ -133,29 +133,30 @@ namespace CapaDatos
             return resultado;
         }
 
-        /*public int actualizar_cliente_individual()
+        public int actualizar_cliente_individual(String param_cedula, String param_nombre, String param_apellido, String param_edad, String param_domicilio, String param_sexo, String param_imagen,String param_codigoCliente)
         {
-            SqlConnection conexion = abrir_conexion(     );
-            string actualizar = "update  Cliente set  Nombre=@param_nombre, Apellido=@param_apellido, Edad=@param_edad, Domicilio=@param_domicilio, Sexo=@param_sexo, Imagen=@param_imagen ,CodigoCliente=@param_ccliente WHERE Cedula = @param_cedula";
-            SqlCommand comannd = new SqlCommand(actualizar, conexion);
-          
-           /* comannd.Parameters.AddWithValue("@param_nombre", param_nombre); 
-            comannd.Parameters.AddWithValue("@param_apellido", param_apellido); 
-            comannd.Parameters.AddWithValue("@param_domicilio", param_domicilio);
-            comannd.Parameters.AddWithValue("@param_sexo", param_sexo);
-            comannd.Parameters.AddWithValue("@param_imagen", param_imagen);
-            comannd.Parameters.AddWithValue("@codigoCliente", param_codigoCliente);
-         
+
+            SqlConnection conexion = ManejaCliente.abrir_conexion();
+            SqlCommand comannd = new SqlCommand();
+
+            comannd.Connection = conexion;
+            comannd.CommandText = "CLIENTEUpdateCommand";
+            comannd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comannd.Parameters.AddWithValue("@Cedula", param_cedula);
+            comannd.Parameters.AddWithValue("@Nombre", param_nombre); 
+            comannd.Parameters.AddWithValue("@Apellido", param_apellido);
+            comannd.Parameters.AddWithValue("@Edad", param_edad);
+            comannd.Parameters.AddWithValue("@Domicilio", param_domicilio);
+            comannd.Parameters.AddWithValue("@Sexo", param_sexo);
+            comannd.Parameters.AddWithValue("@Imagen", param_imagen);
+            comannd.Parameters.AddWithValue("@CodigoCliente", param_codigoCliente);     
 
             int resultado_operacion = Convert.ToInt32(comannd.ExecuteScalar());
-            cerrar_conexion(conexion);
+            ManejaCliente.cerrar_conexion(conexion);
 
             return resultado_operacion;
-
         }
-  
-         */
-
 
     }
 }

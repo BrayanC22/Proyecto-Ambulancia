@@ -73,8 +73,7 @@ namespace CapaNegocio
         public virtual void eliminar(String cedula) { }
         
         
-        public virtual int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio,
-         string sexo, string imagen, string codigoCliente)
+        public virtual int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio, string sexo, string imagen, string codigoCliente)
         { return 0; }
 
 
