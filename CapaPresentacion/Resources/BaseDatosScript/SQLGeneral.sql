@@ -323,6 +323,69 @@ CREATE TABLE Conductor
   Primary Key(Id_Conductor)
 );
 
+CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORInsertCommand]
+(
+	@Cedula varchar(60),
+	@Nombre varchar(60),
+	@Apellido varchar(60),
+	@Edad int,
+	@Domicilio varchar(60),
+	@Sexo varchar(60),
+	@Licencia varchar(60)
+)
+AS
+	SET NOCOUNT OFF;
+INSERT INTO [Conductor] ([Cedula], [Nombre], [Apellido], [Edad], [Domicilio], [Sexo], [Licencia]) VALUES (@Cedula, @Nombre, @Apellido, @Edad, @Domicilio, @Sexo, @Licencia);
+	
+SELECT Id_Conductor, Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia FROM Conductor WHERE (Id_Conductor = SCOPE_IDENTITY())
+GO
+
+
+CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORSelectCommand]
+AS
+	SET NOCOUNT ON;
+SELECT        Conductor.*
+FROM            Conductor
+GO
+
+
+CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORUpdateCommand]
+(
+	@Cedula varchar(60),
+	@Nombre varchar(60),
+	@Apellido varchar(60),
+	@Edad int,
+	@Domicilio varchar(60),
+	@Sexo varchar(60),
+	@Licencia varchar(60)
+	
+)
+AS
+	SET NOCOUNT OFF;
+UPDATE [Conductor] SET  [Nombre] = @Nombre, [Apellido] = @Apellido, [Edad] = @Edad, [Domicilio] = @Domicilio, [Sexo] = @Sexo, [Licencia] = @Licencia WHERE ([Cedula] = @Cedula);
+	
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORDeleteCommand]
+(
+	@Cedula varchar(60)
+)
+AS
+	SET NOCOUNT OFF;
+DELETE FROM [Conductor] WHERE( [Cedula] = @Cedula) 
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORSelectByCedulaCommand](
+@cedula varchar(60)
+)
+AS
+	SET NOCOUNT ON;
+SELECT        Conductor.*
+FROM            Conductor
+WHERE Cedula = @cedula;
+
+GO
+
 /* ---------------------- Asignacion ------------------------ */
 
 CREATE TABLE Asignacion
