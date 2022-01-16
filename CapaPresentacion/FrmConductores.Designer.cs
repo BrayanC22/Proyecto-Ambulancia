@@ -106,7 +106,7 @@ namespace CapaPresentacion
             this.lblLicencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLicencia.Location = new System.Drawing.Point(53, 430);
             this.lblLicencia.Name = "lblLicencia";
-            this.lblLicencia.Size = new System.Drawing.Size(58, 16);
+            this.lblLicencia.Size = new System.Drawing.Size(57, 16);
             this.lblLicencia.TabIndex = 27;
             this.lblLicencia.Text = "Licencia";
             // 
@@ -117,7 +117,7 @@ namespace CapaPresentacion
             this.lblDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDomicilio.Location = new System.Drawing.Point(53, 310);
             this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(64, 16);
+            this.lblDomicilio.Size = new System.Drawing.Size(63, 16);
             this.lblDomicilio.TabIndex = 26;
             this.lblDomicilio.Text = "Domicilio";
             // 
@@ -128,7 +128,7 @@ namespace CapaPresentacion
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.Location = new System.Drawing.Point(53, 270);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(58, 16);
+            this.lblApellido.Size = new System.Drawing.Size(57, 16);
             this.lblApellido.TabIndex = 25;
             this.lblApellido.Text = "Apellido";
             // 
@@ -139,7 +139,7 @@ namespace CapaPresentacion
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(53, 230);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(57, 16);
+            this.lblNombre.Size = new System.Drawing.Size(56, 16);
             this.lblNombre.TabIndex = 24;
             this.lblNombre.Text = "Nombre";
             // 
@@ -150,7 +150,7 @@ namespace CapaPresentacion
             this.lblCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCedula.Location = new System.Drawing.Point(53, 190);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(51, 16);
+            this.lblCedula.Size = new System.Drawing.Size(50, 16);
             this.lblCedula.TabIndex = 23;
             this.lblCedula.Text = "Cédula";
             // 
@@ -264,7 +264,7 @@ namespace CapaPresentacion
             this.rButtonFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rButtonFemenino.Location = new System.Drawing.Point(238, 390);
             this.rButtonFemenino.Name = "rButtonFemenino";
-            this.rButtonFemenino.Size = new System.Drawing.Size(86, 20);
+            this.rButtonFemenino.Size = new System.Drawing.Size(85, 20);
             this.rButtonFemenino.TabIndex = 77;
             this.rButtonFemenino.TabStop = true;
             this.rButtonFemenino.Text = "Femenino";
@@ -277,7 +277,7 @@ namespace CapaPresentacion
             this.rButtonMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rButtonMasculino.Location = new System.Drawing.Point(132, 390);
             this.rButtonMasculino.Name = "rButtonMasculino";
-            this.rButtonMasculino.Size = new System.Drawing.Size(87, 20);
+            this.rButtonMasculino.Size = new System.Drawing.Size(86, 20);
             this.rButtonMasculino.TabIndex = 76;
             this.rButtonMasculino.TabStop = true;
             this.rButtonMasculino.Text = "Masculino";
@@ -290,7 +290,7 @@ namespace CapaPresentacion
             this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSexo.Location = new System.Drawing.Point(60, 390);
             this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(39, 16);
+            this.lblSexo.Size = new System.Drawing.Size(38, 16);
             this.lblSexo.TabIndex = 78;
             this.lblSexo.Text = "Sexo";
             // 
@@ -301,7 +301,7 @@ namespace CapaPresentacion
             this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdad.Location = new System.Drawing.Point(60, 350);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(41, 16);
+            this.lblEdad.Size = new System.Drawing.Size(40, 16);
             this.lblEdad.TabIndex = 79;
             this.lblEdad.Text = "Edad";
             // 
@@ -376,6 +376,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.imgAmbulancia);
             this.Controls.Add(this.label1);
             this.Name = "FrmConductores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConductores";
             ((System.ComponentModel.ISupportInitialize)(this.imgAmbulancia)).EndInit();
             this.ResumeLayout(false);

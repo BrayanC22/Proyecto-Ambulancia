@@ -42,7 +42,7 @@ namespace CapaNegocio.Conductor
             }
             catch (Exception ex)
             {
-                msj = "Error al insertar los datos";
+                msj = "Error al insertar los datos, motivo: " +ex;
                 return msj;
                 throw ex;
             }

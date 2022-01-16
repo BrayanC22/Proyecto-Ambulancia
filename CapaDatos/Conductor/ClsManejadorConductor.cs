@@ -19,11 +19,12 @@ namespace CapaDatos.Conductor
                 if (lst != null)
                 {
                     SqlConnection conexion = manejaConductor.abrir_conexion();
-                    string cadena = "INSERT INTO Conductor" +
-                                    "(Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia) " +
-                                    "VALUES" + " (@cedula, @nombre, @apellido, @edad, @domicilio, @sexo, @licencia)";
+                    
+                    SqlCommand comannd = new SqlCommand();
+                    comannd.Connection = conexion;
+                    comannd.CommandText = "CONDUCTORInsertCommand";
+                    comannd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    SqlCommand comannd = new SqlCommand(cadena, conexion);
                     comannd.Parameters.AddWithValue("@cedula", lst[0].Cedula);      //@cedula = campo vacio de referencia que se va a llenar con algún dato
                     comannd.Parameters.AddWithValue("@nombre", lst[0].Nombre);     // lst[0].Cedula = dato con el que llenaremos el campo de referencia, proviene de...
                     comannd.Parameters.AddWithValue("@apellido", lst[0].Apellido);//...la lista creada en la CapaNegocio
@@ -45,8 +46,11 @@ namespace CapaDatos.Conductor
             List<Object> lstConductor = new List<Object>();
 
             SqlConnection conexion = manejaConductor.abrir_conexion();
-            string cadena = "Select Id_Conductor, Cedula, Nombre, Apellido, Edad, Domicilio, Sexo,  Licencia from Conductor WHERE Cedula = @cedula";
-            SqlCommand comando = new SqlCommand(cadena, conexion);
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandText = "CONDUCTORSelectByCedulaCommand";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
             comando.Parameters.AddWithValue("@cedula", cedula);
 
             SqlDataReader registros = comando.ExecuteReader();
@@ -76,8 +80,11 @@ namespace CapaDatos.Conductor
             try
             {
                 SqlConnection conexion = manejaConductor.abrir_conexion();
-                string cadena = "DELETE FROM Conductor WHERE Cedula = @cedula";
-                SqlCommand command = new SqlCommand(cadena, conexion);
+                SqlCommand command = new SqlCommand();
+                command.Connection= conexion;
+                command.CommandText = "CONDUCTORDeleteCommand";
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
                 command.Parameters.AddWithValue("@cedula", cedula);
                 int resultado = Convert.ToInt32(command.ExecuteScalar());
                 manejaConductor.cerrar_conexion(conexion);
@@ -93,11 +100,13 @@ namespace CapaDatos.Conductor
         public List<Object> listar_conductor()
         {
             List<Object> lstConductor = new List<Object>();
-
             SqlConnection conexion = manejaConductor.abrir_conexion();
-            string cadena = "Select Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia from Conductor";
-            SqlCommand comando = new SqlCommand(cadena, conexion);
-            SqlDataReader registros = comando.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
+            SqlCommand comannd = new SqlCommand();
+
+            comannd.Connection = conexion;
+            comannd.CommandText = "CONDUCTORSelectCommand";
+            comannd.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlDataReader registros = comannd.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
             while (registros.Read())  // leo la informacion almacenada en registro
             {
                 var tmp = new
@@ -124,11 +133,11 @@ namespace CapaDatos.Conductor
                 if (lst != null)
                 {
                     SqlConnection conexion = manejaConductor.abrir_conexion();
-                    string cadena = "UPDATE Conductor set " +
-                                    "Cedula=@cedula, Nombre=@nombre, Apellido=@apellido, Edad=@edad, Domicilio=@domicilio, " +
-                                    "Sexo=@sexo, Licencia=@licencia " + "WHERE Cedula=@cedula";
+                    SqlCommand comannd = new SqlCommand();
+                    comannd.Connection = conexion;
+                    comannd.CommandText = "CONDUCTORUpdateCommand";
+                    comannd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    SqlCommand comannd = new SqlCommand(cadena, conexion);
                     comannd.Parameters.AddWithValue("@cedula", lst[0].Cedula);      //@cedula = campo vacio de referencia que se va a llenar con algún dato
                     comannd.Parameters.AddWithValue("@nombre", lst[0].Nombre);     // lst[0].Cedula = dato con el que llenaremos el campo de referencia, proviene de...
                     comannd.Parameters.AddWithValue("@apellido", lst[0].Apellido);//...la lista creada en la CapaNegocio
@@ -138,7 +147,7 @@ namespace CapaDatos.Conductor
                     comannd.Parameters.AddWithValue("@licencia", lst[0].Licencia);
 
                     comannd.ExecuteNonQuery(); // Ejecuta el update
-                    //int t = Convert.ToInt32(comannd.ExecuteScalar()); 
+                    
                     manejaConductor.cerrar_conexion(conexion);
                 }
             }

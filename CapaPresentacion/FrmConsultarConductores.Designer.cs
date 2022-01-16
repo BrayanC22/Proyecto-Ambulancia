@@ -164,6 +164,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.lblIngreseCedula);
             this.Name = "FrmConsultarConductores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultarConductores";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).EndInit();
             this.ResumeLayout(false);
