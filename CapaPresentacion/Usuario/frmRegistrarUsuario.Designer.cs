@@ -143,9 +143,11 @@ namespace CapaPresentacion.Usuario
             this.txtConfirmaPass.BackColor = System.Drawing.Color.White;
             this.txtConfirmaPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmaPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtConfirmaPass.Enabled = false;
             this.txtConfirmaPass.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmaPass.Location = new System.Drawing.Point(159, 394);
             this.txtConfirmaPass.Name = "txtConfirmaPass";
+            this.txtConfirmaPass.ReadOnly = true;
             this.txtConfirmaPass.Size = new System.Drawing.Size(170, 16);
             this.txtConfirmaPass.TabIndex = 12;
             this.txtConfirmaPass.UseSystemPasswordChar = true;

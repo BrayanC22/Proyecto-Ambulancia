@@ -52,9 +52,7 @@ namespace CapaDatos
             try
             {
                 SqlConnection conexionAbierta = abrir_conexion();
-
                 SqlCommand command = new SqlCommand();
-                
                 command.Connection = conexionAbierta;
 
                 command.CommandText = "UsuarioInsertCommand";

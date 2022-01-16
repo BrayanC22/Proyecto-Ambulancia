@@ -24,7 +24,6 @@ namespace CapaPresentacion.Usuario
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            
             if (datosLlenos())
             {
                 clsUsuario.Nombre = txtNombre.Text;
@@ -32,7 +31,6 @@ namespace CapaPresentacion.Usuario
                 clsUsuario.Cedula = txtCedula.Text;
                 clsUsuario.Usuario = txtUsuario.Text;
                 clsUsuario.Password = txtConfirmaPass.Text;
-
                 validarImagen(this.RutaImagen);
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 pboxPerfil.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
@@ -40,7 +38,6 @@ namespace CapaPresentacion.Usuario
 
                 // Devuelve un valor booleano para verificar el registro y un String con el mensaje obteenido
                 Tuple<String, bool> resultado = clsUsuario.registrarUsuario();
-
                 MessageBox.Show(resultado.Item1, "Resultado de registro");
                 if (resultado.Item2)
                 {
@@ -139,11 +136,7 @@ namespace CapaPresentacion.Usuario
 
         private bool nivelSeguridad(string password)
         {
-            bool validado = false;
-            bool mayuscula = false;
-            bool minuscula = false; 
-            bool numero = false;
-            bool carespecial = false;
+            bool validado = false; bool mayuscula = false; bool minuscula = false; bool numero = false;  bool carespecial = false;
             for (int i = 0; i < password.Length; i++)
             {
                 if (Char.IsUpper(password, i))
@@ -163,34 +156,32 @@ namespace CapaPresentacion.Usuario
                     carespecial = true;
                 }
             }
-
             if (mayuscula && minuscula && numero && carespecial && password.Length >= 8)
             {
                 lblNivelSeguridad.BackColor = Color.Green;
                 validado = true;
-
             }
             else
             {
                 lblNivelSeguridad.BackColor = Color.Red;
                 validado = false;
             }
-
-
             return validado;
         }
 
         private void txtPass_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nivelSeguridad(txtPass.Text))
+            if (nivelSeguridad(txtPass.Text) || txtPass.Text.Equals(""))
             {
+                txtConfirmaPass.Enabled = true;
                 txtConfirmaPass.ReadOnly = false;
             }
         }
 
         private void txtConfirmaPass_KeyUp(object sender, KeyEventArgs e)
         {
-            if (txtPass.Text.Equals(txtConfirmaPass.Text)){
+            if (txtPass.Text.Equals(txtConfirmaPass.Text) || !nivelSeguridad(txtPass.Text))
+            {
                 lblPassIdenticas.Text = "¡Todo listo!";
                 btnRegistrar.Enabled = true;
             }
