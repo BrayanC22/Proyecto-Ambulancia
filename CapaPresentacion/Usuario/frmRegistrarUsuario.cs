@@ -14,12 +14,28 @@ namespace CapaPresentacion.Usuario
 {
     public partial class frmRegistrarUsuario : Form
     {
-        clsUsuario clsUsuario = new clsUsuario();
+        public clsUsuario clsUsuario = new clsUsuario();
         String RutaImagen ="";
 
         public frmRegistrarUsuario()
         {
             InitializeComponent();
+        }
+        public String RegistrarUsuario(clsUsuario clsUsuario)
+        {
+            String Mensaje = "";
+                Tuple<String, bool> resultado = clsUsuario.registrarUsuario();
+                Mensaje =resultado.Item1;
+                if (resultado.Item2)
+                {
+                    limpiarDatos();
+                    this.Close();
+                }
+                else
+                {
+                    txtNombre.Focus();
+                }
+            return Mensaje;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -35,25 +51,15 @@ namespace CapaPresentacion.Usuario
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 pboxPerfil.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 clsUsuario.RutaImagen = ms.GetBuffer();
+                MessageBox.Show(RegistrarUsuario(clsUsuario), "Resultado de registro");
 
-                // Devuelve un valor booleano para verificar el registro y un String con el mensaje obteenido
-                Tuple<String, bool> resultado = clsUsuario.registrarUsuario();
-                MessageBox.Show(resultado.Item1, "Resultado de registro");
-                if (resultado.Item2)
-                {
-                    limpiarDatos();
-                    this.Close();
-                }
-                else
-                {
-                    txtNombre.Focus();
-                }
             }
             else
             {
                 txtNombre.Focus();
-                MessageBox.Show("¡Atención!:\n\n- Ingrese todos los datos solicitados\n- Verifique que la cédula sea correcta", "Error de datos");
+                MessageBox.Show("¡Atención!:\n\n- Ingrese todos los datos solicitados", "Error de datos");
             }
+            
         }
 
         private void btnSeleccionarFoto_Click(object sender, EventArgs e)

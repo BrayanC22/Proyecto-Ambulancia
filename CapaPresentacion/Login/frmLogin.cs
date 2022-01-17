@@ -53,8 +53,9 @@ namespace CapaPresentacion.Login
             return conexion;
         }
 
-        public void login(string user, string password)
+        public bool login(string user, string password)
         {
+            bool acceso=false;
             try
             {
                 SqlConnection conexion = abrirConexionSqlServer();
@@ -66,6 +67,7 @@ namespace CapaPresentacion.Login
                     frmMenu menu = new frmMenu();
                     menu.Show();
                     this.Hide();
+                    acceso = true;
                 }
                 else
                 {
@@ -75,8 +77,10 @@ namespace CapaPresentacion.Login
             }
             catch (SqlException e)
             {
-                MessageBox.Show(" " + e);
+                MessageBox.Show("No se pudo acceder a la base de dqatos\n" + e);
             }
+
+            return acceso;
         }
 
         private void button1_Click(object sender, EventArgs e)
