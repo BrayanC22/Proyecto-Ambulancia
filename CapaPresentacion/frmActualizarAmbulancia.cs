@@ -56,7 +56,11 @@ namespace CapaPresentacion
         {
             try
             {
-               int resultado = Ambulancia1.actualizar_x_placa(comboBoxModelo.Text,comboBoxTipo.Text,txtplaca.Text,txtMatricula.Text);
+               Ambulancia1.Modelo = comboBoxModelo.Text;
+               Ambulancia1.TipoAmbulancia =comboBoxTipo.Text;
+               Ambulancia1.Placa = txtplaca.Text;
+               Ambulancia1.Matricula =txtMatricula.Text;
+               int resultado = Ambulancia1.actualizar_x_placa();
                MessageBox.Show("Los datos se actualizon correctamente");
                 this.Hide();
                 frmConsultarAmbulanciacs frmconsultar = new frmConsultarAmbulanciacs(Ambulancia1);

@@ -1,6 +1,8 @@
 ﻿using CapaDatos;
+using CapaNegocio.ConexionBD;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,31 +39,44 @@ namespace CapaNegocio
             set { Id_ConductorAsignacion = value; }
         }
 
+        clsBaseDatos baseDatos = new clsBaseDatos();
+
+
         public String registrar()
         {
             string msj = "";
 
-            //Lista genérica de parámetros
-            List<ClsParametrosAsignacion> lst = new List<ClsParametrosAsignacion>();
-
             try
             {
-                //Pasar los parámetros hacia la capa de acceso a datos
-                lst.Add(new ClsParametrosAsignacion(ID_AmbulanciaAsignacion, ID_ConductorAsignacion));
-                M.insertar_asignacion(lst);
+             
+                    SqlConnection conexion = baseDatos.abrir_conexion();
 
-                msj = "Insertado correctamente";
+                    SqlCommand command = new SqlCommand();
+
+                    command.Connection = conexion;
+
+                    command.CommandText = "AsignacionInsertCommand";
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+                    command.Parameters.AddWithValue("@Id_AmbulanciaAsignacion", ID_AmbulanciaAsignacion); // a la variable de tip Mysql comand agregar un valor al parametro
+                    command.Parameters.AddWithValue("@Id_ConductorAsignacion", ID_ConductorAsignacion); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
+
+
+
+                    int t = Convert.ToInt32(command.ExecuteScalar()); // con esa linea executa el insert a la bd
+                    baseDatos.cerrar_conexion(conexion);
+                    msj = "Asignación registrada con éxito";
             }
             catch (Exception ex)
             {
-                msj = "Error al insertar los datos" + ex;
-                return msj;
-                throw ex;
+                msj = "Motivos de error:\n\n- No se puede acceder a la base de datos\n- Los datos ya existen";
+                Console.WriteLine(ex.Message);
+
             }
-
             return msj;
-        }
 
+        }
 
     }
 }

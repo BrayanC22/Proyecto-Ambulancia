@@ -18,7 +18,7 @@ namespace CapaDatos
         {
             try
             {
-                string ConnectionString = "server = localhost; database = LosRapidosSAbd; integrated security = true  ";
+                string ConnectionString = "server = localhost; database = LosRapidosSAbd; integrated security = true";
 
                 conexion = new SqlConnection(ConnectionString);
                 conexion.Open();
