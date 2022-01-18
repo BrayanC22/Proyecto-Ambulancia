@@ -16,7 +16,7 @@ namespace CapaNegocio
 
 
         private List<Object> lst_obj;
-        ClsManejadorAmbulancia M = new ClsManejadorAmbulancia();
+        //ClsManejadorAmbulancia M = new ClsManejadorAmbulancia();
 
         public ClsAsignacion() { }
         public ClsAsignacion(Int16 Id_AmbulanciaAsignacion, Int16 Id_ConductorAsignacion)

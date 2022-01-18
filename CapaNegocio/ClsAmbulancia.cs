@@ -19,7 +19,7 @@ namespace CapaNegocio
     
 
         private List<Object> lst_obj;
-        ClsManejadorAmbulancia M = new ClsManejadorAmbulancia();
+        //ClsManejadorAmbulancia M = new ClsManejadorAmbulancia();
 
         public ClsAmbulancia() { }
         public ClsAmbulancia(String modelo, String tipoAmbulancia,String placa, String matricula)

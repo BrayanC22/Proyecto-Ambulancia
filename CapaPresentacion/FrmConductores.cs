@@ -1,5 +1,4 @@
 ﻿using System;
-using CapaNegocio.Conductor;
 using CapaNegocio;
 using System.Collections.Generic;
 using System.ComponentModel;

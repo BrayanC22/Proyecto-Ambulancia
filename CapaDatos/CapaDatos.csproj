@@ -45,8 +45,6 @@
     <Compile Include="ClsManejador.cs" />
     <Compile Include="ClsManejadorCliente.cs" />
     <Compile Include="ClsParametrosCliente.cs" />
-    <Compile Include="Conductor\ClsManejadorConductor.cs" />
-    <Compile Include="Conductor\ClsParametrosConductor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -46,7 +46,7 @@
     <Compile Include="ClsAsignacion.cs" />
     <Compile Include="ClsCliente.cs" />
     <Compile Include="ClsPersona.cs" />
-    <Compile Include="Conductor\ClsConductores.cs" />
+    <Compile Include="ClsConductores.cs" />
     <Compile Include="ConexionBD\clsBaseDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario\clsUsuario.cs" />
