@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
-using CapaDatos.Usuario;
+using CapaNegocio.ConexionBD;
 
 namespace CapaNegocio.Usuario
 {
@@ -60,27 +61,42 @@ namespace CapaNegocio.Usuario
             set { rutaImagen = value; }
         }
 
-        
-        ClsManejador manejadorUsuario = new ClsManejador();
-        List<clsParametrosUsuario> lstUsuarios = new List<clsParametrosUsuario>();
-        clsParametrosUsuario parametrosUsuario = new clsParametrosUsuario();
+        clsBaseDatos baseDatos = new clsBaseDatos();
 
+
+        /* ----------------------- Registro de usuario ------------------------- */
         public Tuple<String, bool> registrarUsuario()
         {
-            
-            /* parametrosUsuario es el objeto intermediario entre los datos ingresados desde la capa vista a la base de datos*/
-            parametrosUsuario.Nombre = this.Nombre;
-            parametrosUsuario.Apellido = this.Apellido;
-            parametrosUsuario.Cedula = this.Cedula;
-            parametrosUsuario.Usuario = this.Usuario;
-            parametrosUsuario.Password = this.Password;
-            parametrosUsuario.RutaImagen = this.RutaImagen;
+            String mensaje = "";
+            bool ingreso = false;
+            try
+            {
+                SqlConnection conexionAbierta = baseDatos.abrir_conexion();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conexionAbierta;
 
-            lstUsuarios.Add(parametrosUsuario);
-            
-            return manejadorUsuario.RegistrarUsuario(lstUsuarios); 
+                command.CommandText = "UsuarioInsertCommand";
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                //valores para cada parámetro dado en el query
+                command.Parameters.AddWithValue("@Nombre", Nombre);
+                command.Parameters.AddWithValue("@Apellido", Apellido);
+                command.Parameters.AddWithValue("@Cedula", Cedula);
+                command.Parameters.AddWithValue("@NombreUsuario", Usuario);
+                command.Parameters.AddWithValue("@Password", Password);
+                command.Parameters.AddWithValue("@Foto", RutaImagen);
+
+                int t = Convert.ToInt32(command.ExecuteNonQuery());
+                mensaje = "Usuario registrado con éxito";
+                ingreso = true;
+                baseDatos.cerrar_conexion(conexionAbierta);
+            }
+            catch (SqlException ex)
+            {
+                mensaje = "Motivos de error:\n\n- No se puede acceder a la base de datos\n- Los datos ingresados ya existen";
+                Console.WriteLine(ex.Message);
+            }
+            return Tuple.Create(mensaje, ingreso);
         }
-
     }
 
 

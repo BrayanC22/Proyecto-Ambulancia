@@ -4,14 +4,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using CapaDatos.Conductor;
 
-namespace CapaDatos
+namespace CapaNegocio.ConexionBD
 {
-    public class ClsManejador
+    class clsBaseDatos
     {
-
         private SqlConnection conexion;
 
         public SqlConnection abrir_conexion()
@@ -39,13 +36,5 @@ namespace CapaDatos
             Console.WriteLine("Se cerro la conexion desde la capa de acceso a datos");
         }
 
-      
-      
-
-        
-
-       
     }
-
 }
-
