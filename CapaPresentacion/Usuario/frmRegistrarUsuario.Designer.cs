@@ -31,8 +31,8 @@ namespace CapaPresentacion.Usuario
         {
             this.components = new System.ComponentModel.Container();
             this.GroupRegistroUsuario = new System.Windows.Forms.GroupBox();
+            this.lblSeguridad = new System.Windows.Forms.Label();
             this.lblPassIdenticas = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNivelSeguridad = new System.Windows.Forms.Label();
             this.btnSeleccionarFoto = new System.Windows.Forms.Button();
             this.pboxPerfil = new System.Windows.Forms.PictureBox();
@@ -52,15 +52,14 @@ namespace CapaPresentacion.Usuario
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.GroupRegistroUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPerfil)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupRegistroUsuario
             // 
             this.GroupRegistroUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(237)))), ((int)(((byte)(255)))));
+            this.GroupRegistroUsuario.Controls.Add(this.lblSeguridad);
             this.GroupRegistroUsuario.Controls.Add(this.lblPassIdenticas);
-            this.GroupRegistroUsuario.Controls.Add(this.pictureBox1);
             this.GroupRegistroUsuario.Controls.Add(this.lblNivelSeguridad);
             this.GroupRegistroUsuario.Controls.Add(this.btnSeleccionarFoto);
             this.GroupRegistroUsuario.Controls.Add(this.pboxPerfil);
@@ -88,6 +87,16 @@ namespace CapaPresentacion.Usuario
             this.GroupRegistroUsuario.TabStop = false;
             this.GroupRegistroUsuario.Text = "INGRESE LOS DATOS SOLICITADOS";
             // 
+            // lblSeguridad
+            // 
+            this.lblSeguridad.Font = new System.Drawing.Font("Cambria", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeguridad.ForeColor = System.Drawing.Color.Crimson;
+            this.lblSeguridad.Location = new System.Drawing.Point(160, 366);
+            this.lblSeguridad.Name = "lblSeguridad";
+            this.lblSeguridad.Size = new System.Drawing.Size(171, 25);
+            this.lblSeguridad.TabIndex = 18;
+            this.lblSeguridad.Text = ".";
+            // 
             // lblPassIdenticas
             // 
             this.lblPassIdenticas.AutoSize = true;
@@ -96,17 +105,6 @@ namespace CapaPresentacion.Usuario
             this.lblPassIdenticas.Name = "lblPassIdenticas";
             this.lblPassIdenticas.Size = new System.Drawing.Size(0, 12);
             this.lblPassIdenticas.TabIndex = 17;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.A_info;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 350);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox1, "La contraseña debe tener");
             // 
             // lblNivelSeguridad
             // 
@@ -152,6 +150,8 @@ namespace CapaPresentacion.Usuario
             this.txtConfirmaPass.TabIndex = 12;
             this.txtConfirmaPass.UseSystemPasswordChar = true;
             this.txtConfirmaPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConfirmaPass_KeyUp);
+            this.txtConfirmaPass.MouseLeave += new System.EventHandler(this.txtConfirmaPass_MouseLeave);
+            this.txtConfirmaPass.MouseHover += new System.EventHandler(this.txtConfirmaPass_MouseHover);
             // 
             // txtPass
             // 
@@ -165,6 +165,8 @@ namespace CapaPresentacion.Usuario
             this.txtPass.TabIndex = 11;
             this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyUp);
+            this.txtPass.MouseLeave += new System.EventHandler(this.txtPass_MouseLeave);
+            this.txtPass.MouseHover += new System.EventHandler(this.txtPass_MouseHover);
             // 
             // txtUsuario
             // 
@@ -308,7 +310,6 @@ namespace CapaPresentacion.Usuario
             this.Shown += new System.EventHandler(this.frmRegistrarUsuario_Shown);
             this.GroupRegistroUsuario.ResumeLayout(false);
             this.GroupRegistroUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPerfil)).EndInit();
             this.ResumeLayout(false);
 
@@ -334,8 +335,8 @@ namespace CapaPresentacion.Usuario
         private System.Windows.Forms.PictureBox pboxPerfil;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label lblNivelSeguridad;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPassIdenticas;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblSeguridad;
     }
 }

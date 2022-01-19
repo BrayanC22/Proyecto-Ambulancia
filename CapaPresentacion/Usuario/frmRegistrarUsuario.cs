@@ -51,6 +51,7 @@ namespace CapaPresentacion.Usuario
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 pboxPerfil.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 clsUsuario.RutaImagen = ms.GetBuffer();
+
                 MessageBox.Show(RegistrarUsuario(clsUsuario), "Resultado de registro");
 
             }
@@ -142,46 +143,56 @@ namespace CapaPresentacion.Usuario
 
         private bool nivelSeguridad(string password)
         {
+            String Mayuscula ="mayuscula, "; String Minus ="minuscula, "; String Num = "numeros, "; String Caracter = "caracter especial, "; String Longitud="Al menos 8 caracteres";
             bool validado = false; bool mayuscula = false; bool minuscula = false; bool numero = false;  bool carespecial = false;
             for (int i = 0; i < password.Length; i++)
             {
                 if (Char.IsUpper(password, i))
                 {
+                    Mayuscula = "";
                     mayuscula = true;
                 }
                 else if (Char.IsLower(password, i))
                 {
+                    Minus = "";
                     minuscula = true;
                 }
                 else if (Char.IsDigit(password, i))
                 {
+                    Num = "";
                     numero = true;
                 }
                 else
                 {
+                    Caracter = "";
                     carespecial = true;
                 }
             }
+
             if (mayuscula && minuscula && numero && carespecial && password.Length >= 8)
             {
                 lblNivelSeguridad.BackColor = Color.Green;
                 validado = true;
+                Longitud = "";
+                lblSeguridad.Text = "";
+                txtConfirmaPass.Enabled = true;
+                txtConfirmaPass.ReadOnly = false;
+
             }
             else
             {
                 lblNivelSeguridad.BackColor = Color.Red;
+                lblSeguridad.Text = "Debe incluir: " + Mayuscula + Minus + Num + Caracter + Longitud;
                 validado = false;
+                txtConfirmaPass.Enabled = false;
+                txtConfirmaPass.ReadOnly = true;
             }
             return validado;
         }
 
         private void txtPass_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nivelSeguridad(txtPass.Text) || txtPass.Text.Equals(""))
-            {
-                txtConfirmaPass.Enabled = true;
-                txtConfirmaPass.ReadOnly = false;
-            }
+            nivelSeguridad(txtPass.Text);
         }
 
         private void txtConfirmaPass_KeyUp(object sender, KeyEventArgs e)
@@ -195,6 +206,36 @@ namespace CapaPresentacion.Usuario
             {
                 lblPassIdenticas.Text = "Las contraseñas no coinciden";
             }
+        }
+
+        private void txtPass_MouseHover(object sender, EventArgs e)
+        {
+            MostrarContra(txtPass);
+        }
+
+        private void MostrarContra(TextBox txt)
+        {
+            txt.UseSystemPasswordChar = false;
+        }
+
+        private void OcultarContra(TextBox txt)
+        {
+            txt.UseSystemPasswordChar = true;
+        }
+
+        private void txtPass_MouseLeave(object sender, EventArgs e)
+        {
+            OcultarContra(txtPass);
+        }
+
+        private void txtConfirmaPass_MouseHover(object sender, EventArgs e)
+        {
+            MostrarContra(txtConfirmaPass);
+        }
+
+        private void txtConfirmaPass_MouseLeave(object sender, EventArgs e)
+        {
+            OcultarContra(txtConfirmaPass);
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.Login;
 
 namespace CapaPresentacion
 {
@@ -65,6 +66,13 @@ namespace CapaPresentacion
         {
             frmAsignar asignar = new frmAsignar();
             asignar.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
             this.Hide();
         }
     }
