@@ -60,7 +60,11 @@ namespace CapaNegocio
 
         clsBaseDatos baseDatos = new clsBaseDatos();
 
-
+        /*
+        Los datos se obtienen de la capa de precentación por medio de los getters & setters de Ambulancia
+        El objeto Amblulancia tiene parámetros: Modelo, TipoAmbulancia, Placa, Matricula
+        El método retorna una cadena de caracteres donde lleva un mensaje a la capa de presentación y se le mostrará al usuario el resultado de la operación         
+        */
 
         public String registrar()
         {
@@ -102,8 +106,13 @@ namespace CapaNegocio
             return msj;
         }
 
+        /*
+        Los datos se obtienen de la base de datos por medio de los Stored procedure
+        El objeto Amblulancia llena con parámetros: Id_ambulanci Modelo, TipoAmbulancia, Placa, Matricula
+        El método retorna una lista de objetos donde los lleva a la capa de presentación y se le mostrará al usuario el DataGridView
+        */
 
-        public  List<Object> listar()
+        public List<Object> listar()
         {
             List<Object> lstAmbulancia = new List<Object>();
 
@@ -139,7 +148,13 @@ namespace CapaNegocio
             return lstAmbulancia;
         }
 
-        public  List<Object> buscar(String placa)
+
+        /*
+        Los datos se obtienen de la base de datos por medio de los Stored procedure
+        El objeto Amblulancia llena con parámetros: Id_ambulanci Modelo, TipoAmbulancia, Placa, Matricula
+        El método retorna una lista de objetos donde los lleva a la capa de presentación y se le mostrará al usuario el DataGridView según la placa ingresada
+        */
+        public List<Object> buscar(String placa)
         {
             List<Object> lstAmbulancia = new List<Object>();
 
@@ -174,6 +189,11 @@ namespace CapaNegocio
             return lstAmbulancia;
         }
 
+        /*
+        Los datos se elimina el registro de la base de datos por medio de los Stored procedure
+        Se toma el registro del daraGridView de la ambulancia en la capa de presentación.
+        El método recibe una placa, ya que al ser un atributo único se elimina solo un registro en caso de que la cédula exista
+        */
 
         public void eliminar(String placa)
         {
@@ -199,7 +219,12 @@ namespace CapaNegocio
                 Console.WriteLine(ex.Message);
             }
         }
-        
+
+        /*
+        Los datos se obtienen de la base de datos por medio de los Stored procedure y se muestra en el formulario "frmActualizarAmbulancia"
+        El objeto Amblulancia llena con parámetros: Id_ambulanci Modelo, TipoAmbulancia, Placa, Matricula.
+        El método retorna un valor entero que indica el número de elementos que han sido modificados.
+        */
         public int actualizar_x_placa()
         {
 
