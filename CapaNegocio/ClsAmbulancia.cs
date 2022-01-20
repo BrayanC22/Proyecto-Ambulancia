@@ -129,9 +129,8 @@ namespace CapaNegocio
 
                     };
                     lstAmbulancia.Add(tmp);
-                    baseDatos.cerrar_conexion(conexion);
-
                 }
+                baseDatos.cerrar_conexion(conexion);
             }
             catch (Exception ex)
             {

@@ -323,6 +323,13 @@ CREATE TABLE Conductor
   Primary Key(Id_Conductor)
 );
 
+/* Registrar conductor*/
+USE [LosRapidosSAbd]
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
 CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORInsertCommand]
 (
 	@Cedula varchar(60),
@@ -340,6 +347,7 @@ INSERT INTO [Conductor] ([Cedula], [Nombre], [Apellido], [Edad], [Domicilio], [S
 SELECT Id_Conductor, Cedula, Nombre, Apellido, Edad, Domicilio, Sexo, Licencia FROM Conductor WHERE (Id_Conductor = SCOPE_IDENTITY())
 GO
 
+/*          Consulta de conductores            */
 
 CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORSelectCommand]
 AS
@@ -348,7 +356,7 @@ SELECT        Conductor.*
 FROM            Conductor
 GO
 
-
+/*           Actualizar Conductores               */
 CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORUpdateCommand]
 (
 	@Cedula varchar(60),
@@ -366,6 +374,8 @@ UPDATE [Conductor] SET  [Nombre] = @Nombre, [Apellido] = @Apellido, [Edad] = @Ed
 	
 GO
 
+/*                    Eliminar conductor                        */
+
 CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORDeleteCommand]
 (
 	@Cedula varchar(60)
@@ -374,6 +384,9 @@ AS
 	SET NOCOUNT OFF;
 DELETE FROM [Conductor] WHERE( [Cedula] = @Cedula) 
 GO
+
+
+/*                Busqueda por cedula                          */
 
 CREATE OR ALTER PROCEDURE [dbo].[CONDUCTORSelectByCedulaCommand](
 @cedula varchar(60)
@@ -387,6 +400,7 @@ WHERE Cedula = @cedula;
 GO
 
 /* ---------------------- Asignacion ------------------------ */
+
 
 CREATE TABLE Asignacion
 (
@@ -427,10 +441,5 @@ INSERT INTO [Asignacion] ([Id_AmbulanciaAsignacion], [Id_ConductorAsignacion]) V
 	
 SELECT Id_Asignacion, Id_AmbulanciaAsignacion, Id_ConductorAsignacion FROM Asignacion WHERE (Id_Asignacion = SCOPE_IDENTITY())
 GO
-
-
-
-
-
 
 /* ------------------------ PAGOS -------------------------- */

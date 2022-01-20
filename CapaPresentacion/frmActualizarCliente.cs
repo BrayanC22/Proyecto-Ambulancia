@@ -53,7 +53,7 @@ namespace CapaPresentacion
                     txtnombres.Text = (String)type.GetProperty("nombre").GetValue(clie);
                     txtapellidos.Text = (String)type.GetProperty("apellido").GetValue(clie);
                     txtdireccion.Text = (String)type.GetProperty("domicilio").GetValue(clie);
-                    //txtedad.Text = (String)type.GetProperty("edad").GetValue(clie);
+                    txtedad.Text = type.GetProperty("edad").GetValue(clie).ToString();
 
                     txtsexo.Text = (String)type.GetProperty("sexo").GetValue(clie);
                     textCC.Text = (String)type.GetProperty("codigoCliente").GetValue(clie);
