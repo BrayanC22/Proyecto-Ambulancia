@@ -70,7 +70,18 @@ namespace CapaPresentacion
         {
             try
             {
-                int resultado = cliente.actualizar_x_cedula(txtcedula.Text, txtnombres.Text, txtapellidos.Text, txtedad.Text, txtdireccion.Text, txtsexo.Text, this.rutaimagen, textCC.Text);
+
+
+                cliente.Cedula= txtcedula.Text;
+                cliente.Nombre = txtnombres.Text;
+                cliente.Apellido= txtapellidos.Text;
+                cliente.Edad= Int16.Parse(txtedad.Text);
+                cliente.Domicilio= txtdireccion.Text;
+                cliente.Sexo= txtsexo.Text;
+                cliente.Imagen= this.rutaimagen;
+                cliente.CodigoCliente = textCC.Text;
+
+                int resultado = cliente.actualizar_x_cedula();
                 MessageBox.Show("Los datos se actualizon correctamente");
                 this.Hide();
                 frmConsultarCliente cons = new frmConsultarCliente(cliente);

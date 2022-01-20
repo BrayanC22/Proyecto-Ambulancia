@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos;
 using CapaNegocio.ConexionBD;
 
 namespace CapaNegocio.Usuario

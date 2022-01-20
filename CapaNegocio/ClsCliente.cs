@@ -1,9 +1,12 @@
-﻿using CapaDatos;
+﻿
+using CapaNegocio.ConexionBD;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapaNegocio
 {
@@ -28,41 +31,45 @@ namespace CapaNegocio
 
         //Referencia al Manejador de la capa de acceso a datos
 
-        ClsManejadorCliente M = new ClsManejadorCliente();
+       
+        clsBaseDatos baseDatos = new clsBaseDatos();
 
         public override String registrar()
         {
             string msj = "";
-            //Lista genérica de parámetros
-            ClsParametrosCliente clienteP = new ClsParametrosCliente();
-            List<ClsParametrosCliente> lst = new List<ClsParametrosCliente>();
-
             try
             {
-
-                clienteP.Nombre = this.Nombre;
-                clienteP.Cedula = this.Cedula;
-                clienteP.Apellido = this.Apellido;
-                clienteP.Edad = this.Edad;
-                clienteP.Domicilio = this.Domicilio;
-                clienteP.Sexo = this.Sexo;
-                clienteP.Imagen = this.Imagen;
-                clienteP.CodigoCliente = this.CodigoCliente;
-
-                //Pasar los parámetros hacia la capa de acceso a datos
-                lst.Add(clienteP);
-                M.insertar_cliente(lst);
+              
+                    SqlConnection conexion = baseDatos.abrir_conexion();
 
 
-                msj = "Insertado correctamente";
+                    SqlCommand comannd = new SqlCommand();
 
+                    comannd.Connection = conexion;
+                    comannd.CommandText = "CLIENTEInsertCommand";
+                    comannd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    comannd.Parameters.AddWithValue("@cedula", Cedula); // a la variable de tip Mysql comand agregar un valor al parametro
+                    comannd.Parameters.AddWithValue("@nombre", Nombre); // Parametro a remplazar en la cadena de conxion o insert , con lo que venga de la capa logica
+                    comannd.Parameters.AddWithValue("@apellido", Apellido);
+                    comannd.Parameters.AddWithValue("@edad",Edad);
+                    comannd.Parameters.AddWithValue("@domicilio", Domicilio);
+                    comannd.Parameters.AddWithValue("@sexo", Sexo);
+                    comannd.Parameters.AddWithValue("@imagen", Imagen);
+                    comannd.Parameters.AddWithValue("@codigoCliente",CodigoCliente);
+
+                int t = Convert.ToInt32(comannd.ExecuteScalar()); // con esa linea executa el insert a la bd
+
+                    baseDatos.cerrar_conexion(conexion);
+                msj = "Cliente registrado con éxito";
             }
             catch (Exception ex)
             {
-                msj = "Error al insertar los datos";
-                return msj;
-                throw ex;
+                msj = "Motivos de error:\n\n- No se puede acceder a la base de datos\n- Los Datos de la cedula ya existen";
+                Console.WriteLine(ex.Message);
+
             }
+
 
             return msj;
         }
@@ -70,23 +77,132 @@ namespace CapaNegocio
         //Lista Cliente
         public override List<Object> listar()
         {
-            return M.listar_cliente();
+            List<Object> lstCliente = new List<Object>();
+
+            SqlConnection conexion = baseDatos.abrir_conexion();
+
+            SqlCommand comannd = new SqlCommand();
+
+            comannd.Connection = conexion;
+            comannd.CommandText = "CLIENTESelectCommand";
+            comannd.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlDataReader registros = comannd.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
+
+            while (registros.Read())  // leo la informacion almacenada en registro
+            {
+                var tmp = new
+                {
+                    Id_Cliente = Int16.Parse(registros["Id_Cliente"].ToString()),
+                    cedula = registros["Cedula"].ToString(),  // para asignar valores de la base a la variable cedula
+                    nombre = registros["Nombre"].ToString(),
+                    apellido = registros["Apellido"].ToString(),
+                    edad = Int16.Parse(registros["Edad"].ToString()),
+                    domicilio = registros["Domicilio"].ToString(),
+                    sexo = registros["Sexo"].ToString(),
+                    imagen = registros["Imagen"].ToString(),
+                    codigoCliente = registros["CodigoCliente"].ToString(),
+                };
+
+                lstCliente.Add(tmp);
+            }
+            baseDatos.cerrar_conexion(conexion);
+            return lstCliente;
+
+           
         }
         public override List<Object> buscar(String cedula)
         {
-            return M.buscar_cliente(cedula);
+            List<Object> lstCliente = new List<Object>();
+
+            SqlConnection conexion = baseDatos.abrir_conexion();
+
+            SqlCommand comannd = new SqlCommand();
+
+            comannd.Connection = conexion;
+            comannd.CommandText = "CLIENTESelectindividualCommand";
+            comannd.CommandType = System.Data.CommandType.StoredProcedure;
+            comannd.Parameters.AddWithValue("@cedula", cedula);
+
+            SqlDataReader registros = comannd.ExecuteReader();
+            while (registros.Read())
+            {
+                var tmp = new
+                {
+                    Id_Cliente = Int16.Parse(registros["Id_Cliente"].ToString()),
+                    cedula = registros["Cedula"].ToString(),
+                    nombre = registros["Nombre"].ToString(),
+                    apellido = registros["Apellido"].ToString(),
+                    edad = Int16.Parse(registros["Edad"].ToString()),
+                    domicilio = registros["Domicilio"].ToString(),
+                    sexo = registros["Sexo"].ToString(),
+                    imagen = registros["Imagen"].ToString(),
+                    codigoCliente = registros["CodigoCliente"].ToString(),
+                };
+                lstCliente.Add(tmp);
+            }
+
+            baseDatos.cerrar_conexion(conexion);
+            return lstCliente;
 
         }
         public override void eliminar(String cedula)
         {
+            try {
+    
             if (buscar(cedula) != null)
-                M.eliminar_cliente(cedula);
+            {
+                SqlConnection conexion = baseDatos.abrir_conexion();
+
+                SqlCommand comannd = new SqlCommand();
+
+                comannd.Connection = conexion;
+                comannd.CommandText = "CLIENTEDeleteCommand";
+                comannd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                comannd.Parameters.AddWithValue("@Original_Cedula", cedula);
+
+           
+            int resultado = Convert.ToInt32(comannd.ExecuteScalar());
+
+
+
+                MessageBox.Show("Se a eliminado con exito");
+                baseDatos.cerrar_conexion(conexion);
+            }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
-    
-      public override int actualizar_x_cedula(string cedula, string nombre, string apellido, string edad, string domicilio, string sexo, string imagen, string codigoCliente)
+        public override int actualizar_x_cedula()
         {
-        return M.actualizar_cliente_individual(cedula, nombre, apellido, edad, domicilio, sexo, imagen, codigoCliente);
+
+
+            SqlConnection conexion = baseDatos.abrir_conexion();
+            SqlCommand comannd = new SqlCommand();
+
+            comannd.Connection = conexion;
+            comannd.CommandText = "CLIENTEUpdateCommand";
+            comannd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comannd.Parameters.AddWithValue("@Cedula", Cedula);
+            comannd.Parameters.AddWithValue("@Nombre", Nombre);
+            comannd.Parameters.AddWithValue("@Apellido", Apellido);
+            comannd.Parameters.AddWithValue("@Edad", Edad);
+            comannd.Parameters.AddWithValue("@Domicilio", Domicilio);
+            comannd.Parameters.AddWithValue("@Sexo", Sexo);
+            comannd.Parameters.AddWithValue("@Imagen", Imagen);
+            comannd.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
+
+            int resultado_operacion = Convert.ToInt32(comannd.ExecuteScalar());
+            baseDatos.cerrar_conexion(conexion);
+
+            return resultado_operacion;
+
+
         }
     
     }
