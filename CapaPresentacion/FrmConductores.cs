@@ -146,7 +146,7 @@ namespace CapaPresentacion
             txtLicencia.Text = "";
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        public void btnConsultar_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmConsultarConductores frmConsultar = new FrmConsultarConductores(chofer);

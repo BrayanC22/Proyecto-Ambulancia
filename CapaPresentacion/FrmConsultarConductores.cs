@@ -69,7 +69,7 @@ namespace CapaPresentacion
             llenar_datagridview_conductores();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        public void btnBuscar_Click(object sender, EventArgs e)
         {
             dgv_listarTodos.Rows.Clear();
             dgv_listarTodos.Refresh();
