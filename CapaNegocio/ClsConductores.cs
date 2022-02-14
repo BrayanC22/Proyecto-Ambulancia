@@ -7,13 +7,20 @@ using CapaNegocio.ConexionBD;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+/// <summary>
+/// Esta clase contiene todos los métodos y parámetros necesarios para la gestión de datos de conductores
+/// </summary>
+
 namespace CapaNegocio
 {
     public class ClsConductores : ClsPersona
     {
 
+        /// <summary>
+        /// Parámetros heredados y propios de la clase
+        /// </summary>
         private String licencia;
-        clsBaseDatos conexionBD = new clsBaseDatos();
+        clsBaseDatos conexionBD = new clsBaseDatos(); //Con esta instancia podemos llamar a los métodos que permiten la conexión con la BD
 
         public ClsConductores(){}
 
@@ -26,6 +33,7 @@ namespace CapaNegocio
         //Fin de constructor, get, set
 
 
+        //Realiza la inserción de datos de un conductor y los almacena en la BD
         public override String registrar()
         {
             string msj = "";
@@ -68,6 +76,7 @@ namespace CapaNegocio
         }
 
 
+        //Mediante el parámetro cédula, busca el conductor objetivo y devuelve todos sus datos a la interfaz en cuestión
         public override List<Object> buscar(String cedula)
         {
             List<Object> lstConductor = new List<Object>();
@@ -105,6 +114,7 @@ namespace CapaNegocio
         }
 
 
+        //Mediante el parámetro cédula, realiza una búsqueda y elimina el registro completo si es que lo encuentra
         public override void eliminar(String cedula)
         {
             if (buscar(cedula).Count != 0)
@@ -136,6 +146,7 @@ namespace CapaNegocio
         }
 
 
+        //Muestra a todos los conductores registrados en la BD
         public override List<Object> listar()
         {
             List<Object> lstConductor = new List<Object>();
@@ -167,9 +178,10 @@ namespace CapaNegocio
         }
 
 
-        public String actualizar_x_cedula()
+        //Mediante el parámetro cédula se realiza  la búsqueda de un conductor y permite la edición de los mismos para actualizarlos
+        public override int actualizar_x_cedula()
         {
-            string msj = "";
+            
             List<ClsConductores> lst = new List<ClsConductores>();
 
             try
@@ -199,15 +211,16 @@ namespace CapaNegocio
                         comannd.ExecuteNonQuery(); //Ejecuta el update
 
                         conexionBD.cerrar_conexion(conexion);
-                        return "Modificado correctamente";
+                        return 1;
                     }
             }
             catch (Exception e)
             {
-                return "Error al modificar, motivo: " + e;
+                return 0;
+                throw e;
             }
 
-            return msj;
+            return 2;
         }
            
 

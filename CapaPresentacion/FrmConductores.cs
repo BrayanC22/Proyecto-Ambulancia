@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CapaPresentacion
 {
     public partial class FrmConductores : Form
@@ -16,6 +17,7 @@ namespace CapaPresentacion
         ClsConductores chofer = new ClsConductores();
         List<Object> lstConductor = new List<Object>();
         frmCliente metodosAux = new frmCliente(); //para llamar a los metodos 'SoloNumeros' y 'SoloLetras'
+        
         public FrmConductores()
         {
             InitializeComponent();
@@ -144,7 +146,7 @@ namespace CapaPresentacion
             txtLicencia.Text = "";
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        public void btnConsultar_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmConsultarConductores frmConsultar = new FrmConsultarConductores(chofer);
@@ -153,7 +155,6 @@ namespace CapaPresentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            String msj = "";
 
             try
             {
@@ -172,8 +173,15 @@ namespace CapaPresentacion
                 }
                 chofer.Licencia = txtLicencia.Text;
 
-                msj = chofer.actualizar_x_cedula();
-                MessageBox.Show(msj);
+                if (chofer.actualizar_x_cedula() == 1)
+                {
+                    MessageBox.Show("Datos modificados exitorsamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al modificar");
+                }
+                
 
             }
             catch (Exception ex)
