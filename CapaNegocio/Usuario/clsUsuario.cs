@@ -64,6 +64,10 @@ namespace CapaNegocio.Usuario
 
 
         /* ----------------------- Registro de usuario ------------------------- */
+        /// <summary>
+        /// Método para registrar al usuario que va a interactuar con el sistema
+        /// </summary>
+        /// <returns>Un objeto tipo Tuple con dos tipos de datos, una cadena de caracteres y otro booleano, para mostrar un mensaje y para verificar si el acceso fue exitoso o no</returns>
         public Tuple<String, bool> registrarUsuario()
         {
             String mensaje = "";

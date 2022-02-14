@@ -21,6 +21,12 @@ namespace CapaPresentacion.Usuario
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Obtiene los datos que el usuario ingresa y los lleva a la capa de negocio al método que los registra en la base de datos.
+        /// </summary>
+        /// <param name="clsUsuario">Objeto que contiene los datos del usuario.</param>
+        /// <returns>Un mensajebox indicando si el registro fue exitoso o no.</returns>
         public String RegistrarUsuario(clsUsuario clsUsuario)
         {
             String Mensaje = "";
@@ -38,6 +44,11 @@ namespace CapaPresentacion.Usuario
             return Mensaje;
         }
 
+        /// <summary>
+        /// Pasa los datos ingresados en el formulario al objeto de tipo "ClsUsuario".
+        /// </summary>
+        /// <param name="sender">Objeto que recibe por defecto</param>
+        /// <param name="e">Evnto que recibe por defecto</param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (datosLlenos())
@@ -62,7 +73,11 @@ namespace CapaPresentacion.Usuario
             }
             
         }
-
+        /// <summary>
+        /// Permite abrir un cuadro de dialogo para seleccionar un archivo de tipo imagen.
+        /// </summary>
+        /// <param name="sender">Objeto que recibe por defecto</param>
+        /// <param name="e">Evnto que recibe por defecto</param>
         private void btnSeleccionarFoto_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Archivo de imagen (*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
@@ -84,6 +99,11 @@ namespace CapaPresentacion.Usuario
             }
         }
 
+        /// <summary>
+        /// Asigna una imagen por defecto si detecta que la ruta del archivo está vacía.
+        /// </summary>
+        /// <param name="Imagen">Contine la ruta de la imagen.</param>
+        /// <returns></returns>
         public String validarImagen(String Imagen)
         {
             String ruta;
@@ -100,6 +120,10 @@ namespace CapaPresentacion.Usuario
             return ruta;
         }
 
+        /// <summary>
+        /// Bloquea el ingreso por teclado cuando se presiona una tecla y no es un número.
+        /// </summary>
+        /// <param name="k">Evento KeyPressEventArgs</param>
         public void validarNumeros(KeyPressEventArgs k)
         {
             if (Char.IsDigit(k.KeyChar) || Char.IsControl(k.KeyChar))
@@ -119,6 +143,10 @@ namespace CapaPresentacion.Usuario
             pboxPerfil.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "..\\..\\Resources\\A-Usuario.png"));
             txtNombre.Focus();
         }
+
+        /// <summary>
+        /// Limpoa los datos que hay en los objetos del formulario.
+        /// </summary>
         private void limpiarDatos()
         {
             txtApellidos.Text = "";
@@ -130,6 +158,11 @@ namespace CapaPresentacion.Usuario
             this.RutaImagen = "";
 
         }
+
+        /// <summary>
+        /// Método para saber si los objetos del formulario tienen o no datos ingresados por el usuario, para evitar el ingreso de datos vacíos.
+        /// </summary>
+        /// <returns>Verdadero si los datos han sido ingresados o falso en el caso contrario.</returns>
         private bool datosLlenos()
         {
             bool estanllenos = true;
@@ -140,7 +173,11 @@ namespace CapaPresentacion.Usuario
             return estanllenos;
         }
 
-
+        /// <summary>
+        /// Muestra el nivel de seguridad de la contraseña que será ingresada por el usuario y desbloquea el botón de registro si es una contraseña segura.
+        /// </summary>
+        /// <param name="password">Contraseña ingresada por el usuario</param>
+        /// <returns>Verdadero: Si la contraseña es segura, Falso: Cuando la contraseña no cumple los requisitos para ser segura.</returns>
         private bool nivelSeguridad(string password)
         {
             String Mayuscula ="mayuscula, "; String Minus ="minuscula, "; String Num = "numeros, "; String Caracter = "caracter especial, "; String Longitud="Al menos 8 caracteres";
@@ -213,11 +250,19 @@ namespace CapaPresentacion.Usuario
             MostrarContra(txtPass);
         }
 
+        /// <summary>
+        /// Muestra la contraseña del textbox
+        /// </summary>
+        /// <param name="txt">Textbox donde se ingresa la contraseña</param>
         private void MostrarContra(TextBox txt)
         {
             txt.UseSystemPasswordChar = false;
         }
 
+        /// <summary>
+        /// Oculta la contraseña del textbox con caracteres "*****".
+        /// </summary>
+        /// <param name="txt">Textbox donde se ingresa la contraseña</param>
         private void OcultarContra(TextBox txt)
         {
             txt.UseSystemPasswordChar = true;

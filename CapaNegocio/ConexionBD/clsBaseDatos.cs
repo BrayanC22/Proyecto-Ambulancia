@@ -11,6 +11,10 @@ namespace CapaNegocio.ConexionBD
     {
         private SqlConnection conexion;
 
+        /// <summary>
+        /// Permite establecer una conexión con la base de datos local
+        /// </summary>
+        /// <returns>Una variable de tipo de dato SqlConnection con el estado de la conexión.</returns>
         public SqlConnection abrir_conexion()
         {
             try
@@ -30,6 +34,10 @@ namespace CapaNegocio.ConexionBD
             return conexion;
         }
 
+        /// <summary>
+        /// Método para cerrar la conexión a la base de datos.
+        /// </summary>
+        /// <param name="conexion">Estado de la conexión de la base de datos.</param>
         public void cerrar_conexion(SqlConnection conexion)
         {
             conexion.Close();
