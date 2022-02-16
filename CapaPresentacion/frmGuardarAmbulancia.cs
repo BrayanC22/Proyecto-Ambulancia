@@ -35,6 +35,8 @@ namespace CapaPresentacion
 
        /// <summary>
        /// Metodo para registrar una ambulancia.
+       /// Se guarda una ambulancia mediante los parametros ingresados si cumple 
+       /// Como condicion de guardado la placa ni la matricula se deben repetir
        /// </summary>
        /// <param name="sender"></param>
        /// <param name="e"></param>
