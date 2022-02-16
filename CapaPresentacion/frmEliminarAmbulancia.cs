@@ -34,6 +34,7 @@ namespace CapaPresentacion
 
         /// <summary>
         /// Metodo para buscar una ambulancia.
+        /// Se busca una ambulancia mediante un parametro de busqueda como la placa
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
