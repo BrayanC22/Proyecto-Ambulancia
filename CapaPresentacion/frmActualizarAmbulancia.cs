@@ -53,6 +53,7 @@ namespace CapaPresentacion
         }
         /// <summary>
         /// Metodo para actualizar ambulancia.
+        /// Se actualiza una asmbulancia mediante una busqueda previamente realizada
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
