@@ -25,7 +25,11 @@ namespace CapaPresentacion
             this.Al = Al;
             btn_eliminar.Enabled = false;
         }
-
+        /// <summary>
+        /// Metedo para eliminar un cliente mediante la cedula.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnbuscar_Click(object sender, EventArgs e)
         {
 

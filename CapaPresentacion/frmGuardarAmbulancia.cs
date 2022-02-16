@@ -33,6 +33,11 @@ namespace CapaPresentacion
         }
 
 
+       /// <summary>
+       /// Metodo para registrar una ambulancia.
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void cmdregistrar_Click(object sender, EventArgs e)
         {
             String msj = "";

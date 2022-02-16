@@ -32,7 +32,11 @@ namespace CapaPresentacion
             this.Al = Al;
             this.lst_cliente_tmp = Al.listar();
         }
-
+        /// <summary>
+        /// Metodo para registrar un cliente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmdregistrar_Click(object sender, EventArgs e)
         {
             String msj = "";
@@ -67,7 +71,11 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Asigna una imagen  de modo que el cliente lo solicite.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCargarImagen_Click(object sender, EventArgs e)
         {
             try

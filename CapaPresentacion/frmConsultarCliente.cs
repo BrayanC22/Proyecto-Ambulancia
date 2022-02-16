@@ -60,7 +60,11 @@ namespace CapaPresentacion
             }
 
         }
-
+        /// <summary>
+        /// Metodo para buscar un cliente mediante un parametro solicitado que es la cedula.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             try

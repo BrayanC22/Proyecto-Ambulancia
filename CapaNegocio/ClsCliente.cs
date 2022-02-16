@@ -33,7 +33,12 @@ namespace CapaNegocio
 
        
         clsBaseDatos baseDatos = new clsBaseDatos();
-
+        /// <summary>
+        /// Los datos se obtienen de la base de datos por medio de los Stored procedure/
+        /// El objeto Cliente llena con parámetros solicitados.
+        /// El método retorna una lista de objetos donde los lleva a la capa de presentación y se le mostrará al usuario el DataGridView.
+        /// </summary>
+        /// <returns></returns>
         public override String registrar()
         {
             string msj = "";
@@ -73,7 +78,12 @@ namespace CapaNegocio
 
             return msj;
         }
-
+        /// <summary>
+        /// Los datos se obtienen de la base de datos por medio de los Stored procedure.
+        /// El objeto Cliente llena con parámetros solicitados.
+        /// El método retorna una lista de objetos donde los lleva a la capa de presentación y se le mostrará al usuario el DataGridView.
+        /// </summary>
+        /// <returns></returns>
         //Lista Cliente
         public override List<Object> listar()
         {
@@ -110,6 +120,13 @@ namespace CapaNegocio
 
            
         }
+        /// <summary>
+        /// Los datos se obtienen de la base de datos por medio de los Stored procedure.
+        /// El objeto cliente llena con parámetros solicitados.
+        /// El método retorna una lista de objetos donde los lleva a la capa de presentación y se le mostrará al usuario el DataGridView según la cedula ingresada.
+        /// </summary>
+        /// <param name="cedula"></param>
+        /// <returns></returns>
         public override List<Object> buscar(String cedula)
         {
             List<Object> lstCliente = new List<Object>();
@@ -145,6 +162,12 @@ namespace CapaNegocio
             return lstCliente;
 
         }
+        /// <summary>
+        /// Los datos se elimina el registro de la base de datos por medio de los Stored procedure
+        /// Se toma el registro del daraGridView del cliente en la capa de presentación.
+        /// El método recibe la cedula, ya que al ser un atributo único se elimina solo un registro en caso de que el cliente exista
+        /// </summary>
+        /// <returns></returns>
         public override void eliminar(String cedula)
         {
             try {
@@ -176,7 +199,13 @@ namespace CapaNegocio
                 Console.WriteLine(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Los datos se obtienen de la base de datos por medio de los Stored procedure y se muestra en el formulario "frmActualizarCliente"
+        /// El objeto Cliente llena con parámetros solicitados.
+        /// El método retorna un valor entero que indica el número de elementos que han sido modificados.
+        /// </summary>
+        /// <returns></returns>
+        /// 
         public override int actualizar_x_cedula()
         {
 

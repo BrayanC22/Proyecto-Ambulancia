@@ -38,7 +38,9 @@ namespace CapaPresentacion
             txtsexo.Enabled = false;
 
         }
-
+        /// <summary>
+        /// Metodo para actulizar mediante la cedula del cliente.
+        /// </summary>
         private void obtenerDatos()
         {
             List<Object> lst_cliente = cliente.listar();
@@ -65,7 +67,11 @@ namespace CapaPresentacion
         }
 
 
-
+        /// <summary>
+        /// Metodo para actulizar los parametros del cliente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonActualizarCambios_Click(object sender, EventArgs e)
         {
             try
@@ -92,7 +98,11 @@ namespace CapaPresentacion
                 MessageBox.Show("Error en la actualizacion verifique que los datos de matricula o placa no esten duplicados");
             }
         }
-
+        /// <summary>
+        /// Metodo para solicitar  una imagen valida.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCargarImagen_Click_1(object sender, EventArgs e)
         {
             try

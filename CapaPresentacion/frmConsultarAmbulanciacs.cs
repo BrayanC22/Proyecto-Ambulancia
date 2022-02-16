@@ -38,6 +38,7 @@ namespace CapaPresentacion
 
         }
 
+     
         public void llenar_datagridview_ambulancia()
         {
             dgv_listarTodos.Rows.Clear();
@@ -66,7 +67,11 @@ namespace CapaPresentacion
             frmGuardarAmbulancia frmEst = new frmGuardarAmbulancia(Ambulancia1);
             frmEst.Show();
         }
-
+        /// <summary>
+        /// Metodo para buscar una ambulancia.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             try

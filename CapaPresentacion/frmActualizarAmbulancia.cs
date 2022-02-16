@@ -51,7 +51,11 @@ namespace CapaPresentacion
                }
             }
         }
-
+        /// <summary>
+        /// Metodo para actualizar ambulancia.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonActualizarCambios_Click(object sender, EventArgs e)
         {
             try
