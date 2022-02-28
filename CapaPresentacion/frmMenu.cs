@@ -75,5 +75,17 @@ namespace CapaPresentacion
             login.Show();
             this.Hide();
         }
+
+        private void BtnConductor_Click_1(object sender, EventArgs e)
+        {
+            conductores.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            guardarAmbulancia.Show();
+            this.Hide();
+        }
     }
 }

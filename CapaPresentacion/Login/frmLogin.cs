@@ -20,9 +20,10 @@ namespace CapaPresentacion.Login
             txtPassword.PasswordChar = '*';
 
         }
-
+       
         private SqlConnection abrirConexionSqlServer()
         {
+            
             SqlConnection conexion = new SqlConnection();
             try
             {
@@ -92,6 +93,11 @@ namespace CapaPresentacion.Login
         {
             frmRegistrarUsuario registrarUsuario = new frmRegistrarUsuario();
             registrarUsuario.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
