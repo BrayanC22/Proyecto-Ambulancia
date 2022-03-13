@@ -19,12 +19,9 @@ namespace CapaPresentacion
         frmCliente metodosAux = new frmCliente(); //para llamar a los metodos 'SoloNumeros' y 'SoloLetras'
 
 
-        public FrmConsultarConductores()
-        {
-            InitializeComponent();
-            
-        }
-
+        /// <summary>
+        /// Constructor para listar todos los conductores
+        /// </summary>
         public FrmConsultarConductores(ClsConductores chofer)
         {
             InitializeComponent();
@@ -33,6 +30,9 @@ namespace CapaPresentacion
             llenar_datagridview_conductores();
         }
 
+        /// <summary>
+        /// Llena la tabla con los datos solicitados, sean uno o mas conductores.
+        /// </summary>
         public void llenar_datagridview_conductores()
         {
             dgv_listarTodos.Rows.Clear();
@@ -56,19 +56,30 @@ namespace CapaPresentacion
 
         }
 
+
+        /// <summary>
+        /// Regresa al menu principal
+        /// </summary>
         private void btnAtras_Click(object sender, EventArgs e)
         {
+            frmMenu menu = new frmMenu();
             this.Hide();
-            frmRegistrar.Show();
+            menu.Show();
 
         }
 
+        /// <summary>
+        /// Carga todos los conductores registrados
+        /// </summary>
         private void btnVerTodos_Click(object sender, EventArgs e)
         {
             this.lst_conductor_tmp = chofer.listar();
             llenar_datagridview_conductores();
         }
 
+        /// <summary>
+        /// Busca un conductor con la cedula especificada
+        /// </summary>
         public void btnBuscar_Click(object sender, EventArgs e)
         {
             dgv_listarTodos.Rows.Clear();
@@ -122,6 +133,48 @@ namespace CapaPresentacion
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             metodosAux.SoloNumeros(e);
+        }
+
+        private void lblIngreseCedula_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Boton para ir al formulario de ingreso
+        /// </summary>
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmRegistrar.Show();
+        }
+
+        /// <summary>
+        /// Regresa a la ventana de ingreso de conductores pero con opciones especiales para modificar
+        /// </summary>
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            btnModificar.Enabled = false;
+            String cedula = (dgv_listarTodos.CurrentRow.Cells[0].Value.ToString());
+            FrmConductores form1 = new FrmConductores(cedula);
+            form1.Show();
+            
+            
+        }
+
+        /// <summary>
+        /// Elimina el conductor seleccionado
+        /// </summary>
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            String cedula = (dgv_listarTodos.CurrentRow.Cells[0].Value.ToString());
+            chofer.eliminar(cedula);
         }
     }
 }

@@ -32,16 +32,16 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.ContenedorPrincipal = new System.Windows.Forms.Panel();
+            this.btnOlvidoContra = new FontAwesome.Sharp.IconButton();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
+            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnOlvidoContra = new FontAwesome.Sharp.IconButton();
-            this.btnCerrar = new FontAwesome.Sharp.IconButton();
-            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.ContenedorPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,6 +106,55 @@
             this.ContenedorPrincipal.Size = new System.Drawing.Size(800, 420);
             this.ContenedorPrincipal.TabIndex = 9;
             // 
+            // btnOlvidoContra
+            // 
+            this.btnOlvidoContra.BackColor = System.Drawing.Color.Transparent;
+            this.btnOlvidoContra.FlatAppearance.BorderSize = 0;
+            this.btnOlvidoContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOlvidoContra.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOlvidoContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnOlvidoContra.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
+            this.btnOlvidoContra.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnOlvidoContra.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnOlvidoContra.IconSize = 25;
+            this.btnOlvidoContra.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOlvidoContra.Location = new System.Drawing.Point(408, 337);
+            this.btnOlvidoContra.Name = "btnOlvidoContra";
+            this.btnOlvidoContra.Rotation = 3D;
+            this.btnOlvidoContra.Size = new System.Drawing.Size(275, 28);
+            this.btnOlvidoContra.TabIndex = 17;
+            this.btnOlvidoContra.Text = "¿Ha olvidado su contraseña?";
+            this.btnOlvidoContra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOlvidoContra.UseVisualStyleBackColor = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Black;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrar.IconColor = System.Drawing.Color.White;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnCerrar.IconSize = 25;
+            this.btnCerrar.Location = new System.Drawing.Point(770, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(30, 30);
+            this.btnCerrar.TabIndex = 16;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Black;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizar.IconColor = System.Drawing.Color.White;
+            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnMinimizar.IconSize = 25;
+            this.btnMinimizar.Location = new System.Drawing.Point(735, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimizar.TabIndex = 15;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Black;
@@ -156,55 +205,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 420);
             this.panel1.TabIndex = 9;
-            // 
-            // btnOlvidoContra
-            // 
-            this.btnOlvidoContra.BackColor = System.Drawing.Color.Transparent;
-            this.btnOlvidoContra.FlatAppearance.BorderSize = 0;
-            this.btnOlvidoContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOlvidoContra.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOlvidoContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.btnOlvidoContra.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.btnOlvidoContra.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.btnOlvidoContra.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnOlvidoContra.IconSize = 25;
-            this.btnOlvidoContra.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOlvidoContra.Location = new System.Drawing.Point(408, 337);
-            this.btnOlvidoContra.Name = "btnOlvidoContra";
-            this.btnOlvidoContra.Rotation = 3D;
-            this.btnOlvidoContra.Size = new System.Drawing.Size(275, 28);
-            this.btnOlvidoContra.TabIndex = 17;
-            this.btnOlvidoContra.Text = "¿Ha olvidado su contraseña?";
-            this.btnOlvidoContra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOlvidoContra.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Black;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnCerrar.IconColor = System.Drawing.Color.White;
-            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnCerrar.IconSize = 25;
-            this.btnCerrar.Location = new System.Drawing.Point(770, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(30, 30);
-            this.btnCerrar.TabIndex = 16;
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Black;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimizar.IconColor = System.Drawing.Color.White;
-            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnMinimizar.IconSize = 25;
-            this.btnMinimizar.Location = new System.Drawing.Point(735, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimizar.TabIndex = 15;
-            this.btnMinimizar.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
