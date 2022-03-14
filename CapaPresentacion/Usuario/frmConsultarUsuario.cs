@@ -69,10 +69,11 @@ namespace CapaPresentacion.Usuario
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            frmRegistrarUsuario registrarUsuario = new frmRegistrarUsuario();
-            registrarUsuario.ShowDialog();
             this.Close();
             this.Dispose();
+            frmRegistrarUsuario registrarUsuario = new frmRegistrarUsuario();
+            registrarUsuario.ShowDialog();
+            
 
         }
 
