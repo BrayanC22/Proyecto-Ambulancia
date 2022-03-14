@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Login;
+using CapaPresentacion.Usuario;
 
 namespace CapaPresentacion
 {
@@ -88,10 +89,11 @@ namespace CapaPresentacion
             this.Hide();
         }
 
-        private void btnCliente_Click_1(object sender, EventArgs e)
+        private void btnUsuario_Click(object sender, EventArgs e)
         {
-            cliente.Show();
-            this.Hide();
+            frmConsultarUsuario frmConsultar = new frmConsultarUsuario();
+            frmConsultar.ShowDialog();
+
         }
     }
 }

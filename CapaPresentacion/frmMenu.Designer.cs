@@ -122,6 +122,7 @@
             this.btnUsuario.Text = "Módulo Usuario";
             this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUsuario.UseVisualStyleBackColor = false;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // btnConductor
             // 

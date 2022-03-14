@@ -54,7 +54,7 @@ namespace CapaPresentacion.Usuario
             if (datosLlenos())
             {
                 clsUsuario.Nombre = txtNombre.Text;
-                clsUsuario.Apellido = txtApellidos.Text;
+                clsUsuario.Apellido = cboxCargo.SelectedItem.ToString();
                 clsUsuario.Cedula = txtCedula.Text;
                 clsUsuario.Usuario = txtUsuario.Text;
                 clsUsuario.Password = txtConfirmaPass.Text;

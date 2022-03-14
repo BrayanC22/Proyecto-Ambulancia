@@ -43,6 +43,21 @@ SELECT Id_Usuario, Nombre, Apellido, Cedula, NombreUsuario, Password, Foto FROM 
 
 GO
 
+
+/* --------------------- Consultar Usuario ----------------------------- */
+GO
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[UsuarioSelectCommand]
+AS
+	SET NOCOUNT ON;
+SELECT        Usuario.*
+FROM            Usuario
+GO
 /* ---------------------- CLIENTE -------------------------- */
 
 CREATE TABLE Cliente

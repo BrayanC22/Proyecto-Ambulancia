@@ -144,6 +144,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Usuario\frmConsultarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\frmConsultarUsuario.Designer.cs">
+      <DependentUpon>frmConsultarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\frmRegistrarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\frmConsultarUsuario.resx">
+      <DependentUpon>frmConsultarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\frmRegistrarUsuario.resx">
       <DependentUpon>frmRegistrarUsuario.cs</DependentUpon>
@@ -309,7 +318,11 @@
     <None Include="Resources\add %281%29.png" />
     <None Include="Resources\job %281%29.png" />
     <None Include="Resources\all %281%29.png" />
+    <None Include="Resources\BorrarDatos.png" />
+    <None Include="Resources\BorrarDatos1.png" />
     <Content Include="Resources\RImagen\A-Usuario.png" />
+    <None Include="Resources\RImagen\BorrarDatos.png" />
+    <None Include="Resources\RImagen\floppy-disk %282%29.png" />
     <Content Include="Resources\RImagen\IconoAmbulancia.png" />
     <Content Include="Resources\RImagen\IconoClientes.png" />
     <Content Include="Resources\RImagen\IconoConductor.png" />
