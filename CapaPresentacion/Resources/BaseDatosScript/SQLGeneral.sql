@@ -58,6 +58,28 @@ AS
 SELECT        Usuario.*
 FROM            Usuario
 GO
+
+/* ---------- Eliminar usuario .---------------*/
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[UsuarioDeleteCommand]
+(
+	
+	@Id varchar(60)
+
+)
+AS
+	SET NOCOUNT OFF;
+DELETE FROM [Usuario] WHERE( [Id_Usuario] = @Id) 
+GO
+
+
+
 /* ---------------------- CLIENTE -------------------------- */
 
 CREATE TABLE Cliente

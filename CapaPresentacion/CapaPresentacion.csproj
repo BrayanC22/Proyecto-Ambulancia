@@ -65,12 +65,6 @@
     <Compile Include="frmActualizarCliente.Designer.cs">
       <DependentUpon>frmActualizarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAsignar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAsignar.Designer.cs">
-      <DependentUpon>frmAsignar.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,9 +155,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmActualizarCliente.resx">
       <DependentUpon>frmActualizarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAsignar.resx">
-      <DependentUpon>frmAsignar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
@@ -300,6 +291,9 @@
     <Content Include="Resources\A-info.png" />
     <Content Include="Resources\A-save.png" />
     <Content Include="Resources\A-Usuario.png" />
+    <None Include="Resources\RImagen\ModuloAmbulancia.png" />
+    <None Include="Resources\RImagen\ModuloClientes.png" />
+    <None Include="Resources\RImagen\ModuloUsuarios.png" />
     <None Include="Resources\add-friend.png" />
     <None Include="Resources\add-friend %281%29.png" />
     <None Include="Resources\magnifying-glass.png" />

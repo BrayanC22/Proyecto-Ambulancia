@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using CapaNegocio.ConexionBD;
 
 namespace CapaNegocio.Usuario
@@ -134,7 +135,28 @@ namespace CapaNegocio.Usuario
 
         }
 
+        public void eliminarUsuario(String idUsuario)
+        {
+                try
+                {
+                    SqlConnection conexion = baseDatos.abrir_conexion();
+                    SqlCommand command = new SqlCommand
+                    {
+                        Connection = conexion,
+                        CommandText = "UsuarioDeleteCommand",
+                        CommandType = System.Data.CommandType.StoredProcedure
+                    };
 
+                    command.Parameters.AddWithValue("@Id", idUsuario);
+                    int resultado = Convert.ToInt32(command.ExecuteScalar());
+                    baseDatos.cerrar_conexion(conexion);
+                    MessageBox.Show("Usuario eliminado con éxito");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error al eliminar, motivo: " + e);
+                }
+        }
     }
 
 

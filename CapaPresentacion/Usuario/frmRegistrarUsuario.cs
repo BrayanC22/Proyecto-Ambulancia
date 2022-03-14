@@ -282,5 +282,33 @@ namespace CapaPresentacion.Usuario
         {
             OcultarContra(txtConfirmaPass);
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            frmConsultarUsuario consultarUsuario = new frmConsultarUsuario();
+            consultarUsuario.ShowDialog();
+            this.Close();
+            this.Dispose();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

@@ -133,8 +133,14 @@
   <data name="coming-soon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coming-soon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ModuloClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RImagen\ModuloClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancel (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="floppy-disk (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RImagen\floppy-disk (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EliminarIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EliminarIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,17 +154,23 @@
   <data name="output-onlinepngtools" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinepngtools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="A-info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A-info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="consultarConductor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consultarConductor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A-Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RImagen\A-Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconoClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RImagen\IconoClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ambulancia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ambulancia1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ambulancia4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ambulancia4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoCompleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RImagen\LogoCompleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconoConductor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RImagen\IconoConductor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,9 +183,6 @@
   </data>
   <data name="conductor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\conductor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mesa de trabajo 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mesa de trabajo 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="consultar23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consultar23.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +205,8 @@
   <data name="Eliminar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Eliminar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconoUsuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RImagen\IconoUsuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="guardar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guardar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="A-Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\A-Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +223,8 @@
   <data name="salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="back (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ModuloUsuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RImagen\ModuloUsuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="confirmarambulancia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\confirmarambulancia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +235,8 @@
   <data name="magnifying-glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnifying-glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ambulancia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ambulancia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,26 +250,26 @@
   <data name="BorrarDatos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RImagen\BorrarDatos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="guardar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\guardar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconoUsuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RImagen\IconoUsuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoCompleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RImagen\LogoCompleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A-Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RImagen\A-Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mesa de trabajo 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mesa de trabajo 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondo_pagos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo_pagos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="volver2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\volver2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="floppy-disk (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\floppy-disk (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A-info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\A-info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ambulancia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ambulancia1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,10 +295,10 @@
   <data name="all (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\all (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="floppy-disk (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\floppy-disk (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="volver2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volver2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="floppy-disk (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RImagen\floppy-disk (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ModuloAmbulancia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RImagen\ModuloAmbulancia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

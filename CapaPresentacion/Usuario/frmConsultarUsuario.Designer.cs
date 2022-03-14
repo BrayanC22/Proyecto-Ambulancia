@@ -30,9 +30,9 @@ namespace CapaPresentacion.Usuario
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgv_Usuarios = new System.Windows.Forms.DataGridView();
+            this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +46,8 @@ namespace CapaPresentacion.Usuario
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.lblNombreAdmin = new System.Windows.Forms.Label();
             this.pboxFotoAdmin = new System.Windows.Forms.PictureBox();
@@ -60,7 +60,6 @@ namespace CapaPresentacion.Usuario
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.dgv_Usuarios);
             this.panel1.Controls.Add(this.btnVerTodos);
@@ -78,20 +77,6 @@ namespace CapaPresentacion.Usuario
             this.panel1.Size = new System.Drawing.Size(809, 438);
             this.panel1.TabIndex = 0;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.Gray;
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(349, 358);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(141, 39);
-            this.btnModificar.TabIndex = 98;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Gray;
@@ -99,29 +84,43 @@ namespace CapaPresentacion.Usuario
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(527, 358);
+            this.btnEliminar.Image = global::CapaPresentacion.Properties.Resources.BorrarDatos;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.Location = new System.Drawing.Point(450, 372);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(141, 39);
             this.btnEliminar.TabIndex = 97;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgv_Usuarios
             // 
             this.dgv_Usuarios.AllowUserToAddRows = false;
             this.dgv_Usuarios.AllowUserToDeleteRows = false;
-            this.dgv_Usuarios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_Usuarios.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dgv_Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdUsuario,
             this.NombreUsuario,
             this.Cedula,
             this.Nombre,
             this.Cargo});
-            this.dgv_Usuarios.Location = new System.Drawing.Point(236, 143);
+            this.dgv_Usuarios.Location = new System.Drawing.Point(235, 143);
+            this.dgv_Usuarios.MultiSelect = false;
             this.dgv_Usuarios.Name = "dgv_Usuarios";
             this.dgv_Usuarios.ReadOnly = true;
-            this.dgv_Usuarios.Size = new System.Drawing.Size(570, 192);
+            this.dgv_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Usuarios.Size = new System.Drawing.Size(570, 206);
             this.dgv_Usuarios.TabIndex = 96;
+            // 
+            // IdUsuario
+            // 
+            this.IdUsuario.HeaderText = "ID";
+            this.IdUsuario.Name = "IdUsuario";
+            this.IdUsuario.ReadOnly = true;
             // 
             // NombreUsuario
             // 
@@ -162,6 +161,7 @@ namespace CapaPresentacion.Usuario
             this.btnVerTodos.Text = "Todos";
             this.btnVerTodos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnVerTodos.UseVisualStyleBackColor = false;
+            this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
             // 
             // btnBuscar
             // 
@@ -178,6 +178,7 @@ namespace CapaPresentacion.Usuario
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtUsuario
             // 
@@ -211,6 +212,7 @@ namespace CapaPresentacion.Usuario
             this.btnCerrar.Size = new System.Drawing.Size(30, 30);
             this.btnCerrar.TabIndex = 21;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMinimizar
             // 
@@ -225,6 +227,7 @@ namespace CapaPresentacion.Usuario
             this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
             this.btnMinimizar.TabIndex = 20;
             this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // label7
             // 
@@ -253,8 +256,8 @@ namespace CapaPresentacion.Usuario
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.btnAgregar);
+            this.panel2.Controls.Add(this.btnRegistrar);
+            this.panel2.Controls.Add(this.btnConsultar);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.lblNombreAdmin);
             this.panel2.Controls.Add(this.pboxFotoAdmin);
@@ -264,35 +267,41 @@ namespace CapaPresentacion.Usuario
             this.panel2.Size = new System.Drawing.Size(232, 438);
             this.panel2.TabIndex = 17;
             // 
-            // button2
+            // btnRegistrar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(0, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 40);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "REGISTRAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.output_onlinepngtools__1___1_;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrar.Location = new System.Drawing.Point(0, 255);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(232, 40);
+            this.btnRegistrar.TabIndex = 23;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // btnAgregar
+            // btnConsultar
             // 
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.Location = new System.Drawing.Point(0, 212);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(232, 40);
-            this.btnAgregar.TabIndex = 22;
-            this.btnAgregar.Text = "CONSULTAR";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnConsultar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnConsultar.Image = global::CapaPresentacion.Properties.Resources.job__1_;
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConsultar.Location = new System.Drawing.Point(0, 212);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(232, 40);
+            this.btnConsultar.TabIndex = 22;
+            this.btnConsultar.Text = "CONSULTAR";
+            this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // label11
             // 
@@ -318,9 +327,10 @@ namespace CapaPresentacion.Usuario
             // 
             // pboxFotoAdmin
             // 
-            this.pboxFotoAdmin.Location = new System.Drawing.Point(12, 44);
+            this.pboxFotoAdmin.Image = global::CapaPresentacion.Properties.Resources.ModuloUsuarios;
+            this.pboxFotoAdmin.Location = new System.Drawing.Point(2, 30);
             this.pboxFotoAdmin.Name = "pboxFotoAdmin";
-            this.pboxFotoAdmin.Size = new System.Drawing.Size(90, 98);
+            this.pboxFotoAdmin.Size = new System.Drawing.Size(100, 112);
             this.pboxFotoAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxFotoAdmin.TabIndex = 19;
             this.pboxFotoAdmin.TabStop = false;
@@ -367,19 +377,19 @@ namespace CapaPresentacion.Usuario
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblNombreAdmin;
         private System.Windows.Forms.PictureBox pboxFotoAdmin;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgv_Usuarios;
         private System.Windows.Forms.Button btnVerTodos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblIngreseCedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

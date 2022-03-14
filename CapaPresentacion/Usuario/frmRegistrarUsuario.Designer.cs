@@ -63,8 +63,8 @@ namespace CapaPresentacion.Usuario
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnRegistro = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.lblNombreAdmin = new System.Windows.Forms.Label();
             this.pboxFotoAdmin = new System.Windows.Forms.PictureBox();
@@ -86,7 +86,6 @@ namespace CapaPresentacion.Usuario
             // 
             this.ContenedorPrincipal.Controls.Add(this.btnRegistrar);
             this.ContenedorPrincipal.Controls.Add(this.groupBox1);
-            this.ContenedorPrincipal.Controls.Add(this.lblPassIdenticas);
             this.ContenedorPrincipal.Controls.Add(this.GroupRegistroUsuario);
             this.ContenedorPrincipal.Controls.Add(this.btnCerrar);
             this.ContenedorPrincipal.Controls.Add(this.btnMinimizar);
@@ -102,13 +101,14 @@ namespace CapaPresentacion.Usuario
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnRegistrar.BackColor = System.Drawing.Color.Gray;
             this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrar.Enabled = false;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.floppy_disk__2_;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.Location = new System.Drawing.Point(304, 372);
             this.btnRegistrar.Name = "btnRegistrar";
@@ -118,6 +118,7 @@ namespace CapaPresentacion.Usuario
             this.btnRegistrar.Text = "CONFIRMAR";
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // groupBox1
             // 
@@ -135,7 +136,7 @@ namespace CapaPresentacion.Usuario
             this.groupBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(237, 83);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 266);
+            this.groupBox1.Size = new System.Drawing.Size(279, 281);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS PERSONALES";
@@ -143,6 +144,10 @@ namespace CapaPresentacion.Usuario
             // cboxCargo
             // 
             this.cboxCargo.FormattingEnabled = true;
+            this.cboxCargo.Items.AddRange(new object[] {
+            "Administrador",
+            "Secretaria",
+            "Gerente"});
             this.cboxCargo.Location = new System.Drawing.Point(87, 183);
             this.cboxCargo.Name = "cboxCargo";
             this.cboxCargo.Size = new System.Drawing.Size(170, 25);
@@ -257,12 +262,13 @@ namespace CapaPresentacion.Usuario
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(170, 23);
             this.txtCedula.TabIndex = 9;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // lblPassIdenticas
             // 
             this.lblPassIdenticas.AutoSize = true;
             this.lblPassIdenticas.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassIdenticas.Location = new System.Drawing.Point(370, 343);
+            this.lblPassIdenticas.Location = new System.Drawing.Point(102, 263);
             this.lblPassIdenticas.Name = "lblPassIdenticas";
             this.lblPassIdenticas.Size = new System.Drawing.Size(0, 12);
             this.lblPassIdenticas.TabIndex = 17;
@@ -272,6 +278,7 @@ namespace CapaPresentacion.Usuario
             this.GroupRegistroUsuario.BackColor = System.Drawing.Color.Transparent;
             this.GroupRegistroUsuario.Controls.Add(this.btnSeleccionarFoto);
             this.GroupRegistroUsuario.Controls.Add(this.lblSeguridad);
+            this.GroupRegistroUsuario.Controls.Add(this.lblPassIdenticas);
             this.GroupRegistroUsuario.Controls.Add(this.lblNivelSeguridad);
             this.GroupRegistroUsuario.Controls.Add(this.txtConfirmaPass);
             this.GroupRegistroUsuario.Controls.Add(this.txtPass);
@@ -286,7 +293,7 @@ namespace CapaPresentacion.Usuario
             this.GroupRegistroUsuario.ForeColor = System.Drawing.Color.Black;
             this.GroupRegistroUsuario.Location = new System.Drawing.Point(515, 83);
             this.GroupRegistroUsuario.Name = "GroupRegistroUsuario";
-            this.GroupRegistroUsuario.Size = new System.Drawing.Size(286, 266);
+            this.GroupRegistroUsuario.Size = new System.Drawing.Size(286, 281);
             this.GroupRegistroUsuario.TabIndex = 17;
             this.GroupRegistroUsuario.TabStop = false;
             this.GroupRegistroUsuario.Text = "DATOS DE CUENTA";
@@ -303,6 +310,7 @@ namespace CapaPresentacion.Usuario
             this.btnSeleccionarFoto.TabIndex = 14;
             this.btnSeleccionarFoto.Text = "FOTO DE PERFIL";
             this.btnSeleccionarFoto.UseVisualStyleBackColor = true;
+            this.btnSeleccionarFoto.Click += new System.EventHandler(this.btnSeleccionarFoto_Click);
             // 
             // lblSeguridad
             // 
@@ -335,6 +343,9 @@ namespace CapaPresentacion.Usuario
             this.txtConfirmaPass.Size = new System.Drawing.Size(170, 23);
             this.txtConfirmaPass.TabIndex = 12;
             this.txtConfirmaPass.UseSystemPasswordChar = true;
+            this.txtConfirmaPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConfirmaPass_KeyUp);
+            this.txtConfirmaPass.MouseLeave += new System.EventHandler(this.txtConfirmaPass_MouseLeave);
+            this.txtConfirmaPass.MouseHover += new System.EventHandler(this.txtConfirmaPass_MouseHover);
             // 
             // txtPass
             // 
@@ -348,6 +359,9 @@ namespace CapaPresentacion.Usuario
             this.txtPass.Size = new System.Drawing.Size(170, 23);
             this.txtPass.TabIndex = 11;
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyUp);
+            this.txtPass.MouseLeave += new System.EventHandler(this.txtPass_MouseLeave);
+            this.txtPass.MouseHover += new System.EventHandler(this.txtPass_MouseHover);
             // 
             // pboxPerfil
             // 
@@ -413,6 +427,7 @@ namespace CapaPresentacion.Usuario
             this.btnCerrar.Size = new System.Drawing.Size(30, 30);
             this.btnCerrar.TabIndex = 16;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMinimizar
             // 
@@ -427,6 +442,7 @@ namespace CapaPresentacion.Usuario
             this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
             this.btnMinimizar.TabIndex = 15;
             this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // label7
             // 
@@ -455,8 +471,8 @@ namespace CapaPresentacion.Usuario
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnAgregar);
+            this.panel1.Controls.Add(this.btnRegistro);
+            this.panel1.Controls.Add(this.btnConsultar);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lblNombreAdmin);
             this.panel1.Controls.Add(this.pboxFotoAdmin);
@@ -466,35 +482,41 @@ namespace CapaPresentacion.Usuario
             this.panel1.Size = new System.Drawing.Size(232, 438);
             this.panel1.TabIndex = 9;
             // 
-            // button2
+            // btnRegistro
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(0, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 40);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "REGISTRAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRegistro.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRegistro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnRegistro.Image = global::CapaPresentacion.Properties.Resources.add__1_;
+            this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistro.Location = new System.Drawing.Point(0, 255);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(232, 40);
+            this.btnRegistro.TabIndex = 23;
+            this.btnRegistro.Text = "REGISTRAR";
+            this.btnRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistro.UseVisualStyleBackColor = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
-            // btnAgregar
+            // btnConsultar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.Location = new System.Drawing.Point(0, 212);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(232, 40);
-            this.btnAgregar.TabIndex = 22;
-            this.btnAgregar.Text = "CONSULTAR";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Image = global::CapaPresentacion.Properties.Resources.output_onlinepngtools__2___1_;
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConsultar.Location = new System.Drawing.Point(0, 212);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(232, 40);
+            this.btnConsultar.TabIndex = 22;
+            this.btnConsultar.Text = "CONSULTAR";
+            this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // label11
             // 
@@ -520,16 +542,18 @@ namespace CapaPresentacion.Usuario
             // 
             // pboxFotoAdmin
             // 
-            this.pboxFotoAdmin.Location = new System.Drawing.Point(12, 44);
+            this.pboxFotoAdmin.Image = global::CapaPresentacion.Properties.Resources.ModuloUsuarios;
+            this.pboxFotoAdmin.Location = new System.Drawing.Point(2, 30);
             this.pboxFotoAdmin.Name = "pboxFotoAdmin";
-            this.pboxFotoAdmin.Size = new System.Drawing.Size(90, 98);
+            this.pboxFotoAdmin.Size = new System.Drawing.Size(100, 112);
             this.pboxFotoAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxFotoAdmin.TabIndex = 19;
             this.pboxFotoAdmin.TabStop = false;
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.Control;
+            this.btnVolver.BackColor = System.Drawing.Color.White;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
@@ -540,13 +564,16 @@ namespace CapaPresentacion.Usuario
             this.btnVolver.TabIndex = 19;
             this.btnVolver.Text = "REGRESAR";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnLimpiar.BackColor = System.Drawing.Color.Gray;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.Image = global::CapaPresentacion.Properties.Resources.BorrarDatos;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.Location = new System.Drawing.Point(518, 372);
             this.btnLimpiar.Name = "btnLimpiar";
@@ -569,7 +596,6 @@ namespace CapaPresentacion.Usuario
             this.Text = "REGISTRAR USUARIO";
             this.Shown += new System.EventHandler(this.frmRegistrarUsuario_Shown);
             this.ContenedorPrincipal.ResumeLayout(false);
-            this.ContenedorPrincipal.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.GroupRegistroUsuario.ResumeLayout(false);
@@ -616,8 +642,8 @@ namespace CapaPresentacion.Usuario
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton rMasculino;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnRegistro;
+        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblNombreAdmin;
         private System.Windows.Forms.PictureBox pboxFotoAdmin;
