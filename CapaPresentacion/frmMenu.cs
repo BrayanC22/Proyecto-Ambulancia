@@ -93,6 +93,7 @@ namespace CapaPresentacion
         {
             frmConsultarUsuario frmConsultar = new frmConsultarUsuario();
             frmConsultar.ShowDialog();
+
         }
     }
 }

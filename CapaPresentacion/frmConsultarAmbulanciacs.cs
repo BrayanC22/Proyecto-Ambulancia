@@ -17,6 +17,8 @@ namespace CapaPresentacion
         List<Object> lst_ambulancia_tmp;
         ClsAmbulancia Ambulancia1;
         frmActualizarAmbulancia frmActualizar = new frmActualizarAmbulancia();
+        frmGuardarAmbulancia frmRegistrar = new frmGuardarAmbulancia();
+
 
 
         public frmConsultarAmbulanciacs()
@@ -123,6 +125,12 @@ namespace CapaPresentacion
         private void txtnunplaca_TextChanged(object sender, EventArgs e)
         {
             buttonactualizar.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmRegistrar.Show();
         }
     }
 }

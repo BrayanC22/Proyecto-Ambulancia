@@ -46,39 +46,49 @@ namespace CapaPresentacion
             this.btnbuscar = new System.Windows.Forms.Button();
             this.txtcedula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblModuloConductores = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
+            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnregresar
             // 
-            this.btnregresar.BackColor = System.Drawing.Color.Transparent;
-            this.btnregresar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btnregresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregresar.Image = global::CapaPresentacion.Properties.Resources.salir;
-            this.btnregresar.Location = new System.Drawing.Point(821, 294);
-            this.btnregresar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnregresar.BackColor = System.Drawing.Color.Gray;
+            this.btnregresar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnregresar.FlatAppearance.BorderSize = 0;
+            this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnregresar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.btnregresar.Location = new System.Drawing.Point(44, 370);
+            this.btnregresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(86, 62);
+            this.btnregresar.Size = new System.Drawing.Size(182, 54);
             this.btnregresar.TabIndex = 87;
-            this.btnregresar.Text = "Regresar";
-            this.btnregresar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnregresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnregresar.Text = "REGRESAR";
+            this.btnregresar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnregresar.UseVisualStyleBackColor = false;
             this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
             // 
             // buttonactualizar
             // 
-            this.buttonactualizar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonactualizar.BackColor = System.Drawing.Color.Gray;
             this.buttonactualizar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.buttonactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonactualizar.Image = global::CapaPresentacion.Properties.Resources.editarConductor;
-            this.buttonactualizar.Location = new System.Drawing.Point(441, 294);
-            this.buttonactualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonactualizar.FlatAppearance.BorderSize = 0;
+            this.buttonactualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonactualizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.buttonactualizar.Location = new System.Drawing.Point(528, 464);
+            this.buttonactualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonactualizar.Name = "buttonactualizar";
-            this.buttonactualizar.Size = new System.Drawing.Size(172, 66);
+            this.buttonactualizar.Size = new System.Drawing.Size(229, 58);
             this.buttonactualizar.TabIndex = 86;
-            this.buttonactualizar.Text = "Actualizar Datos";
-            this.buttonactualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonactualizar.Text = "ACTUALIZAR ";
             this.buttonactualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonactualizar.UseVisualStyleBackColor = false;
             this.buttonactualizar.Click += new System.EventHandler(this.buttonactualizar_Click);
@@ -96,20 +106,22 @@ namespace CapaPresentacion
             this.sexo,
             this.imagen,
             this.codigoCliente});
-            this.dgv_listarTodos.Location = new System.Drawing.Point(20, 94);
-            this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_listarTodos.Location = new System.Drawing.Point(300, 237);
+            this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_listarTodos.Name = "dgv_listarTodos";
             this.dgv_listarTodos.ReadOnly = true;
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(980, 181);
+            this.dgv_listarTodos.Size = new System.Drawing.Size(684, 223);
             this.dgv_listarTodos.TabIndex = 85;
             // 
             // Id_Cliente
             // 
             this.Id_Cliente.HeaderText = "Numero de Cliente";
+            this.Id_Cliente.MinimumWidth = 6;
             this.Id_Cliente.Name = "Id_Cliente";
             this.Id_Cliente.ReadOnly = true;
+            this.Id_Cliente.Width = 125;
             // 
             // cedula
             // 
@@ -177,12 +189,15 @@ namespace CapaPresentacion
             // 
             // btn_todos
             // 
-            this.btn_todos.BackColor = System.Drawing.Color.Transparent;
+            this.btn_todos.BackColor = System.Drawing.Color.Gray;
             this.btn_todos.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btn_todos.Location = new System.Drawing.Point(885, 52);
-            this.btn_todos.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_todos.FlatAppearance.BorderSize = 0;
+            this.btn_todos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_todos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.btn_todos.Location = new System.Drawing.Point(692, 97);
+            this.btn_todos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_todos.Name = "btn_todos";
-            this.btn_todos.Size = new System.Drawing.Size(115, 24);
+            this.btn_todos.Size = new System.Drawing.Size(229, 58);
             this.btn_todos.TabIndex = 84;
             this.btn_todos.Text = "Mostrar Todos";
             this.btn_todos.UseVisualStyleBackColor = false;
@@ -190,12 +205,15 @@ namespace CapaPresentacion
             // 
             // btnbuscar
             // 
-            this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnbuscar.BackColor = System.Drawing.Color.Gray;
             this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btnbuscar.Location = new System.Drawing.Point(423, 52);
-            this.btnbuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnbuscar.FlatAppearance.BorderSize = 0;
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.btnbuscar.Location = new System.Drawing.Point(692, 159);
+            this.btnbuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(57, 25);
+            this.btnbuscar.Size = new System.Drawing.Size(229, 58);
             this.btnbuscar.TabIndex = 83;
             this.btnbuscar.Text = "Buscar";
             this.btnbuscar.UseVisualStyleBackColor = false;
@@ -203,10 +221,10 @@ namespace CapaPresentacion
             // 
             // txtcedula
             // 
-            this.txtcedula.Location = new System.Drawing.Point(280, 55);
-            this.txtcedula.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcedula.Location = new System.Drawing.Point(375, 159);
+            this.txtcedula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcedula.Name = "txtcedula";
-            this.txtcedula.Size = new System.Drawing.Size(128, 20);
+            this.txtcedula.Size = new System.Drawing.Size(197, 22);
             this.txtcedula.TabIndex = 82;
             this.txtcedula.TextChanged += new System.EventHandler(this.txtcedula_TextChanged);
             this.txtcedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedula_KeyPress);
@@ -216,31 +234,153 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(27, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(370, 114);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 22);
+            this.label1.Size = new System.Drawing.Size(209, 26);
             this.label1.TabIndex = 81;
-            this.label1.Text = "Ingrese el número de Cédula: ";
+            this.label1.Text = "Ingrese su Cédula: ";
+            // 
+            // lblModuloConductores
+            // 
+            this.lblModuloConductores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblModuloConductores.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuloConductores.ForeColor = System.Drawing.Color.Black;
+            this.lblModuloConductores.Location = new System.Drawing.Point(257, 33);
+            this.lblModuloConductores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModuloConductores.Name = "lblModuloConductores";
+            this.lblModuloConductores.Size = new System.Drawing.Size(758, 37);
+            this.lblModuloConductores.TabIndex = 90;
+            this.lblModuloConductores.Text = "MÓDULO CLIENTE";
+            this.lblModuloConductores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(0, -2);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(1015, 37);
+            this.label5.TabIndex = 89;
+            this.label5.Text = "Los Rápidos S.A.";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnRegistrar);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.btnregresar);
+            this.panel1.Location = new System.Drawing.Point(-3, 33);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(270, 510);
+            this.panel1.TabIndex = 91;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.job__1_;
+            this.btnRegistrar.Location = new System.Drawing.Point(0, 237);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(270, 60);
+            this.btnRegistrar.TabIndex = 90;
+            this.btnRegistrar.Text = "CONSULTAR";
+            this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(7, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(102, 105);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 81;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::CapaPresentacion.Properties.Resources.output_onlinepngtools__1___1_;
+            this.button1.Location = new System.Drawing.Point(0, 150);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(270, 60);
+            this.button1.TabIndex = 91;
+            this.button1.Text = "REGISTRAR";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Black;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrar.IconColor = System.Drawing.Color.White;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnCerrar.IconSize = 25;
+            this.btnCerrar.Location = new System.Drawing.Point(970, -2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(40, 31);
+            this.btnCerrar.TabIndex = 94;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Black;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizar.IconColor = System.Drawing.Color.White;
+            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnMinimizar.IconSize = 25;
+            this.btnMinimizar.Location = new System.Drawing.Point(933, -8);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(40, 37);
+            this.btnMinimizar.TabIndex = 93;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
             // 
             // frmConsultarCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1022, 367);
-            this.Controls.Add(this.btnregresar);
+            this.ClientSize = new System.Drawing.Size(1015, 543);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnMinimizar);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblModuloConductores);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonactualizar);
             this.Controls.Add(this.dgv_listarTodos);
             this.Controls.Add(this.btn_todos);
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.txtcedula);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmConsultarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConsultarCliente";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +404,13 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn imagen;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoCliente;
+        private System.Windows.Forms.Label lblModuloConductores;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button1;
+        private FontAwesome.Sharp.IconButton btnCerrar;
+        private FontAwesome.Sharp.IconButton btnMinimizar;
     }
 }
