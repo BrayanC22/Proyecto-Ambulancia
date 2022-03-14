@@ -100,7 +100,43 @@ namespace CapaNegocio.Usuario
             }
             return Tuple.Create(mensaje, ingreso);
         }
+
+
+        public List<Object> listarUsuario()
+        {
+            List<Object> lstUsuario = new List<Object>();
+
+            SqlConnection conexion = baseDatos.abrir_conexion();
+
+            SqlCommand comannd = new SqlCommand();
+
+            comannd.Connection = conexion;
+            comannd.CommandText = "UsuarioSelectCommand";
+            comannd.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlDataReader registros = comannd.ExecuteReader(); // lo usamos porque requerimos que la base nos devuelva algo todo esa info llega a la variable registros.
+
+            while (registros.Read())  // leo la informacion almacenada en registro
+            {
+                var tmp = new
+                {
+                    id_usuario = registros["Id_Usuario"].ToString(),
+                    nombre = registros["Nombre"].ToString(),  // para asignar valores de la base a la variable cedula
+                    cargo = registros["Apellido"].ToString(),
+                    cedula = registros["Cedula"].ToString(),
+                    nombreUsuario = registros["NombreUsuario"].ToString(),
+                };
+
+                lstUsuario.Add(tmp);
+            }
+            baseDatos.cerrar_conexion(conexion);
+            return lstUsuario;
+
+
+        }
+
+
     }
+
 
 
 

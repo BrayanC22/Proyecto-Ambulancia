@@ -203,6 +203,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BorrarDatos {
+            get {
+                object obj = ResourceManager.GetObject("BorrarDatos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel__1_ {
             get {
                 object obj = ResourceManager.GetObject("cancel (1)", resourceCulture);
@@ -406,6 +416,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap floppy_disk__2_ {
             get {
                 object obj = ResourceManager.GetObject("floppy-disk (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap floppy_disk__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("floppy-disk (2)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

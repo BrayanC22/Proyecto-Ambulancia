@@ -33,23 +33,28 @@ namespace CapaPresentacion.Usuario
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ContenedorPrincipal = new System.Windows.Forms.Panel();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxCargo = new System.Windows.Forms.ComboBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rMasculino = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
-            this.GroupRegistroUsuario = new System.Windows.Forms.GroupBox();
-            this.lblSeguridad = new System.Windows.Forms.Label();
             this.lblPassIdenticas = new System.Windows.Forms.Label();
-            this.lblNivelSeguridad = new System.Windows.Forms.Label();
+            this.GroupRegistroUsuario = new System.Windows.Forms.GroupBox();
             this.btnSeleccionarFoto = new System.Windows.Forms.Button();
-            this.pboxPerfil = new System.Windows.Forms.PictureBox();
+            this.lblSeguridad = new System.Windows.Forms.Label();
+            this.lblNivelSeguridad = new System.Windows.Forms.Label();
             this.txtConfirmaPass = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.pboxPerfil = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,18 +63,13 @@ namespace CapaPresentacion.Usuario
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pboxFotoAdmin = new System.Windows.Forms.PictureBox();
-            this.lblNombreAdmin = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.rMasculino = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.cboxCargo = new System.Windows.Forms.ComboBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblNombreAdmin = new System.Windows.Forms.Label();
+            this.pboxFotoAdmin = new System.Windows.Forms.PictureBox();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.ContenedorPrincipal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GroupRegistroUsuario.SuspendLayout();
@@ -100,6 +100,25 @@ namespace CapaPresentacion.Usuario
             this.ContenedorPrincipal.Size = new System.Drawing.Size(809, 438);
             this.ContenedorPrincipal.TabIndex = 10;
             // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrar.Enabled = false;
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrar.Location = new System.Drawing.Point(304, 372);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnRegistrar.Size = new System.Drawing.Size(200, 40);
+            this.btnRegistrar.TabIndex = 6;
+            this.btnRegistrar.Text = "CONFIRMAR";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboxCargo);
@@ -120,6 +139,57 @@ namespace CapaPresentacion.Usuario
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS PERSONALES";
+            // 
+            // cboxCargo
+            // 
+            this.cboxCargo.FormattingEnabled = true;
+            this.cboxCargo.Location = new System.Drawing.Point(87, 183);
+            this.cboxCargo.Name = "cboxCargo";
+            this.cboxCargo.Size = new System.Drawing.Size(170, 25);
+            this.cboxCargo.TabIndex = 19;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton1.Location = new System.Drawing.Point(179, 217);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(97, 21);
+            this.radioButton1.TabIndex = 14;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Femenino";
+            this.radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // rMasculino
+            // 
+            this.rMasculino.AutoSize = true;
+            this.rMasculino.Location = new System.Drawing.Point(84, 217);
+            this.rMasculino.Name = "rMasculino";
+            this.rMasculino.Size = new System.Drawing.Size(99, 21);
+            this.rMasculino.TabIndex = 13;
+            this.rMasculino.TabStop = true;
+            this.rMasculino.Text = "Masculino";
+            this.rMasculino.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 217);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 19);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Género:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(4, 183);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 19);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Cargo:";
             // 
             // label1
             // 
@@ -188,6 +258,15 @@ namespace CapaPresentacion.Usuario
             this.txtCedula.Size = new System.Drawing.Size(170, 23);
             this.txtCedula.TabIndex = 9;
             // 
+            // lblPassIdenticas
+            // 
+            this.lblPassIdenticas.AutoSize = true;
+            this.lblPassIdenticas.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassIdenticas.Location = new System.Drawing.Point(370, 343);
+            this.lblPassIdenticas.Name = "lblPassIdenticas";
+            this.lblPassIdenticas.Size = new System.Drawing.Size(0, 12);
+            this.lblPassIdenticas.TabIndex = 17;
+            // 
             // GroupRegistroUsuario
             // 
             this.GroupRegistroUsuario.BackColor = System.Drawing.Color.Transparent;
@@ -212,32 +291,6 @@ namespace CapaPresentacion.Usuario
             this.GroupRegistroUsuario.TabStop = false;
             this.GroupRegistroUsuario.Text = "DATOS DE CUENTA";
             // 
-            // lblSeguridad
-            // 
-            this.lblSeguridad.Font = new System.Drawing.Font("Cambria", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeguridad.ForeColor = System.Drawing.Color.Crimson;
-            this.lblSeguridad.Location = new System.Drawing.Point(100, 219);
-            this.lblSeguridad.Name = "lblSeguridad";
-            this.lblSeguridad.Size = new System.Drawing.Size(170, 18);
-            this.lblSeguridad.TabIndex = 18;
-            this.lblSeguridad.Text = ".";
-            // 
-            // lblPassIdenticas
-            // 
-            this.lblPassIdenticas.AutoSize = true;
-            this.lblPassIdenticas.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassIdenticas.Location = new System.Drawing.Point(370, 343);
-            this.lblPassIdenticas.Name = "lblPassIdenticas";
-            this.lblPassIdenticas.Size = new System.Drawing.Size(0, 12);
-            this.lblPassIdenticas.TabIndex = 17;
-            // 
-            // lblNivelSeguridad
-            // 
-            this.lblNivelSeguridad.Location = new System.Drawing.Point(270, 198);
-            this.lblNivelSeguridad.Name = "lblNivelSeguridad";
-            this.lblNivelSeguridad.Size = new System.Drawing.Size(10, 16);
-            this.lblNivelSeguridad.TabIndex = 15;
-            // 
             // btnSeleccionarFoto
             // 
             this.btnSeleccionarFoto.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -251,14 +304,22 @@ namespace CapaPresentacion.Usuario
             this.btnSeleccionarFoto.Text = "FOTO DE PERFIL";
             this.btnSeleccionarFoto.UseVisualStyleBackColor = true;
             // 
-            // pboxPerfil
+            // lblSeguridad
             // 
-            this.pboxPerfil.Location = new System.Drawing.Point(100, 23);
-            this.pboxPerfil.Name = "pboxPerfil";
-            this.pboxPerfil.Size = new System.Drawing.Size(96, 91);
-            this.pboxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxPerfil.TabIndex = 13;
-            this.pboxPerfil.TabStop = false;
+            this.lblSeguridad.Font = new System.Drawing.Font("Cambria", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeguridad.ForeColor = System.Drawing.Color.Crimson;
+            this.lblSeguridad.Location = new System.Drawing.Point(100, 219);
+            this.lblSeguridad.Name = "lblSeguridad";
+            this.lblSeguridad.Size = new System.Drawing.Size(170, 18);
+            this.lblSeguridad.TabIndex = 18;
+            this.lblSeguridad.Text = ".";
+            // 
+            // lblNivelSeguridad
+            // 
+            this.lblNivelSeguridad.Location = new System.Drawing.Point(270, 198);
+            this.lblNivelSeguridad.Name = "lblNivelSeguridad";
+            this.lblNivelSeguridad.Size = new System.Drawing.Size(10, 16);
+            this.lblNivelSeguridad.TabIndex = 15;
             // 
             // txtConfirmaPass
             // 
@@ -288,6 +349,15 @@ namespace CapaPresentacion.Usuario
             this.txtPass.TabIndex = 11;
             this.txtPass.UseSystemPasswordChar = true;
             // 
+            // pboxPerfil
+            // 
+            this.pboxPerfil.Location = new System.Drawing.Point(100, 23);
+            this.pboxPerfil.Name = "pboxPerfil";
+            this.pboxPerfil.Size = new System.Drawing.Size(96, 91);
+            this.pboxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxPerfil.TabIndex = 13;
+            this.pboxPerfil.TabStop = false;
+            // 
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.White;
@@ -299,24 +369,6 @@ namespace CapaPresentacion.Usuario
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(170, 23);
             this.txtUsuario.TabIndex = 10;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrar.Enabled = false;
-            this.btnRegistrar.FlatAppearance.BorderSize = 0;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(304, 372);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(200, 40);
-            this.btnRegistrar.TabIndex = 6;
-            this.btnRegistrar.Text = "CONFIRMAR";
-            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrar.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -414,85 +466,20 @@ namespace CapaPresentacion.Usuario
             this.panel1.Size = new System.Drawing.Size(232, 438);
             this.panel1.TabIndex = 9;
             // 
-            // btnLimpiar
+            // button2
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(518, 372);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(200, 40);
-            this.btnLimpiar.TabIndex = 4;
-            this.btnLimpiar.Text = "LIMPIAR DATOS";
-            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVolver.Location = new System.Drawing.Point(12, 372);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(200, 40);
-            this.btnVolver.TabIndex = 19;
-            this.btnVolver.Text = "REGRESAR";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(4, 183);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 19);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Cargo:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 217);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 19);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Género:";
-            // 
-            // pboxFotoAdmin
-            // 
-            this.pboxFotoAdmin.Location = new System.Drawing.Point(12, 44);
-            this.pboxFotoAdmin.Name = "pboxFotoAdmin";
-            this.pboxFotoAdmin.Size = new System.Drawing.Size(90, 98);
-            this.pboxFotoAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxFotoAdmin.TabIndex = 19;
-            this.pboxFotoAdmin.TabStop = false;
-            // 
-            // lblNombreAdmin
-            // 
-            this.lblNombreAdmin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAdmin.ForeColor = System.Drawing.Color.White;
-            this.lblNombreAdmin.Location = new System.Drawing.Point(106, 44);
-            this.lblNombreAdmin.Name = "lblNombreAdmin";
-            this.lblNombreAdmin.Size = new System.Drawing.Size(107, 60);
-            this.lblNombreAdmin.TabIndex = 20;
-            this.lblNombreAdmin.Text = "YERMIN LINO SANCHEZ";
-            this.lblNombreAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(106, 104);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 38);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Administrador";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(0, 255);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(232, 40);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "REGISTRAR";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // btnAgregar
             // 
@@ -509,51 +496,65 @@ namespace CapaPresentacion.Usuario
             this.btnAgregar.Text = "CONSULTAR";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // label11
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(0, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 40);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "REGISTRAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(106, 104);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 38);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Administrador";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // rMasculino
+            // lblNombreAdmin
             // 
-            this.rMasculino.AutoSize = true;
-            this.rMasculino.Location = new System.Drawing.Point(84, 217);
-            this.rMasculino.Name = "rMasculino";
-            this.rMasculino.Size = new System.Drawing.Size(99, 21);
-            this.rMasculino.TabIndex = 13;
-            this.rMasculino.TabStop = true;
-            this.rMasculino.Text = "Masculino";
-            this.rMasculino.UseVisualStyleBackColor = true;
+            this.lblNombreAdmin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreAdmin.ForeColor = System.Drawing.Color.White;
+            this.lblNombreAdmin.Location = new System.Drawing.Point(106, 44);
+            this.lblNombreAdmin.Name = "lblNombreAdmin";
+            this.lblNombreAdmin.Size = new System.Drawing.Size(107, 60);
+            this.lblNombreAdmin.TabIndex = 20;
+            this.lblNombreAdmin.Text = "YERMIN LINO SANCHEZ";
+            this.lblNombreAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // radioButton1
+            // pboxFotoAdmin
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Location = new System.Drawing.Point(179, 217);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(97, 21);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Femenino";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.pboxFotoAdmin.Location = new System.Drawing.Point(12, 44);
+            this.pboxFotoAdmin.Name = "pboxFotoAdmin";
+            this.pboxFotoAdmin.Size = new System.Drawing.Size(90, 98);
+            this.pboxFotoAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxFotoAdmin.TabIndex = 19;
+            this.pboxFotoAdmin.TabStop = false;
             // 
-            // cboxCargo
+            // btnVolver
             // 
-            this.cboxCargo.FormattingEnabled = true;
-            this.cboxCargo.Location = new System.Drawing.Point(87, 183);
-            this.cboxCargo.Name = "cboxCargo";
-            this.cboxCargo.Size = new System.Drawing.Size(170, 25);
-            this.cboxCargo.TabIndex = 19;
+            this.btnVolver.BackColor = System.Drawing.SystemColors.Control;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVolver.Location = new System.Drawing.Point(12, 372);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(200, 40);
+            this.btnVolver.TabIndex = 19;
+            this.btnVolver.Text = "REGRESAR";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiar.Location = new System.Drawing.Point(518, 372);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(200, 40);
+            this.btnLimpiar.TabIndex = 4;
+            this.btnLimpiar.Text = "LIMPIAR DATOS";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // frmRegistrarUsuario
             // 

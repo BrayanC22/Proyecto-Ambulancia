@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Login;
+using CapaPresentacion.Usuario;
 
 namespace CapaPresentacion
 {
@@ -86,6 +87,12 @@ namespace CapaPresentacion
         {
             guardarAmbulancia.Show();
             this.Hide();
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            frmConsultarUsuario frmConsultar = new frmConsultarUsuario();
+            frmConsultar.ShowDialog();
         }
     }
 }
