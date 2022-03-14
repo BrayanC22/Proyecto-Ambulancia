@@ -119,5 +119,15 @@ namespace CapaPresentacion
                 MessageBox.Show("El archivo no es un tipo de imagen valido");
             }
         }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

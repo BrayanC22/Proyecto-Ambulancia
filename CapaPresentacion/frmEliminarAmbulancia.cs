@@ -89,5 +89,20 @@ namespace CapaPresentacion
             frmGuardarAmbulancia frmEst = new frmGuardarAmbulancia(Ambulancia1);
             frmEst.Show();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

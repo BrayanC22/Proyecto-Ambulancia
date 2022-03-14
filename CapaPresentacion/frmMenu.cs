@@ -62,13 +62,7 @@ namespace CapaPresentacion
             this.Hide();
         }
 
-  
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            frmAsignar asignar = new frmAsignar();
-            asignar.Show();
-            this.Hide();
-        }
+
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -94,6 +88,16 @@ namespace CapaPresentacion
             frmConsultarUsuario frmConsultar = new frmConsultarUsuario();
             frmConsultar.ShowDialog();
 
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
