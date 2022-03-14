@@ -44,52 +44,63 @@ namespace CapaPresentacion
             this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
+            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
+            this.lblModuloConductores = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnregresar
             // 
-            this.btnregresar.BackColor = System.Drawing.Color.Transparent;
-            this.btnregresar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btnregresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnregresar.Image = global::CapaPresentacion.Properties.Resources.salir;
-            this.btnregresar.Location = new System.Drawing.Point(776, 295);
-            this.btnregresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnregresar.BackColor = System.Drawing.Color.Gray;
+            this.btnregresar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnregresar.FlatAppearance.BorderSize = 0;
+            this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnregresar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.btnregresar.Location = new System.Drawing.Point(36, 352);
+            this.btnregresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(76, 63);
+            this.btnregresar.Size = new System.Drawing.Size(181, 53);
             this.btnregresar.TabIndex = 23;
-            this.btnregresar.Text = "Regresar";
-            this.btnregresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnregresar.Text = "REGRESAR";
             this.btnregresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnregresar.UseVisualStyleBackColor = false;
             this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.BackColor = System.Drawing.Color.White;
-            this.btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.btn_eliminar.BackColor = System.Drawing.Color.Gray;
+            this.btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btn_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminarConductor;
-            this.btn_eliminar.Location = new System.Drawing.Point(430, 295);
-            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_eliminar.Location = new System.Drawing.Point(545, 405);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(120, 63);
+            this.btn_eliminar.Size = new System.Drawing.Size(160, 53);
             this.btn_eliminar.TabIndex = 22;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_eliminar.Text = "BORRAR";
             this.btn_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_eliminar.UseVisualStyleBackColor = false;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btnbuscar
             // 
-            this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btnbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnbuscar.Location = new System.Drawing.Point(508, 37);
-            this.btnbuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnbuscar.BackColor = System.Drawing.Color.Gray;
+            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnbuscar.FlatAppearance.BorderSize = 0;
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.btnbuscar.Location = new System.Drawing.Point(746, 84);
+            this.btnbuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(68, 32);
+            this.btnbuscar.Size = new System.Drawing.Size(181, 53);
             this.btnbuscar.TabIndex = 21;
             this.btnbuscar.Text = "Buscar";
             this.btnbuscar.UseVisualStyleBackColor = false;
@@ -97,10 +108,10 @@ namespace CapaPresentacion
             // 
             // txtcedula
             // 
-            this.txtcedula.Location = new System.Drawing.Point(320, 45);
-            this.txtcedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcedula.Location = new System.Drawing.Point(545, 102);
+            this.txtcedula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcedula.Name = "txtcedula";
-            this.txtcedula.Size = new System.Drawing.Size(139, 20);
+            this.txtcedula.Size = new System.Drawing.Size(184, 22);
             this.txtcedula.TabIndex = 20;
             this.txtcedula.TextChanged += new System.EventHandler(this.txtcedula_TextChanged);
             this.txtcedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedula_KeyPress);
@@ -110,12 +121,11 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(40, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(283, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 22);
+            this.label1.Size = new System.Drawing.Size(210, 26);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Cédula del Cliente a eliminar: ";
+            this.label1.Text = "Cédula a eliminar: ";
             // 
             // dgv_listarTodos
             // 
@@ -129,13 +139,13 @@ namespace CapaPresentacion
             this.sexo,
             this.imagen,
             this.codigoCliente});
-            this.dgv_listarTodos.Location = new System.Drawing.Point(44, 102);
-            this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_listarTodos.Location = new System.Drawing.Point(276, 161);
+            this.dgv_listarTodos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_listarTodos.Name = "dgv_listarTodos";
             this.dgv_listarTodos.ReadOnly = true;
             this.dgv_listarTodos.RowHeadersWidth = 51;
             this.dgv_listarTodos.RowTemplate.Height = 24;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(862, 181);
+            this.dgv_listarTodos.Size = new System.Drawing.Size(651, 223);
             this.dgv_listarTodos.TabIndex = 86;
             // 
             // cedula
@@ -202,23 +212,126 @@ namespace CapaPresentacion
             this.codigoCliente.ReadOnly = true;
             this.codigoCliente.Width = 125;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Black;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrar.IconColor = System.Drawing.Color.White;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnCerrar.IconSize = 25;
+            this.btnCerrar.Location = new System.Drawing.Point(935, -1);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(40, 37);
+            this.btnCerrar.TabIndex = 96;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Black;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizar.IconColor = System.Drawing.Color.White;
+            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnMinimizar.IconSize = 25;
+            this.btnMinimizar.Location = new System.Drawing.Point(887, -5);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(40, 37);
+            this.btnMinimizar.TabIndex = 95;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            // 
+            // lblModuloConductores
+            // 
+            this.lblModuloConductores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblModuloConductores.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuloConductores.ForeColor = System.Drawing.Color.Black;
+            this.lblModuloConductores.Location = new System.Drawing.Point(256, 36);
+            this.lblModuloConductores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModuloConductores.Name = "lblModuloConductores";
+            this.lblModuloConductores.Size = new System.Drawing.Size(722, 37);
+            this.lblModuloConductores.TabIndex = 94;
+            this.lblModuloConductores.Text = "MÓDULO CLIENTE";
+            this.lblModuloConductores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(-1, -1);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(979, 37);
+            this.label5.TabIndex = 93;
+            this.label5.Text = "Los Rápidos S.A.";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
+            this.panel1.Controls.Add(this.btnRegistrar);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.btnregresar);
+            this.panel1.Location = new System.Drawing.Point(-3, 36);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(261, 510);
+            this.panel1.TabIndex = 97;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrar.Image = global::CapaPresentacion.Properties.Resources.job__1_;
+            this.btnRegistrar.Location = new System.Drawing.Point(0, 179);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(261, 60);
+            this.btnRegistrar.TabIndex = 90;
+            this.btnRegistrar.Text = "ELIMINAR ";
+            this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(15, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(102, 105);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 81;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmEliminarClientecs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(940, 399);
-            this.Controls.Add(this.dgv_listarTodos);
-            this.Controls.Add(this.btnregresar);
-            this.Controls.Add(this.btn_eliminar);
+            this.ClientSize = new System.Drawing.Size(978, 491);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnbuscar);
+            this.Controls.Add(this.lblModuloConductores);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgv_listarTodos);
+            this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.txtcedula);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmEliminarClientecs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEliminarClientecs";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,5 +352,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn imagen;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoCliente;
+        private FontAwesome.Sharp.IconButton btnCerrar;
+        private FontAwesome.Sharp.IconButton btnMinimizar;
+        private System.Windows.Forms.Label lblModuloConductores;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -87,5 +87,11 @@ namespace CapaPresentacion
             guardarAmbulancia.Show();
             this.Hide();
         }
+
+        private void btnCliente_Click_1(object sender, EventArgs e)
+        {
+            cliente.Show();
+            this.Hide();
+        }
     }
 }

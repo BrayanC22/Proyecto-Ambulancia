@@ -18,6 +18,7 @@ namespace CapaPresentacion
         List<Object> lst_cliente_tmp;
         String rutaimagen;
         frmActualizarCliente frmActualizar = new frmActualizarCliente();
+        frmCliente frmRegistrar = new frmCliente();
 
         public frmConsultarCliente()
         {
@@ -150,6 +151,12 @@ namespace CapaPresentacion
         private void txtcedula_TextChanged(object sender, EventArgs e)
         {
             buttonactualizar.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmRegistrar.Show();
         }
     }
 
