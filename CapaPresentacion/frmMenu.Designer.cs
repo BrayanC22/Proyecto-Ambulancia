@@ -156,7 +156,7 @@
             this.btnCliente.Text = "Módulo Cliente";
             this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCliente.UseVisualStyleBackColor = false;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click_1);
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // btnCerrar
             // 
