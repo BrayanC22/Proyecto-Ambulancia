@@ -119,11 +119,17 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pagos\frmPagos.cs">
+    <Compile Include="Solicitudes\frmHistorialPagos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pagos\frmPagos.Designer.cs">
-      <DependentUpon>frmPagos.cs</DependentUpon>
+    <Compile Include="Solicitudes\frmHistorialPagos.Designer.cs">
+      <DependentUpon>frmHistorialPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitudes\frmPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Solicitudes\frmPago.Designer.cs">
+      <DependentUpon>frmPago.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\frmLogin.cs">
       <SubType>Form</SubType>
@@ -183,8 +189,11 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pagos\frmPagos.resx">
-      <DependentUpon>frmPagos.cs</DependentUpon>
+    <EmbeddedResource Include="Solicitudes\frmHistorialPagos.resx">
+      <DependentUpon>frmHistorialPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitudes\frmPago.resx">
+      <DependentUpon>frmPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

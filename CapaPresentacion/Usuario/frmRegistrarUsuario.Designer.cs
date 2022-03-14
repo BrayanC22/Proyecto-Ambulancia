@@ -46,10 +46,10 @@ namespace CapaPresentacion.Usuario
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
-            this.lblPassIdenticas = new System.Windows.Forms.Label();
             this.GroupRegistroUsuario = new System.Windows.Forms.GroupBox();
             this.btnSeleccionarFoto = new System.Windows.Forms.Button();
             this.lblSeguridad = new System.Windows.Forms.Label();
+            this.lblPassIdenticas = new System.Windows.Forms.Label();
             this.lblNivelSeguridad = new System.Windows.Forms.Label();
             this.txtConfirmaPass = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -264,15 +264,6 @@ namespace CapaPresentacion.Usuario
             this.txtCedula.TabIndex = 9;
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
-            // lblPassIdenticas
-            // 
-            this.lblPassIdenticas.AutoSize = true;
-            this.lblPassIdenticas.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassIdenticas.Location = new System.Drawing.Point(102, 263);
-            this.lblPassIdenticas.Name = "lblPassIdenticas";
-            this.lblPassIdenticas.Size = new System.Drawing.Size(0, 12);
-            this.lblPassIdenticas.TabIndex = 17;
-            // 
             // GroupRegistroUsuario
             // 
             this.GroupRegistroUsuario.BackColor = System.Drawing.Color.Transparent;
@@ -321,6 +312,15 @@ namespace CapaPresentacion.Usuario
             this.lblSeguridad.Size = new System.Drawing.Size(170, 18);
             this.lblSeguridad.TabIndex = 18;
             this.lblSeguridad.Text = ".";
+            // 
+            // lblPassIdenticas
+            // 
+            this.lblPassIdenticas.AutoSize = true;
+            this.lblPassIdenticas.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassIdenticas.Location = new System.Drawing.Point(102, 263);
+            this.lblPassIdenticas.Name = "lblPassIdenticas";
+            this.lblPassIdenticas.Size = new System.Drawing.Size(0, 12);
+            this.lblPassIdenticas.TabIndex = 17;
             // 
             // lblNivelSeguridad
             // 
@@ -582,6 +582,7 @@ namespace CapaPresentacion.Usuario
             this.btnLimpiar.Text = "LIMPIAR DATOS";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // frmRegistrarUsuario
             // 

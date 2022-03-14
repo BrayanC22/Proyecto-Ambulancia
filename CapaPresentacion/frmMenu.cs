@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Login;
 using CapaPresentacion.Usuario;
+using CapaPresentacion;
 
 namespace CapaPresentacion
 {
@@ -98,6 +99,12 @@ namespace CapaPresentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            frmPagos pagos = new frmPagos();
+            pagos.ShowDialog();
         }
     }
 }

@@ -295,10 +295,11 @@ namespace CapaPresentacion.Usuario
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            frmConsultarUsuario consultarUsuario = new frmConsultarUsuario();
-            consultarUsuario.ShowDialog();
             this.Close();
             this.Dispose();
+            frmConsultarUsuario consultarUsuario = new frmConsultarUsuario();
+            consultarUsuario.ShowDialog();
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -309,6 +310,11 @@ namespace CapaPresentacion.Usuario
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarDatos();
         }
     }
 }
