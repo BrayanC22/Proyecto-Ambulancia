@@ -78,6 +78,68 @@ AS
 DELETE FROM [Usuario] WHERE( [Id_Usuario] = @Id) 
 GO
 
+/* ------------------- Pagos ------------------------*/
+use LosRapidosSAbd;
+CREATE TABLE Solicitud
+(
+ 
+  Id_Solicitud      int  identity (1,1) not null,
+  CedulaCliente         VARCHAR (10) not null,
+  NombreCliente         VARCHAR (40) not null,
+  hospitalOrigen              VARCHAR (40) not null ,
+  hospitalDestino           VARCHAR (40) not null ,
+  placaAmbulancia            VARCHAR(5) not null,
+  descripcionSolicitud            VARCHAR(500) not null,
+  totalPagar            Float,
+  Primary Key(Id_Solicitud));
+  -- drop table Solicitud;
+
+  -- Crear Stored procedured --
+
+USE [LosRapidosSAbd]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE OR ALTER PROCEDURE [dbo].[SolicitudInsertCommand]
+(
+  @CedulaCliente         VARCHAR (10),
+  @NombreCliente         VARCHAR (40),
+  @hospitalOrigen              VARCHAR (40),
+  @hospitalDestino           VARCHAR (40),
+  @placaAmbulancia            VARCHAR(5),
+  @descripcionSolicitud            VARCHAR(500),
+  @totalPagar float
+)
+AS
+	SET NOCOUNT OFF;
+INSERT INTO [Solicitud] ([CedulaCliente], [NombreCliente], [hospitalOrigen], [hospitalDestino], [placaAmbulancia], [descripcionSolicitud],[totalPagar]) VALUES (@CedulaCliente, @NombreCliente, @hospitalOrigen, @hospitalDestino, @placaAmbulancia, @descripcionSolicitud, @totalPagar);
+	
+SELECT CedulaCliente, NombreCliente, hospitalOrigen, hospitalDestino, placaAmbulancia, descripcionSolicitud, totalPagar FROM Solicitud WHERE (Id_Solicitud = SCOPE_IDENTITY())
+
+GO
+
+
+/* --------------------- Consultar Solicitudes ----------------------------- */
+GO
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[SolicitudSelectCommand]
+AS
+	SET NOCOUNT ON;
+SELECT        Solicitud.*
+FROM            Solicitud
+GO
+
 
 
 /* ---------------------- CLIENTE -------------------------- */

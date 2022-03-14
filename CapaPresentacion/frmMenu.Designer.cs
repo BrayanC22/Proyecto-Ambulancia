@@ -86,9 +86,10 @@
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Size = new System.Drawing.Size(150, 120);
             this.btnPagos.TabIndex = 25;
-            this.btnPagos.Text = "Módulo Pagos";
+            this.btnPagos.Text = "Módulo Solicitudes";
             this.btnPagos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPagos.UseVisualStyleBackColor = false;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnAmbulancia
             // 
