@@ -44,15 +44,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.pboxMenu = new System.Windows.Forms.PictureBox();
             this.btnConfig = new FontAwesome.Sharp.IconButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -218,7 +218,7 @@
             this.panel3.Controls.Add(this.btnCerrarSesion);
             this.panel3.Controls.Add(this.groupBox2);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.pboxMenu);
             this.panel3.Controls.Add(this.btnConfig);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -233,7 +233,7 @@
             this.btnCerrarSesion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(22)))), ((int)(((byte)(10)))));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(39, 335);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(43, 335);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(170, 37);
             this.btnCerrarSesion.TabIndex = 2;
@@ -267,7 +267,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblRol);
             this.groupBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(30, 199);
@@ -277,25 +277,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cargo";
             // 
-            // label3
+            // lblRol
             // 
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(188, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "ROL";
+            this.lblRol.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.White;
+            this.lblRol.Location = new System.Drawing.Point(6, 25);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(188, 18);
+            this.lblRol.TabIndex = 2;
+            this.lblRol.Text = "ROL";
             // 
-            // pictureBox2
+            // pboxMenu
             // 
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.A_Usuario;
-            this.pictureBox2.Location = new System.Drawing.Point(69, 68);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(125, 125);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.pboxMenu.Image = global::CapaPresentacion.Properties.Resources.A_Usuario;
+            this.pboxMenu.Location = new System.Drawing.Point(69, 68);
+            this.pboxMenu.Name = "pboxMenu";
+            this.pboxMenu.Size = new System.Drawing.Size(125, 125);
+            this.pboxMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxMenu.TabIndex = 1;
+            this.pboxMenu.TabStop = false;
             // 
             // btnConfig
             // 
@@ -309,6 +309,7 @@
             this.btnConfig.Size = new System.Drawing.Size(48, 42);
             this.btnConfig.TabIndex = 0;
             this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // frmMenu
             // 
@@ -326,7 +327,7 @@
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,7 +343,7 @@
         private FontAwesome.Sharp.IconButton btnCerrar;
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pboxMenu;
         private FontAwesome.Sharp.IconButton btnConfig;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -351,6 +352,6 @@
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnConductor;
         private System.Windows.Forms.Button btnCliente;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblRol;
     }
 }

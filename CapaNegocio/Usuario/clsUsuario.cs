@@ -101,7 +101,34 @@ namespace CapaNegocio.Usuario
             }
             return Tuple.Create(mensaje, ingreso);
         }
+        public String ActualizarPass()
+        {
+            String mensaje="";
+            try
+            {
+                SqlConnection conexionAbierta = baseDatos.abrir_conexion();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conexionAbierta;
 
+                command.CommandText = "UsuarioUpdateCommand";
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                //valores para cada parámetro dado en el query
+                command.Parameters.AddWithValue("@NombreUsuario", Usuario);
+                command.Parameters.AddWithValue("@Password", Password);
+
+                int t = Convert.ToInt32(command.ExecuteNonQuery());
+                mensaje = "Contraseña actualizada registrado con éxito";
+
+                baseDatos.cerrar_conexion(conexionAbierta);
+            }
+            catch (SqlException ex)
+            {
+                mensaje = "Motivos de error:\n\n- No se puede acceder a la base de datos\n- Los datos ingresados ya existen";
+                Console.WriteLine(ex.Message);
+            }
+
+            return mensaje;
+        }
 
         public List<Object> listarUsuario()
         {

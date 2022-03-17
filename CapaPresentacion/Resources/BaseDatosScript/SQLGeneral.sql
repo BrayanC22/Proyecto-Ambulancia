@@ -78,6 +78,27 @@ AS
 DELETE FROM [Usuario] WHERE( [Id_Usuario] = @Id) 
 GO
 
+/*------------ Actualizar contraseña -----------------*/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[UsuarioUpdateCommand]
+(
+	@NombreUsuario varchar(40),
+	@Password varchar(40)
+	
+	
+)
+AS
+	SET NOCOUNT OFF;
+UPDATE [Usuario] SET  [Password] = @Password WHERE ([NombreUsuario] = @NombreUsuario);
+	
+GO
+
+
 /* ------------------- Pagos ------------------------*/
 use LosRapidosSAbd;
 CREATE TABLE Solicitud

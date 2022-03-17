@@ -16,6 +16,7 @@ namespace CapaPresentacion
 {
     public partial class frmMenu : Form
     {
+        List<Object> lstUsuario;
         frmCliente cliente = new frmCliente();
         frmGuardarAmbulancia guardarAmbulancia = new frmGuardarAmbulancia();
         FrmConductores conductores = new FrmConductores();
@@ -26,8 +27,31 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+        public frmMenu(List<Object> lst_Usuarios)
+        {
+            
+            
+            InitializeComponent();
+            this.lstUsuario = lst_Usuarios;
+            foreach (var usuario in lst_Usuarios)
+            {
+                System.Type type = usuario.GetType();
+                lblUsername.Text = (String)type.GetProperty("nombre").GetValue(usuario);
+                lblRol.Text = (String)type.GetProperty("cargo").GetValue(usuario);
+                byte[] foto = (byte[])type.GetProperty("foto").GetValue(usuario);
+                System.IO.MemoryStream ms = new System.IO.MemoryStream(foto);
+                pboxMenu.Image = Image.FromStream(ms);
+            }
 
-        private void btnCliente_Click(object sender, EventArgs e)
+
+        }
+
+
+        
+
+
+
+    private void btnCliente_Click(object sender, EventArgs e)
         {
             cliente.Show();
             this.Hide();
@@ -105,6 +129,12 @@ namespace CapaPresentacion
         {
             frmPagos pagos = new frmPagos();
             pagos.ShowDialog();
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            frmActualizarPass actualizarPass = new frmActualizarPass(lstUsuario);
+            actualizarPass.ShowDialog();
         }
     }
 }

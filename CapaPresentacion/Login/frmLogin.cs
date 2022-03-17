@@ -14,6 +14,7 @@ namespace CapaPresentacion.Login
 {
     public partial class frmLogin : Form
     {
+        List<Object> lstUsuario = new List<Object>();
         public frmLogin()
         {
             InitializeComponent();
@@ -56,16 +57,30 @@ namespace CapaPresentacion.Login
 
         public bool login(string user, string password)
         {
+            
             bool acceso=false;
             try
             {
                 SqlConnection conexion = abrirConexionSqlServer();
-                String cadena = ("SELECT NombreUsuario, password FROM Usuario WHERE NombreUsuario = '"+user+"' AND password = '"+password+"'");
+                String cadena = ("SELECT * FROM Usuario WHERE NombreUsuario = '"+user+"' AND password = '"+password+"'");
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 SqlDataReader registros = comando.ExecuteReader();
                 if (registros.Read())
                 {
-                    frmMenu menu = new frmMenu();
+                        var tmp = new
+                        {
+                            id_usuario = registros["Id_Usuario"].ToString(),
+                            nombre = registros["Nombre"].ToString(),
+                            cargo = registros["Apellido"].ToString(),
+                            cedula = registros["Cedula"].ToString(),
+                            nombreUsuario = registros["NombreUsuario"].ToString(),
+                            foto = (byte[])registros["Foto"]
+                        };
+
+                        lstUsuario.Add(tmp);
+                   
+                    
+                    frmMenu menu = new frmMenu(lstUsuario);
                     menu.Show();
                     this.Hide();
                     acceso = true;
